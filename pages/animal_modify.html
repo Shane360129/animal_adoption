@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../main.css">
+  <title>Title</title>
+</head>
+<body>
+  <div class="animal_modify">
+    <!--  照片上傳功能暫不能使用  -->
+    <input type="file">
+    <img src="" alt="">
+    <label>
+      編號
+      <input type="text" class="animalId" disabled="disabled">
+    </label>
+    <label>
+      動物名稱
+      <input type="text" class="animalName">
+    </label>
+
+    <label>
+      公
+      <input type="radio" name="sex" value="0" checked="checked" class="male">
+    </label>
+    <label>
+      母
+      <input type="radio" name="sex" value="1" class="female">
+    </label>
+
+    <label>
+      貓
+      <input type="radio" name="species" value="0" checked="checked" class="cat">
+    </label>
+    <label>
+      狗
+      <input type="radio" name="species" value="1" class="dog">
+    </label>
+    <label>
+      物種
+      <input type="text" class="type">
+    </label>
+    <label>
+      登記日期
+      <input type="date" class="regDate">
+    </label>
+    <label>
+      登記城市
+      <select name="regCity" id="regCity">
+      </select>
+    </label>
+
+    <button type="button" class="reset">清除</button>
+    <button type="button" class="submit">送出</button>
+  </div>
+  <script src="../Js/animal_modify.js"></script>
+</body>
+</html>
