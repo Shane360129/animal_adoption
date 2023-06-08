@@ -53,4 +53,20 @@ table {
   border-spacing: 0;
 }
 
+.account-alert {
+  display: none;
+}
+
+.password-alert {
+  display: none;
+}
+
+.name-alert {
+  display: none;
+}
+
+.tel-alert {
+  display: none;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -9,22 +9,31 @@
 </head>
 <body>
   <label for="account">
+    帳號
     <input type="text" id="account">
-    <span class="account-alert" style="display: none">格式不正確</span>
+    <span class="account-alert">格式不正確</span>
   </label>
   <label for="password">
+    密碼
     <input type="password" id="password">
+    <span class="password-alert">格式不正確</span>
+  </label>
+  <label for="name">
+    姓名
+    <input type="text" id="name">
+    <span class="name-alert">格式不正確</span>
   </label>
   <label for="tel">
+    手機
     <input type="tel" id="tel">
+    <span class="tel-alert">格式不正確</span>
   </label>
-  <label for="date">
-    <input type="date" id="date">
+  <label for="birthday">
+    出生日期
+    <input type="date" id="birthday">
   </label>
-  <label>
-    <input type="checkbox" id="rememberAcc">
-  </label>
-  <button type="button" class="login">登入</button>
+
+  <button type="button" class="login">註冊</button>
 
   <script src="../Js/register.js"></script>
 </body>
