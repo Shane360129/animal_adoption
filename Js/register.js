@@ -10,7 +10,7 @@ const birthday = document.querySelector("#birthday");
 const loginButton = document.querySelector(".login");
 
 // 將所有input設為不儲存紀錄
-const inputElements = document.querySelectorAll("input");
+const inputElements = document.querySelectorAll("input[]");
 inputElements.forEach((input) => {
   input.setAttribute('autocomplete', 'off');
 })
@@ -95,7 +95,6 @@ birthday.value = formattedDate;
 //註冊
 loginButton.addEventListener("click", () => {
   // 所有input非空判斷
-  // span:not([style*='display:none'])
   const span = Array.from(document.querySelectorAll("span"))
   console.dir(span)
   if (account.value.trim() === ""
