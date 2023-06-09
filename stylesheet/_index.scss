@@ -1,0 +1,298 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    .text {
+        width: 1000px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textTitle {
+        font-size: 96px;
+        color: black;
+    }
+
+    .pArea {
+        width: 600px;
+        height: 100px;
+        margin-top: 50px;
+
+        .pAreaText {
+            font-size: 32px;
+        }
+    }
+
+
+    .meetbtn {
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+    }
+
+    button {
+        width: 380px;
+        height: 100px;
+        font-size: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 2px 2px 2px gray;
+        margin: 0 5px;
+        background-color: #FF7E6B;
+        color: white;
+    }
+
+    .pic {
+        width: 400px;
+        height: 500px;
+        background-image: url('https://j.gifs.com/DqQrry.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+
+//商品牆輪播區
+.pruductWall {
+    position: relative;
+    background: #FFA69E;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 50px 0;
+    padding: 0 20px;
+    --swiper-pagination-color: #FF7E6B;
+    //點點樣式
+}
+
+.swiper {
+    //內部輪播圖片大小
+    width: 100%;
+    height: 400px;
+    --swiper-navigation-color: #8C5E58;
+    //箭頭樣式
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    // margin-right: -20px;
+    position: relative;
+    display: block;
+    width: 100%;
+    background-repeat: no-repeat;
+
+}
+
+.swiper-slide .saleWord {
+    position: absolute;
+    bottom: 55px;
+    right: 0;
+    z-index: 1;
+    color: black;
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px gray;
+    background-color: white;
+}
+
+.swiper-slide img {
+    height: 300px;
+    position: absolute;
+    top: 20%;
+    right: 0;
+
+}
+
+//分隔線樣式
+hr.hrStyle {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+.animalTitle {
+    font-size: 96px;
+    margin: 50px;
+}
+
+
+//毛小孩圖片輪播區
+
+.animalCardWall {
+    position: relative;
+    // background: #6e2620;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 50px 0;
+    padding: 0 20px;
+    --swiper-pagination-color: #8C5E58;
+    //點點樣式
+}
+
+.swiper1 {
+    //內部輪播圖片大小
+    width: 100%;
+    height: 600px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    // margin-right: -20px;
+    position: relative;
+    display: block;
+    width: 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+.animalCardImg {
+    width: 400px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 3rem 0 0 0;
+}
+
+.aniPic1 {
+    background-image: url("https://s.yimg.com/ny/api/res/1.2/DYTRU1X9WNgPRQhzevmbvw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--/https://s.yimg.com/os/creatr-uploaded-images/2022-09/e283f9d0-396a-11ed-a2d5-89d366f4d162");
+}
+
+.aniPic2 {
+    background-image: url("https://actionah2020.com/wp-content/uploads/2021/08/456423.jpg");
+}
+
+.aniPic3 {
+    background-image: url("https://cdn2.ettoday.net/images/6559/6559053.jpg");
+}
+
+.aniPic4 {
+    background-image: url("https://s3-ap-southeast-1.amazonaws.com/mababy-production/knowledge/1c652fd9-c248-4cc4-a3bd-9cde4a9996a7");
+}
+
+.aniPic5 {
+    background-image: url("https://s.yimg.com/ny/api/res/1.2/yRFa65s0k2u0E9N4OLtqIg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/os/creatr-uploaded-images/2021-11/df9feba0-572c-11ec-bffd-e90dbcd68c5a");
+}
+
+.animalCardText {
+    background-color: white;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 0 3rem 0;
+
+    .aniP{
+        margin: 10px;
+    }
+
+
+    .aniBtn {
+        width: 200px;
+        font-size: 24px;
+        text-align: center;
+        margin: 20px 0;
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 2px 2px 2px gray;
+        background-color: #FF7E6B;
+        color: white;
+    }
+}
+
+.teachInfo{
+    display: flex;
+    justify-content: center;
+}
+
+.teachInfoImgBot{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 0 20px;
+    margin: 0 100px 50px 0 ;
+}
+
+.InfoImgBot1{
+    width: 400px;
+    height: 400px;
+    border: 1rem double rgb(186, 93, 108);
+    position: absolute;
+}
+
+.InfoImgBot2{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(168, 156, 156);
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+}
+
+.InfoImgBot3{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 135px;
+    bottom: -16px;
+    background-image: url("https://memeprod.sgp1.digitaloceanspaces.com/user-resource/79b46b770a422dd42cdaf9a929c3093d.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.teachInfoTextBot{
+    width: 600px;
+    height: 400px;
+    background-image: url("/img/teachInfoImg/infoPic.png");
+}
+
+.InfoTextUl{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.InfoTextHideLi{
+    margin: 50px;
+    position: relative;
+    &:hover .InfoTextHideUl{
+        opacity: 1;
+    }
+    &:hover .InfoTextHideLi_a{
+        color: #A9F0D1;
+        text-shadow: 2px 2px 2px white;
+    }
+
+    a{
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    }
+}
+
+.InfoTextHideUl{
+    width: 100px;
+    text-align:left;
+    border-radius: 1rem;
+    padding-left:30px;
+    position: absolute;
+    background-color: #A9F0D1;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+
+    li{
+        margin: 10px 0;
+        a{
+        color: white;
+        }
+    }
+}
