@@ -1,16 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-    <title>Document</title>
+
+    <!-- 導入swipe CDN -->
+    <!-- Swiper v4.1.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+    <title>動物領養網</title>
 </head>
+
 <body>
-    <h1>122</h1>
-    <i class="fa-solid fa-magnifying-glass"></i>
-    
-        
-    </body>
+    <header>
+        <div class="logo">
+            <a href="/frontPage.html">
+                <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
+                    alt="LOGO">
+            </a>
+        </div>
+        <div class="title">
+            <ul class="drop_down_menu">
+                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
+                    <ul class="hideUl">
+                        <li><a href="#">A</a>
+                        </li>
+                        <li><a href="#">B</a>
+                        </li>
+                        <li><a href="#">C</a>
+                        </li>
+                        <li><a href="#">D</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
+                    <ul class="hideUl">
+                        <li><a href="#">ㄅ</a>
+                        </li>
+                        <li><a href="#">ㄆ</a>
+                        </li>
+                        <li><a href="#">ㄇ</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
+                    <ul class="hideUl">
+                        <li><a href="#">OAO</a>
+                        </li>
+                        <li><a href="#">QAQ</a>
+                        </li>
+                        <li><a href="#">A_A</a>
+                        </li>
+                        <li><a href="#">T_T</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
+                    <ul class="hideUl">
+                        <li><a href="#">貓咪</a>
+                        </li>
+                        <li><a href="#">狗狗</a>
+                        </li>
+                        <li><a href="#">人類</a>
+                        </li>
+                        <li><a href="#">其他畜生</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="btn">
+                <button type="button">註冊</button>
+                <button type="button">登入</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="text">
+            <h2 class="textTitle">等你給他們一個家</h2>
+            <i class="fa-solid fa-house"></i>
+            <div class="pArea">
+                <p class="pAreaText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, voluptas dolore
+                    labore voluptatibus
+                    impedit perferendis.
+            </div>
+            <div class="meetbtn">
+                <button type="button">認識我們</button>
+            </div>
+        </div>
+        <div class="pic"></div>
+    </div>
+
+    <br>
+
+    <div class="pruductWall">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_1.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_2.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_3.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_4.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_5.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_6.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_7.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_8.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="saleWord">限時特價中!!口</h2>
+                    <a href="https://www.yahoo.tv/"><img src="./img/pruductWall_img/pruductWall_9.jpg" /></a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+            <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+        </div>
+    </div>
+
+    <hr class="hrStyle">
+
+    <h2 class="animalTitle">毛孩子們</h2>
+
+    <div class="animalCardWall">
+        <div class="swiper mySwiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="animalCard">
+                        <div class="animalCardImg aniPic1"></div>
+                        <div class="animalCardText">
+                            <i>口</i>
+                            <p class="aniP">Lorem ipsum dolor sit amet.</p>
+                            <button type="button" class="aniBtn">點我</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="animalCard">
+                        <div class="animalCardImg aniPic2"></div>
+                        <div class="animalCardText">
+                            <i>口</i>
+                            <p class="aniP">Lorem ipsum dolor sit amet.</p>
+                            <button type="button" class="aniBtn">點我</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="animalCard">
+                        <div class="animalCardImg aniPic3"></div>
+                        <div class="animalCardText">
+                            <i>口</i>
+                            <p class="aniP">Lorem ipsum dolor sit amet.</p>
+                            <button type="button" class="aniBtn">點我</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="animalCard">
+                        <div class="animalCardImg aniPic4"></div>
+                        <div class="animalCardText">
+                            <i>口</i>
+                            <p class="aniP">Lorem ipsum dolor sit amet.</p>
+                            <button type="button" class="aniBtn">點我</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="animalCard">
+                        <div class="animalCardImg aniPic5"></div>
+                        <div class="animalCardText">
+                            <i>口</i>
+                            <p class="aniP">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, animi!</p>
+                            <button type="button" class="aniBtn">點我</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+        <div class="teachInfo">
+            <div class="teachInfoImgBot">
+                <div class="InfoImgBot1"></div>
+                <div class="InfoImgBot2"></div>
+                <div class="InfoImgBot3"></div>
+            </div>
+            <div class="teachInfoTextBot">
+                <h2 class="InfoTextTitle">教育與關愛EDUCATION & LOVE</h2>
+                <ul class="InfoTextUl">
+                    <li class="InfoTextHideLi"><a class="InfoTextHideLi_a" href="#">首頁</a>
+                        <ul class="InfoTextHideUl">
+                            <li><a href="#">A</a>
+                            </li>
+                            <li><a href="#">B</a>
+                            </li>
+                        </ul>    
+                    </li>    
+                </ul>
+                <ul class="InfoTextUl">
+                    <li class="InfoTextHideLi"><a class="InfoTextHideLi_a" href="#">首頁</a>
+                        <ul class="InfoTextHideUl">
+                            <li><a href="#">A</a>
+                            </li>
+                            <li><a href="#">B</a>
+                            </li>
+                        </ul>    
+                    </li>    
+                </ul>
+            </div>
+        </div>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: false,
+            centeredSlides: true,
+            slidesPerView: 3,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            loop: true,
+            autoplay: {
+                delay: 1500,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        var swiper1 = new Swiper(".mySwiper1", {
+            effect: "coverflow",
+            grabCursor: false,
+            centeredSlides: true,
+            slidesPerView: 3,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                //比100大會更立體
+                depth: 500,
+                modifier: 1,
+                slideShadows: false,
+            },
+            loop: true,
+            // autoplay: {
+            //     delay: 1500,
+            // },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+    </script>
+
+</body>
+
 </html>
