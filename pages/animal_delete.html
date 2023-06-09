@@ -6,7 +6,55 @@
   <title>Title</title>
 </head>
 <body>
+  <div class="animal_delete">
+    <!--  照片更新功能暫不能使用  -->
+    <input type="file">
+    <img src="" alt="">
+    <label>
+      編號
+      <input type="text" class="animalId" disabled="disabled">
+    </label>
+    <label>
+      動物名稱
+      <input type="text" class="animalName">
+    </label>
 
-  <script src="../Js/animal_delete.js"></script>
+    <label>
+      公
+      <input type="radio" name="sex" value="0" class="male">
+    </label>
+    <label>
+      母
+      <input type="radio" name="sex" value="1" class="female">
+    </label>
+
+    <label>
+      貓
+      <input type="radio" name="species" value="0" class="cat">
+    </label>
+    <label>
+      狗
+      <input type="radio" name="species" value="1" class="dog">
+    </label>
+    <label>
+      物種
+      <input type="text" class="type">
+    </label>
+    <label>
+      登記日期
+      <input type="date" class="regDate">
+    </label>
+    <label>
+      登記城市
+      <select name="regCity" id="regCity">
+      </select>
+    </label>
+
+    <button type="button" class="delete">刪除</button>
+    <!--  放棄更新應該直接<a>跳離頁面就可以  -->
+    <button type="button" class="quit">放棄更新</button>
+    <button type="button" class="update">更新</button>
+  </div>
+  <script type="module" src="../Js/animal_delete.js"></script>
 </body>
 </html>
