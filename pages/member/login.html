@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main.css">
+    <title>Animal Adoption</title>
+</head>
+<body>
+    <div class="member-body">
+
+        <main>
+            <div class="member-page">
+                <div class="member-wrap" style="margin-bottom: 168px;">
+                    <div class="title-wrap">
+                        <div class="title-box login-box">
+                            <p><a href="../member/login.html" style="color: #665e54;">登入</a></p>
+                        </div>
+                        <div class="title-box register-box">
+                            <p><a href="../member/register.html">註冊</a></p>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="memberId">帳號</label>
+                                <input id="memberId" type="text" placeholder="身分證字號，英文字母須大寫" pattern="^[A-Z][1-2]\\d{8}$" required>
+                            </div>
+                            <p class="alert-text" id="idAlertText"></p>
+                        </div>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="pwd">密碼</label>
+                                <input id="pwd" type="password" placeholder="請輸入8~12碼英文字母和數字" pattern="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d\\S]{8,12}$" required>
+                            </div>
+                            <p class="alert-text" id="pwdAlertText"></p>
+                        </div>
+                        <button type="button" id="loginBtn">登入</button>              
+                    </form>           
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../Js/views/member/login.js"></script>
+</body>
+</html>
+
+<style>
+    .login-box {
+        background-color: #fff;
+    }
+</style>

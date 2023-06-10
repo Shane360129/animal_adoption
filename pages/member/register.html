@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main.css">
+    <title>Animal Adoption</title>
+</head>
+<body>
+    <div class="member-body">
+        <main>
+            <div class="member-page">
+                <div class="member-wrap">
+                    <div class="title-wrap">
+                        <div class="title-box login-box">
+                            <p><a href="../member/login.html">登入</a></p>
+                        </div>
+                        <div class="title-box register-box">
+                            <p><a href="../member/register.html" style="color: #665e54;">註冊</a></p>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="memberId">帳號</label>
+                                <input id="memberId" type="text" placeholder="身分證字號，英文字母須大寫" pattern="^[A-Z][1-2]\\d{8}$" required>
+                            </div>
+                            <p class="alert-text" id="IdAlertText"></p>
+                        </div>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="pwd">密碼</label>
+                                <input id="pwd" type="password" placeholder="請輸入8~12碼英文字母和數字" pattern="^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d\\S]{8,12}$" required>
+                            </div>
+                            <p class="alert-text" id="PwdAlertText"></p>
+                        </div>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="memberName">姓名</label>
+                                <input id="memberName" type="text" placeholder="請輸入真實姓名" pattern="" required>
+                            </div>
+                            <p class="alert-text" id="nameAlertText"></p>
+                        </div>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="phone">手機</label>
+                                <input id="phone" type="tel" placeholder="0912345678" pattern="^09\\d{8}$" required>
+                            </div>
+                            <p class="alert-text" id="phoneAlertText"></p>
+                        </div>
+                        <div class="form-item">
+                            <div class="input-box">
+                                <label for="birth">生日</label>
+                                <input id="birth" type="date" placeholder="yyyy/mm/dd" pattern="^\\d{4}-\\d{2}-\\d{2}$" required>
+                            </div>   
+                            <p class="alert-text" id="birthAlertText"></p>
+                        </div>  
+                        <button type="button">註冊</button>              
+                    </form>        
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../../Js/views/member/register.js"></script>
+</body>
+</html>
+
+<style>
+    .register-box {
+        background-color: #fff;
+    }
+</style>
