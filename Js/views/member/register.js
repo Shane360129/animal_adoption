@@ -94,7 +94,7 @@ signupBtnDOM.addEventListener("click", () => {
         || phoneDOM.value.trim() === ""
         || memberNameDOM.value.trim() === ""
         || birthDOM.value.trim() === "") {
-        swal("注意!", "輸入資料錯誤", "error");
+        return swal("注意!", "輸入資料錯誤", "error");
     }
 
     const body = {

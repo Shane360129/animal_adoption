@@ -41,11 +41,11 @@ pwdDOM.addEventListener("blur", () => {
 }) 
 
 loginBtnDOM.addEventListener("click", () => {
-    // 若有欄位是空
+    // 若有欄位是空或全空白
     if (memberIdDOM.value.trim() === "" || pwdDOM.value.trim() === "") {
-        swal("注意!", "輸入資料錯誤", "error");
+        return swal("注意!", "輸入資料錯誤", "error");
     }
-
+    
     // location.href="/";
     const body = {
         member_id: memberIdDOM.value,
