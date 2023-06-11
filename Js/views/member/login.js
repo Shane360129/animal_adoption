@@ -14,7 +14,7 @@ const pwdPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d\\S]{8,12}$";
 
 // 帳號欄位檢查
 memberIdDOM.addEventListener("change", () => {
-    if(memberIdDOM.value == null || memberIdDOM.value == "") {
+    if(memberIdDOM.value === null || memberIdDOM.value === "") {
         idAlertTextDOM.innerText = "*帳號欄位未填寫";
     }
     if (!memberIdDOM.value.match(idPattern)) {
@@ -26,7 +26,7 @@ memberIdDOM.addEventListener("change", () => {
 
 // 密碼欄位檢查
 pwdDOM.addEventListener("change", () => {
-    if(pwdDOM.value == null || pwdDOM.value == "") {
+    if(pwdDOM.value === null || pwdDOM.value === "") {
         pwdAlertTextDOM.innerText = "*密碼欄位未填寫";
     }
     if (!pwdDOM.value.match(pwdPattern)) {
@@ -58,7 +58,7 @@ loginBtnDOM.addEventListener("click", () => {
         console.log(data);
 
         // 跳出提醒視窗
-        if (data.message == "登入成功") {
+        if (data.message === "登入成功") {
             swal(data.message, "登入成功", "success");
 
             const swalBtnDOM = document.querySelector(".swal-button");
@@ -67,10 +67,10 @@ loginBtnDOM.addEventListener("click", () => {
             })
             // console.dir(swalBtnDOM)
         }
-        if (data.message == "資料不正確") {
+        if (data.message === "資料不正確") {
             swal(data.message, "輸入錯誤", "error");
         }
-        if (data.message == "尚未註冊會員或資料錯誤或尚未生效會員") {
+        if (data.message === "尚未註冊會員或資料錯誤或尚未生效會員") {
             swal(data.message, "資訊錯誤", "error");
         }
     })
