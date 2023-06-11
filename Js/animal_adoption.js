@@ -9,6 +9,17 @@ const animal = {
   regDate: "2023-05-12",
   regCity: "臺北市"
 }
+
+// 還沒想好如何獲得登錄會員資訊
+// 這裡先預設
+const member={
+  memberId:"A129111111",
+  pwd:"eibb6666",
+  memberName:"doctor",
+  phone:"0988876584",
+  birth:"2023-06-08"
+}
+
 const animalId = document.querySelector(".animalId");
 const animalName = document.querySelector(".animalName");
 const species = document.querySelector(".species");
@@ -16,6 +27,7 @@ const sex = document.querySelector(".sex");
 const type = document.querySelector(".type");
 const regDate = document.querySelector(".regDate");
 const regCity = document.querySelector(".regCity");
+const adoption = document.querySelector(".adoption");
 
 // 渲染選中寵物資料
 animalId.innerText = animal.animalId;
@@ -26,4 +38,22 @@ type.innerText = animal.type;
 regDate.innerText = animal.regDate;
 regCity.innerText = animal.regCity;
 
-// 認養
+// 送審認養
+adoption.addEventListener("click",()=>{
+  const body = {
+    member:{}
+    ,animal:{}
+  }
+  body.member = member;
+  body.animal = animal;
+  console.log(body)
+  axios({
+    method: "post",
+    url: "http://localhost:8080/adoption",
+    //API要求的資料
+    data: body
+  })
+      .then( (response) => {
+        alert(response.data.message)
+      })
+})
