@@ -1,4 +1,3 @@
-import {setAnimalInfo} from "./views/setAnimalInfo.js"
 // 預期會從「待認養犬貓照片檢索」的js裡導入選中的寵物資訊
 // 這裡先預設
 const animal = {

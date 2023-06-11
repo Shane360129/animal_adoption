@@ -55,8 +55,6 @@ update.addEventListener("click", () => {
       const regCity = document.querySelector("#regCity")
       const type = document.querySelector(".type");
       const regDate = document.querySelector(".regDate");
-      const deleteBtn = document.querySelector(".delete");
-
       const body = {
         animalList: [
           {
