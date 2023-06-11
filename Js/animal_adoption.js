@@ -46,7 +46,6 @@ adoption.addEventListener("click",()=>{
   }
   body.member = member;
   body.animal = animal;
-  console.log(body)
   axios({
     method: "post",
     url: "http://localhost:8080/adoption",
