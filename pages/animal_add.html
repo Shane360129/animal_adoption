@@ -6,8 +6,8 @@
   <title>Title</title>
 </head>
 <body>
-  <div class="animal_delete">
-    <!--  照片更新功能暫不能使用  -->
+  <div class="animal_modify">
+    <!--  照片上傳功能暫不能使用  -->
     <input type="file">
     <img src="" alt="">
     <label>
@@ -21,7 +21,7 @@
 
     <label>
       公
-      <input type="radio" name="sex" value="0" class="male">
+      <input type="radio" name="sex" value="0" checked="checked" class="male">
     </label>
     <label>
       母
@@ -30,7 +30,7 @@
 
     <label>
       貓
-      <input type="radio" name="species" value="0" class="cat">
+      <input type="radio" name="species" value="0" checked="checked" class="cat">
     </label>
     <label>
       狗
@@ -50,11 +50,9 @@
       </select>
     </label>
 
-    <button type="button" class="delete">刪除</button>
-    <!--  「放棄更新」應該直接<a>跳離頁面就可以  -->
-    <button type="button" class="quit">放棄更新</button>
-    <button type="button" class="update">更新</button>
+    <button type="button" class="reset">清除</button>
+    <button type="button" class="submit">送出</button>
   </div>
-  <script type="module" src="../Js/animal_delete.js"></script>
+  <script type="module" src="../Js/animal_add.js"></script>
 </body>
 </html>
