@@ -91,11 +91,14 @@ upload.addEventListener("change", (e) => {
   reader.readAsDataURL(img)
   // 讀完圖片後會執行的方法
   reader.onload = function (e) {
-    console.log(e.target.result);
+    // console.log(e.target.result);
     const imgDataUrl = e.target.result;
-
-    splitBase64IntoChunks(imgDataUrl,1000)
-
+    const base64 = {
+      "imgBase64":imgDataUrl.split(",")[1],
+      "sort":"a",
+      "id":animalId.value
+    }
+    console.log(base64)
     const newDiv = document.createElement("div");
     newDiv.classList.add("firstPic");
     newDiv.innerHTML = `<img src="${imgDataUrl}" alt="pet">`;
@@ -105,6 +108,8 @@ upload.addEventListener("change", (e) => {
       firstPics[i].classList.remove("firstPic");
       firstPics[i].classList.add("otherPic");
     }
+    // axios.post("http://localhost:8080/upLordImg", base64).then((res) => {
+    // });
   }
 })
 
