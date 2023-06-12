@@ -19,7 +19,7 @@ $animationSpeed: 40s;
 
 
 // Styling
-.product-new-arrival-slider {
+.product_new_arrival_slider {
     background: #A9F0D1;
     height: 320px;
     margin: auto;
@@ -73,55 +73,55 @@ $animationSpeed: 40s;
 }
 
 // 熱銷商品==========================================
-.product-sell-cards {
+// .product-sell-cards {
 
-    .product-sell-card {
-        height: 350px;
-        width: 23%;
-        background-color: #fff;
-        border-radius: 10px;
-        position: relative;
-        overflow: hidden;
-
-
-        .product-sell-img {
-            transition: 1s;
-            scale: 1.8;
-        }
-
-        .product-sell-description {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 12%;
-            border-radius: 10px;
-            background-color: #FF9999;
-            text-align: center;
-            padding: 10px;
-            transition: 1s;
+//     .product-sell-card {
+//         height: 350px;
+//         width: 23%;
+//         background-color: #fff;
+//         border-radius: 10px;
+//         position: relative;
+//         overflow: hidden;
 
 
-            h5 {
-                margin: 5px 0;
-                font-size: 24px;
-            }
+//         .product-sell-img {
+//             transition: 1s;
+//             scale: 1.8;
+//         }
 
-            p {
-                font-size: 18px;
-            }
-        }
+//         .product-sell-description {
+//             position: absolute;
+//             bottom: 0;
+//             width: 100%;
+//             height: 12%;
+//             border-radius: 10px;
+//             background-color: #FF9999;
+//             text-align: center;
+//             padding: 10px;
+//             transition: 1s;
 
-        &:hover {
-            cursor: pointer;
 
-            .product-sell-description {
-                padding-bottom: 65px;
-            }
+//             h5 {
+//                 margin: 5px 0;
+//                 font-size: 24px;
+//             }
 
-            .product-sell-img {
-                scale: 1.3;
-            }
+//             p {
+//                 font-size: 18px;
+//             }
+//         }
 
-        }
-    }
-}
+//         &:hover {
+//             cursor: pointer;
+
+//             .product-sell-description {
+//                 padding-bottom: 65px;
+//             }
+
+//             .product-sell-img {
+//                 scale: 1.3;
+//             }
+
+//         }
+//     }
+// }
