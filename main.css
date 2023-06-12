@@ -424,7 +424,7 @@ hr.hrStyle {
     transform: translateX(-1750px);
   }
 }
-.product-new-arrival-slider {
+.product_new_arrival_slider {
   background: #A9F0D1;
   height: 320px;
   margin: auto;
@@ -433,7 +433,7 @@ hr.hrStyle {
   position: relative;
   width: 100%;
 }
-.product-new-arrival-slider::before, .product-new-arrival-slider::after {
+.product_new_arrival_slider::before, .product_new_arrival_slider::after {
   background: linear-gradient(to right, rgb(169, 240, 209) 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
   height: 320px;
@@ -441,69 +441,29 @@ hr.hrStyle {
   width: 200px;
   z-index: 2;
 }
-.product-new-arrival-slider::after {
+.product_new_arrival_slider::after {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
 }
-.product-new-arrival-slider::before {
+.product_new_arrival_slider::before {
   left: 0;
   top: 0;
 }
-.product-new-arrival-slider .product-new-arrival-slide-track {
+.product_new_arrival_slider .product-new-arrival-slide-track {
   animation: scroll 40s linear infinite;
   display: flex;
   width: 3500px;
 }
-.product-new-arrival-slider .product-new-arrival-slide {
+.product_new_arrival_slider .product-new-arrival-slide {
   height: 100px;
   width: 250px;
 }
-.product-new-arrival-slider img {
+.product_new_arrival_slider img {
   border-radius: 500px;
 }
-.product-new-arrival-slider img:hover {
+.product_new_arrival_slider img:hover {
   scale: 1.2;
   transition: 0.5s;
   border-radius: 50px;
-}
-
-.product-sell-cards .product-sell-card {
-  height: 350px;
-  width: 23%;
-  background-color: #fff;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-.product-sell-cards .product-sell-card .product-sell-img {
-  transition: 1s;
-  scale: 1.8;
-}
-.product-sell-cards .product-sell-card .product-sell-description {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 12%;
-  border-radius: 10px;
-  background-color: #FF9999;
-  text-align: center;
-  padding: 10px;
-  transition: 1s;
-}
-.product-sell-cards .product-sell-card .product-sell-description h5 {
-  margin: 5px 0;
-  font-size: 24px;
-}
-.product-sell-cards .product-sell-card .product-sell-description p {
-  font-size: 18px;
-}
-.product-sell-cards .product-sell-card:hover {
-  cursor: pointer;
-}
-.product-sell-cards .product-sell-card:hover .product-sell-description {
-  padding-bottom: 65px;
-}
-.product-sell-cards .product-sell-card:hover .product-sell-img {
-  scale: 1.3;
 }/*# sourceMappingURL=main.css.map */
