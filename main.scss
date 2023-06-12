@@ -2,8 +2,14 @@
 @import "./layout/layout";
 @import "./node_modules/@fortawesome/fontawesome-free/css/all.css";
 
-@import "stylesheet/_register.scss";
-@import "stylesheet/_animal_modify.scss";
+@import "./stylesheet/_register.scss";
+@import "./stylesheet/_animal_add.scss";
+@import "./stylesheet/_animal_adoption.scss";
+@import "./stylesheet/_animal_modify_and_delete.scss";
+@import "./stylesheet/cart/_cart.scss";
 
 // 首頁
 @import "./stylesheet/_index.scss";
+
+//member
+@import "./stylesheet/member/member";
