@@ -94,3 +94,79 @@ header {
         }
     }
 }
+
+.frontFooter {
+    max-width: 1920px;
+    height: 500px;
+    background-color: #FFA69E;
+    display: flex;
+    justify-content: space-around;
+
+    .footerImg {
+        margin-left: 20px;
+    }
+
+    .footerCoverP {
+        color: #8c5e58;
+        font-size: 18px;
+    }
+
+    .footerIcon {
+        line-height: 3;
+        letter-spacing: 8px;
+        text-align: center;
+    }
+
+    .footerText {
+        width: 33%;
+        margin: 50px 20px;
+        font-size: 24px;
+        color: #8c5e58;
+        line-height: 3;
+    }
+
+    .footerMap {
+        width: 33%;
+        margin: 50px 20px;
+    }
+
+    .footerMapText {
+        font-size: 30px;
+        font-weight: bolder;
+        margin: 20px;
+        color: #8c5e58;
+        text-shadow: 1px 1px 1px #573e3a;
+    }
+
+    .footerMapLi {
+        font-size: 24px;
+        line-height: 2;
+        margin-left: 40px;
+        color: #8c5e58;
+    }
+}
+
+//回頂部按鈕
+.homeBox {
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #8c5e58;
+    opacity: 0.3;
+    z-index: 5;
+
+    .homeBoxP {
+        font-size: 36px;
+        color: #ffffff;
+    }
+
+    &:hover {
+        opacity: 1;
+        font-weight: bold;
+        border-radius: 50%;
+
+    }
+}

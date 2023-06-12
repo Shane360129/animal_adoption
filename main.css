@@ -138,6 +138,71 @@ header button:hover {
   background-color: #FFA69E;
 }
 
+.frontFooter {
+  max-width: 1920px;
+  height: 500px;
+  background-color: #FFA69E;
+  display: flex;
+  justify-content: space-around;
+}
+.frontFooter .footerImg {
+  margin-left: 20px;
+}
+.frontFooter .footerCoverP {
+  color: #8c5e58;
+  font-size: 18px;
+}
+.frontFooter .footerIcon {
+  line-height: 3;
+  letter-spacing: 8px;
+  text-align: center;
+}
+.frontFooter .footerText {
+  width: 33%;
+  margin: 50px 20px;
+  font-size: 24px;
+  color: #8c5e58;
+  line-height: 3;
+}
+.frontFooter .footerMap {
+  width: 33%;
+  margin: 50px 20px;
+}
+.frontFooter .footerMapText {
+  font-size: 30px;
+  font-weight: bolder;
+  margin: 20px;
+  color: #8c5e58;
+  text-shadow: 1px 1px 1px #573e3a;
+}
+.frontFooter .footerMapLi {
+  font-size: 24px;
+  line-height: 2;
+  margin-left: 40px;
+  color: #8c5e58;
+}
+
+.homeBox {
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #8c5e58;
+  opacity: 0.3;
+  z-index: 5;
+}
+.homeBox .homeBoxP {
+  font-size: 36px;
+  color: #ffffff;
+}
+.homeBox:hover {
+  opacity: 1;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
 .account-alert {
   display: none;
 }
@@ -152,6 +217,90 @@ header button:hover {
 
 .tel-alert {
   display: none;
+}
+
+.animal_modify {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.imgBlock {
+  width: 400px;
+  height: 400px;
+  border: 1rem double #8C5E58;
+  margin-right: 50px;
+  padding: 50px;
+}
+.imgBlock .firstPic img {
+  width: 300px;
+  height: 300px;
+}
+.imgBlock .otherPic img {
+  width: 50px;
+  height: 50px;
+}
+
+.modifyText {
+  width: 500px;
+  height: 500px;
+}
+.modifyText .modifyTextUl {
+  text-align: start;
+  line-height: 2.5;
+  margin: 2rem 1.5rem;
+  font-size: 20px;
+}
+.modifyText label {
+  font-size: 24px;
+}
+.modifyText .modifyBtn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.modifyText .modifyBtn .reset, .modifyText .modifyBtn .submit {
+  text-align: center;
+  font-size: 18px;
+  margin: 1.5rem auto;
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 0.5rem;
+  transition: ease 0.1s;
+  border: none;
+  box-shadow: 2px 2px 2px gray;
+  background-color: #FF7E6B;
+}
+.modifyText .modifyBtn .reset:hover, .modifyText .modifyBtn .submit:hover {
+  background-color: #FFA69E;
+}
+
+input[type=radio] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  border: none;
+}
+input[type=radio]::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  position: absolute;
+}
+input[type=radio]:checked::after {
+  content: "";
+  background-color: #8C5E58;
+  width: 16px;
+  height: 16px;
+  top: -2px;
+  left: -2px;
+  border: 4px double #fff;
+  border-radius: 50%;
+  position: absolute;
 }
 
 .cart {
@@ -556,70 +705,6 @@ hr.hrStyle {
 }
 .newsBtn:hover {
   background-color: #FFA69E;
-}
-
-.frontFooter {
-  max-width: 1920px;
-  height: 500px;
-  background-color: #FFA69E;
-  display: flex;
-  justify-content: space-around;
-}
-.frontFooter .footerImg {
-  margin-left: 20px;
-}
-.frontFooter .footerCoverP {
-  color: #8c5e58;
-  font-size: 18px;
-}
-.frontFooter .footerIcon {
-  line-height: 3;
-  letter-spacing: 8px;
-  text-align: center;
-}
-.frontFooter .footerText {
-  width: 33%;
-  margin: 50px 20px;
-  font-size: 24px;
-  color: #8c5e58;
-  line-height: 3;
-}
-.frontFooter .footerMap {
-  width: 33%;
-  margin: 50px 20px;
-}
-.frontFooter .footerMapText {
-  font-size: 30px;
-  font-weight: bolder;
-  margin: 20px;
-  color: #8c5e58;
-  text-shadow: 1px 1px 1px #573e3a;
-}
-.frontFooter .footerMapLi {
-  font-size: 24px;
-  line-height: 2;
-  margin-left: 40px;
-  color: #8c5e58;
-}
-
-.homeBox {
-  width: 80px;
-  height: 50px;
-  text-align: center;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: #8c5e58;
-  opacity: 0.3;
-}
-.homeBox .homeBoxP {
-  font-size: 36px;
-  color: #ffffff;
-}
-.homeBox:hover {
-  opacity: 1;
-  font-weight: bold;
-  border-radius: 50%;
 }
 
 .member-body main .member-page {
