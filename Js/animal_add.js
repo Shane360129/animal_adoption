@@ -1,4 +1,5 @@
 import {autoAddMenuCityContent} from "./views/autoAddMenuCityContent.js"
+import {updateSessionInterval} from "./views/updateSessionInterval.js"
 
 const upload = document.querySelector(".upload");
 const imgBlock = document.querySelector(".imgBlock");
@@ -16,6 +17,7 @@ const inputs = document.querySelectorAll("input");
 setAnimalId2();
 setDate();
 autoAddMenuCityContent(regCity);
+updateSessionInterval();
 
 // 自動選擇當天日期
 function setDate() {
@@ -37,7 +39,6 @@ function setDate() {
 }*/
 function setAnimalId2() {
   axios.get("http://localhost:8080/findAll").then((res) => {
-    console.log(res)
     animalId.value = +res.data.animalList.pop().animalId + 1;
   });
 }
