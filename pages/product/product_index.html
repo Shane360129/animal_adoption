@@ -52,8 +52,8 @@
         </div>
 
         <!-- 新商品輪播 -->
-        <div class="product-new-arrival relative bg-pri-pink pt-24 pb-12">
-            <a href="#">
+        <div class="product-new-arrival relative bg-pri-green pt-24 pb-12">
+            <a href="../product/product_all.html">
                 <div
                     class="h-12 w-96 rounded-full pl-12 my-4 bg-pri-dark flex flex-col justify-center items-center absolute top-5 -left-16">
 
@@ -129,9 +129,9 @@
             </div>
         </div>
 
-        <!-- 熱銷商品 -->
-        <div class="product-sell relative bg-pri-green">
-            <a href="#">
+        <!-- 人氣商品 啊 我們沒做銷售量 -->
+        <!-- <div class="product-sell relative bg-pri-green">
+            <a href="./product_all.html">
                 <div
                     class="h-12 w-96 rounded-full pl-12 my-4 bg-white flex flex-col justify-center items-center absolute top-5 -left-16">
 
@@ -181,7 +181,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <hr>
 
@@ -191,25 +191,14 @@
 
     </main>
 
-    <footer class=" h-32 bg-pri-light">
+    <footer class=" h-32 bg-pri-pink">
         <!-- 等統一格式 -->
         footer保留區
     </footer>
 
     <!-- Flickity輪播功能 -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script>
-        const elem = document.querySelector('.carousel');
-        const flkty = new Flickity(elem, {
-            // options
-            cellAlign: 'left',
-            contain: true,
-            autoPlay: 3000,
-            prevNextButtons: true,
-            pageDots: false,
-            wrapAround: true,
-        });
-    </script>
+    <script src="../../Js/product_index.js"></script>
 </body>
 
 </html>
