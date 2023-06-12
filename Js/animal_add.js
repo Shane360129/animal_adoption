@@ -42,6 +42,7 @@ function setAnimalId2() {
   });
 }
 
+
 // 清空表單
 reset.addEventListener("click", () => {
   for (let i = 0; i < inputs.length; i++) {
@@ -91,6 +92,9 @@ upload.addEventListener("change", (e) => {
   reader.onload = function (e) {
     console.log(e.target.result);
     const imgDataUrl = e.target.result;
+
+    splitBase64IntoChunks(imgDataUrl,1000)
+
     const newDiv = document.createElement("div");
     newDiv.classList.add("firstPic");
     newDiv.innerHTML = `<img src="${imgDataUrl}" alt="pet">`;
@@ -102,3 +106,16 @@ upload.addEventListener("change", (e) => {
     }
   }
 })
+
+function splitBase64IntoChunks(base64Data, chunkSize) {
+  const totalChunks = Math.ceil(base64Data.length / chunkSize);
+  const chunks = [];
+
+  for (let i = 0; i < totalChunks; i++) {
+    const start = i * chunkSize;
+    const chunk = base64Data.substr(start, chunkSize);
+    chunks.push(chunk);
+  }
+  console.log(chunks)
+  return chunks;
+}
