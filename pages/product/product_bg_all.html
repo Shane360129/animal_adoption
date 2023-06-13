@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="../../main.css">
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- flickity引入 -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
     <script>
         // 自定義tailwindcss
         tailwind.config = {
@@ -23,6 +20,9 @@
                         'pri-green': '#A9F0D1', //綠色
                         'pri-light': '#FFF7F8', //背景白粉
                         'pri-dark': '#8C5E58'//咖啡
+                    },
+                    width: {
+                        '90': '90%',
                     }
                 }
             }
@@ -57,8 +57,35 @@
             </ul>
         </div>
         <div class="right-side w-4/5 pb-20 bg-white flex flex-col justify-center items-center" id="product_bg_all">
-            <div class="showcard">
-
+            <div class="m-auto" id="show_product">
+                <!-- <div class="product_bg flex justify-center items-center h-48 w-auto bg-pri-green rounded-xl">
+                    <div class="w-1/4">
+                        <img src="../../img/pruductWall_img/pruductWall_1.jpg" id="product_img" class="p-3">
+                    </div>
+                    <div class="w-1/2">
+                        <div class="d">
+                            <p class="bg-white rounded-md p-1 mx-1 mb-2">名稱：
+                                <span id="product_show_name"></span>
+                            </p>
+                        </div>
+                        <div class="d">
+                            <p class="bg-white rounded-md p-1 m-1">分類：<span id="product_show_cate"></span>
+                            </p>
+                        </div>
+                        <div class="d flex">
+                            <p class="bg-white rounded-md p-1 m-1 w-1/2">
+                                庫存：
+                                <span id="product_show_stock"></span>
+                            </p>
+                            <p class="bg-white rounded-md p-1 m-1 w-1/2">
+                                價格：
+                                <span id="product_show_price"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <button type="button" class="w-1/5 m-5 bg-pri-pink">修改資訊</buttom>
+                </div> -->
+                <a href="./product_bg_update.html"></a>
             </div>
         </div>
     </main>
