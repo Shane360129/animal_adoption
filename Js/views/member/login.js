@@ -5,6 +5,7 @@ const pwdAlertTextDOM = document.querySelector("#pwdAlertText");
 
 const loginBtnDOM = document.querySelector("#loginBtn");
 
+
 // 將所有input設為不儲存紀錄
 const inputElements = document.querySelectorAll("input");
 inputElements.forEach((input) => {
@@ -62,7 +63,7 @@ loginBtnDOM.addEventListener("click", () => {
     })
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
+        console.log(data);
 
         // 跳出提醒視窗
         if (data.message === "登入成功") {
@@ -72,7 +73,9 @@ loginBtnDOM.addEventListener("click", () => {
             swalBtnDOM.addEventListener("click", () => {
                 location.href="/";
             })
-            // console.dir(swalBtnDOM)
+            
+            // 暫存帳號資訊
+            sessionStorage.setItem("member_id", data.member.memberId)
         }
         if (data.message === "資料不正確") {
             swal(data.message, "輸入錯誤", "error");

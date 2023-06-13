@@ -1,0 +1,36 @@
+.member-info-body {
+    display: flex;
+
+    aside {
+        width: 20%;
+        .nav {
+            .nav-item {
+                p {
+
+                }
+            }
+        }
+    }
+
+    main {
+        text-align: center;
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .info-content-box {
+            width: 400px;
+            background-color: #fff;
+            .each-content-box {
+                span {
+
+                }
+                .content-box {
+
+                }
+            }
+        }
+    }
+}
