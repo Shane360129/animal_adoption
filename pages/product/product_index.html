@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品首頁 - Vet X</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../main.css">
+    <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flickity引入 -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <script>
+        // 自定義tailwindcss
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundColor: {
+                        'pri-pink': '#FFA69E', //淺粉
+                        'pri-darkpink': '#FF7E6B', //深粉
+                        'pri-green': '#A9F0D1', //綠色
+                        'pri-light': '#FFF7F8', //背景白粉
+                        'pri-dark': '#8C5E58'//咖啡
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-pri-light">
+    <header class="h-32 mb-9">
+        <!-- 等統一格式 -->
+        header保留區
+    </header>
+
+    <main class="product_index_main bg-pri-light">
+        <!-- 輪播 -->
+        <!-- https://flickity.metafizzy.co/style.html -->
+        <div class="carousel product-carousel m-auto bg-pri-dark-pink">
+            <div class="carousel-cell">
+                <img src="../../img/carouselImg/cat_can_1.png" alt="猫罐頭">
+            </div>
+            <div class="carousel-cell">
+                <img src="../../img/carouselImg/pet_car_1.png" alt="寵物車車">
+            </div>
+            <div class="carousel-cell">
+                <img src="../../img/carouselImg/pet_nailcut_1.png" alt="指甲剪">
+            </div>
+        </div>
+
+        <!-- 新商品輪播 -->
+        <div class="product_new_arrival relative bg-pri-green pt-24 pb-12">
+            <a href="../product/product_all.html">
+                <div
+                    class="h-12 w-96 rounded-full pl-12 my-4 bg-pri-dark flex flex-col justify-center items-center absolute top-5 -left-16">
+
+                    <h1 class="text-2xl text-center text-white">
+                        新商品 New Arrival
+                    </h1>
+                </div>
+            </a>
+            <div class=" product_new_arrival_slider mx-18">
+                <div class="product-new-arrival-slide-track">
+                    <div class="product-new-arrival-slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_1.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_2.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_3.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_4.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_5.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_6.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_7.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_8.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_9.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_7.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_8.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                    <div class="product_new_arrival_slide">
+                        <a href="./product_info.html">
+                            <img src="../../img/pruductWall_img/pruductWall_9.jpg" height="100" width="250"
+                                alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人氣商品 啊 我們沒做銷售量 -->
+        <!-- <div class="product_sell relative bg-pri-green">
+            <a href="./product_all.html">
+                <div
+                    class="h-12 w-96 rounded-full pl-12 my-4 bg-white flex flex-col justify-center items-center absolute top-5 -left-16">
+
+                    <h1 class="text-2xl text-center text-black">
+                        人気商品 Best Selling
+                    </h1>
+                </div>
+            </a>
+            <div class="product_sell_cards flex justify-evenly pt-24 pb-12">
+                <div class="product_sell_card">
+                    <a href="#">
+                        <img class="product_sell_img" src="../../img/pruductWall_img/pruductWall_1.jpg" alt="">
+                    </a>
+                    <div class="product_sell_description">
+                        <h5> 商品名稱 </h5>
+                        <p> $ 399 </p>
+                    </div>
+                </div>
+                <div class="product_sell_card">
+                    <a href="#"> <img class="product_sell_img" src="../../img/pruductWall_img/pruductWall_2.jpg" alt="">
+                    </a>
+                    <div class="product_sell_description">
+                        <h5> 商品名稱 </h5>
+                        <p> $ 399 </p>
+                    </div>
+                </div>
+                <div class="product_sell_card">
+                    <a href="#">
+                        <a href="#"> <img class="product_sell_img" src="../../img/pruductWall_img/pruductWall_3.jpg"
+                                alt="">
+                        </a>
+                    </a>
+                    <div class="product_sell_description">
+                        <h5> 商品名稱 </h5>
+                        <p> $ 399 </p>
+                    </div>
+                </div>
+                <div class="product_sell_card">
+                    <a href="#">
+                        <a href="#"> <img class="product_sell_img" src="../../img/pruductWall_img/pruductWall_4.jpg"
+                                alt="">
+                        </a>
+                    </a>
+                    <div class="product_sell_description">
+                        <h5> 商品名稱 </h5>
+                        <p> $ 399 </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <hr>
+
+
+
+        </div>
+
+    </main>
+
+    <footer class=" h-32 bg-pri-pink">
+        <!-- 等統一格式 -->
+        footer保留區
+    </footer>
+
+    <!-- Flickity輪播功能 -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="../../Js/product_index.js"></script>
+</body>
+
+</html>

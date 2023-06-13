@@ -1,5 +1,5 @@
 // 自動新增選單城市內容
-export function autoAddMenuCityContent(regCity){
+export function autoAddMenuCityContent(regCity) {
   const taiwanCities = [
     "基隆市",
     "臺北市",

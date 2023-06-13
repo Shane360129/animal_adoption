@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增商品 - Vet X</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../main.css">
+    <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flickity引入 -->
+    <script>
+        // 自定義tailwindcss
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundColor: {
+                        'pri-pink': '#FFA69E', //淺粉
+                        'pri-darkpink': '#FF7E6B', //深粉
+                        'pri-green': '#A9F0D1', //綠色
+                        'pri-light': '#FFF7F8', //背景白粉
+                        'pri-dark': '#8C5E58'//咖啡
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="h-32 mb-9">
+        <!-- 等統一格式 -->
+        header保留區
+    </header>
+    <main class="product_add_main flex">
+        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pri-pink ">
+            <ul>
+                <a href="./product_bg_all.html">
+                    <li class="bg-white bg-pri-dark px-8 py-2 my-4 rounded-full">
+                        商品總覽
+                    </li>
+                </a>
+                <a href="./product_bg_add.html">
+                    <li class="bg-pri-dark text-white px-8 py-2 my-4 rounded-full">
+                        新增商品
+                    </li>
+                </a>
+                <a href="./product_bg_update.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        更新商品
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div class="right-side w-4/5 bg-white">
+            <div class="product container pl-12 my-12 flex">
+                <div class="">
+                    <p class="my-6">商品名稱</p>
+                    <p class="my-6">商品分類</p>
+                    <p class="my-6">商品圖片</p>
+                    <p class="my-6">現有庫存</p>
+                    <p class="my-6">價格</p>
+                </div>
+                <div class="ml-12">
+                    <input class="block my-5 px-2 w-96 border-black border-2 rounded-md" type="text" id="product_name"
+                        placeholder="*請輸入商品名稱">
+                    <input class="block my-5  px-2 w-96 border-black border-2 rounded-md" type="text" id="category"
+                        placeholder="*多個分類請用逗號(, )分開">
+                    <input class="block my-5 px-2 w-96 rounded-md" type="file" id="product_img"
+                        accept="image/png, image/jpeg">
+                    <input class="block my-5 px-2 w-48 border-black border-2 rounded-md" type="number" id="stock"
+                        placeholder="數量不得為負數">
+                    <input class="block my-5 px-2 w-48 border-black border-2 rounded-md" type="number" id="price"
+                        placeholder="價格不得為零或負數">
+                </div>
+            </div>
+            <div class="product_add_btn_area flex justify-center items-center">
+                <button type="button" id="product_add_cencel_btn" class="bg-pri-darkpink px-4 py-1 m-5 rounded-full">
+                    取消回列表</button>
+                <button type="button" id="product_add_save_btn"
+                    class="bg-pri-green px-4 py-1 m-5 rounded-full">完成並送出</button>
+            </div>
+        </div>
+    </main>
+    <footer class=" h-32 bg-pri-pink">
+        <!-- 等統一格式 -->
+        footer保留區
+    </footer>
+    <script src="../../Js/product_bg_add.js"></script>
+</body>
+
+</html>
