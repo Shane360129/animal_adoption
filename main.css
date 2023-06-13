@@ -442,17 +442,31 @@ header button:hover {
 svg.like {
   z-index: 10;
   border-radius: 100%;
+  -webkit-transform: scale(0.3);
   transform: scale(0.3);
+  -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
   fill: gray;
   cursor: pointer;
 }
 
 body.liked svg.like {
+  -webkit-animation: blink 1s forwards;
   animation: blink 1s forwards;
+}
+
+@-webkit-keyframes blink {
+  10% {
+    -webkit-transform: scale(0.42);
+    transform: scale(0.42);
+  }
+  100% {
+    fill: #8C5E58;
+  }
 }
 @keyframes blink {
   10% {
+    -webkit-transform: scale(0.42);
     transform: scale(0.42);
     fill: #FFA69E;
   }
@@ -743,6 +757,7 @@ hr.hrStyle {
   position: absolute;
   background-color: #ffffff;
   opacity: 0;
+  display: none;
   transition: all 0.2s ease-out;
 }
 .infoTextHideUl li {
@@ -1016,4 +1031,6 @@ footer {
   border-radius: 50px;
 }
 
-/* 彈出視窗 *//*# sourceMappingURL=main.css.map */
+/* 彈出視窗 */
+
+/*# sourceMappingURL=main.css.map */
