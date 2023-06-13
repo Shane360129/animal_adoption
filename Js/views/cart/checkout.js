@@ -1,5 +1,6 @@
+
+
 const form = document.querySelector("#checkoutForm")
-const test = document.querySelector("#test")
 
 const cartData = {
     member:
@@ -29,8 +30,8 @@ function renderResult(data) {
 
     const resultContainer = document.getElementById("resultContainer");
 
-    const resultHTML = `<p>${data.cartList}</p>`;
+    const resultHTML = `<p>${data.message}</p>`;
 
-    test.innerHTML = data;
-    resultContainer.innerHTML = data;
+
+    resultContainer.innerHTML = resultHTML;
 }
