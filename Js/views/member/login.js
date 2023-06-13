@@ -62,7 +62,7 @@ loginBtnDOM.addEventListener("click", () => {
     })
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
+        console.log(data);
 
         // 跳出提醒視窗
         if (data.message === "登入成功") {
