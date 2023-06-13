@@ -29,18 +29,34 @@ function getAllAnimal() {
 getAllAnimal().then(() => {
   const filesBanner = document.querySelector(".filesBanner")
   console.log(filesBanner);
-  filesBanner.addEventListener("click", function(e) {
+  filesBanner.addEventListener("click", function (e) {
     console.log(e.target.getAttribute("data-item"))
     if (e.target.classList.contains("like")) {
       const clicks = parseInt(e.target.getAttribute("data-clicks"));
-      if (clicks === 0) {
-        e.target.classList.add("liked");
-        e.target.setAttribute("data-clicks", clicks + 1);
-
-      } else {
-        e.target.classList.remove("liked");
-        e.target.setAttribute("data-clicks", clicks - 1);
+      const animalId = +e.target.getAttribute("data-item");
+      const body = {
+        "animalId": animalId
       }
+      axios.post("http://localhost:8080/findByAnimalId", body).then((res) => {
+        console.log(res)
+        const body = {
+          "member_id":"A129111111",
+          "animal_id": animalId
+        };
+        if (clicks === 0) {
+          e.target.classList.add("liked");
+          e.target.setAttribute("data-clicks", clicks + 1);
+          axios.post("http://localhost:8080/add_favorite", body).then((res) =>{})
+        }
+        else {
+          e.target.classList.remove("liked");
+          e.target.setAttribute("data-clicks", clicks - 1);
+          axios.post("http://localhost:8080/delete_favorite", body).then((res) =>{})
+        }
+
+
+      });
+
     }
   });
 }).then(() => {
@@ -48,6 +64,7 @@ getAllAnimal().then(() => {
 }).catch((error) => {
   console.error(error);
 });
-getAllAnimal().then(() => {}).catch((error) => {
+getAllAnimal().then(() => {
+}).catch((error) => {
   console.error(error);
 });
