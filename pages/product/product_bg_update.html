@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../../main.css">
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- flickity引入 -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- SweetAlert2 彈跳視窗 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
     <script>
         // 自定義tailwindcss
@@ -56,38 +56,61 @@
                 </a>
             </ul>
         </div>
-        <div class="right-side w-4/5 pb-20 bg-white text-center">
+        <div class="right-side w-4/5 pb-20 bg-white flex flex-col justify-center items-center">
             <h2 class="text-3xl mt-10">商品資料更新</h2>
 
-            <div class="product_bg_update_container pl-8 mt-4 flex-wrap flex justify-center items-center">
+            <!-- 商品名稱 -->
+            <div class="product_bg_update_container mt-4 flex-wrap flex justify-center items-center">
+                <!-- SweetAlert2 彈跳視窗套件 -->
+                <button onclick="showUpdateNameAlert()"
+                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    <img class="w-20 pl-2"
+                        src="https://3.bp.blogspot.com/-KqVSsXF1vFo/U9zpEUYEahI/AAAAAAAAkBY/00oPpgvnFlE/s1600/hiragana_01_a.png.png">
+                    <div class=" px-5">
+                        <p class="text-xl">【商品名稱】</p>
+                        <p class="mt-2 text-xs text-clip">
+                            <span id="product_update_name">品名</span>
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
+                    <!-- 手刻彈跳視窗 -->
+                    <!-- <a href="#open-modal" class="product_update_name_mod"></a>-->
+                </button>
 
-                <button type="button"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-center items-center mx-5 my-5">
-                    <img src="https://3.bp.blogspot.com/-KqVSsXF1vFo/U9zpEUYEahI/AAAAAAAAkBY/00oPpgvnFlE/s1600/hiragana_01_a.png.png"
-                        class="h-20 w-20 p-2">
-                    <span class="product_update_name text-2xl mr-2">商品名稱</span>
-                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #757575;"></i>
+
+                <!-- 變更分類 -->
+                <button onclick="showUpdateCategoryAlert()"
+                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    <img class="w-20 pl-2"
+                        src="https://4.bp.blogspot.com/-yn703BXL-3U/VuKMXoMqr0I/AAAAAAAA4zA/Qcz_Kz6o0nkp6t1JrsNkdQDFozoBWrSng/s400/computer_folder.pngg">
+                    <div class=" px-5">
+                        <p class="text-xl">【分類】</p>
+                        <p class="mt-2 text-xs text-clip" id="product_update_category">分類, 分類, 分類, 分類
+                        </p>
+                    </div>
+                    <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
                 </button>
-                <button type="button"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-center items-center mx-5 my-5">
-                    <img src="https://4.bp.blogspot.com/-yn703BXL-3U/VuKMXoMqr0I/AAAAAAAA4zA/Qcz_Kz6o0nkp6t1JrsNkdQDFozoBWrSng/s400/computer_folder.pngg"
-                        class="h-20 w-20 p-2">
-                    <span class="product_update_category text-2xl mr-2">商品分類</span>
-                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #757575;"></i>
+
+                <!-- 變更庫存 -->
+                <button onclick="showUpdateStockAlert()"
+                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    <img class="w-20 pl-2"
+                        src="https://1.bp.blogspot.com/--ol-eoqhFHg/Xhwqi1LSKwI/AAAAAAABXBE/KNxAF4TB3FoUUXA5aHbRrdAlB_W7CZDQACNcBGAsYHQ/s400/nimotsu_box_close_bad.png">
+                    <div class=" px-5">
+                        <p class="text-xl">【庫存】</p>
+                        <p class="mt-2 text-xs" id="product_update_stock">13456231</p>
+                    </div>
+                    <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
                 </button>
-                <button type="button"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-center items-center mx-5 my-5">
-                    <img src="https://1.bp.blogspot.com/--ol-eoqhFHg/Xhwqi1LSKwI/AAAAAAABXBE/KNxAF4TB3FoUUXA5aHbRrdAlB_W7CZDQACNcBGAsYHQ/s400/nimotsu_box_close_bad.png"
-                        class="h-20 w-20 p-2">
-                    <span class="product_update_stock text-2xl mr-2">庫存</span>
-                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #757575;"></i>
-                </button>
-                <button type="button"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-center items-center mx-5 my-5">
-                    <img src="https://1.bp.blogspot.com/-KtVIPGzqFaU/VbnRnEF5z7I/AAAAAAAAwNo/WXdX-AlKG8I/s400/mark_yen_okaikei.png"
-                        class="h-20 w-20 p-2">
-                    <span class="product_update_price text-2xl mr-2">售價</span>
-                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #757575;"></i>
+                <button onclick="showUpdatePriceAlert()"
+                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    <img class=" w-20 pl-2"
+                        src="https://1.bp.blogspot.com/-KtVIPGzqFaU/VbnRnEF5z7I/AAAAAAAAwNo/WXdX-AlKG8I/s400/mark_yen_okaikei.png">
+                    <div class=" px-5">
+                        <p class="text-xl">【價格】</p>
+                        <p class="mt-2 text-xs" id="product_update_price">9999999</p>
+                    </div>
+                    <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
                 </button>
             </div>
         </div>
@@ -97,6 +120,7 @@
         <!-- 等統一格式 -->
         footer保留區
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script src="../../Js/product_bg_update.js"></script>
 </body>
 

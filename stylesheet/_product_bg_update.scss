@@ -1,0 +1,81 @@
+/* 彈出視窗 */
+// .modal-window {
+//     position: fixed;
+//     background-color: rgba(255, 255, 255, 0.25);
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: 999;
+//     visibility: visible;
+//     opacity: 1;
+//     pointer-events: auto;
+//     transition: all 0.3s;
+
+//     /*  彈出視窗位置  */
+//     &>div {
+//         background: #FFA69E;
+//         width: 400px;
+//         height: 300px;
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         padding: 2em;
+//         border-radius: 1rem;
+//         border: 2px solid gray;
+
+
+//         #product_update_name_confirm,
+//         #product_update_clear_all {
+//             padding: 10px 20px;
+//         }
+
+//         #product_update_name_confirm {
+//             background-color: #A9F0D1;
+//             position: absolute;
+//             bottom: 10px;
+//             right: 20px
+//         }
+
+//         #product_update_clear_all {
+//             background-color: #ffffff;
+//             position: absolute;
+//             bottom: 10px;
+//             right: 100px
+//         }
+
+//     }
+// }
+
+// /* 關閉按鈕格式 */
+// .modal-close {
+//     color: #ffffff;
+//     line-height: 50px;
+//     font-size: 80%;
+//     position: absolute;
+//     right: 0;
+//     text-align: center;
+//     top: 0;
+//     width: 70px;
+//     text-decoration: none;
+
+//     &:hover {
+//         color: black;
+//     }
+// }
+
+// .modal-window div:not(:last-of-type) {
+//     margin-bottom: 15px;
+// }
+
+// .product_update_name_mod {
+//     background-color: white;
+//     padding: 1em 1.5em;
+//     border-radius: 0.5rem;
+//     text-decoration: none;
+
+//     i {
+//         padding-right: 0.3em;
+//     }
+// }

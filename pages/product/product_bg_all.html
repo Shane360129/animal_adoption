@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品總覽 - Vet X</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../main.css">
+    <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flickity引入 -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <script>
+        // 自定義tailwindcss
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundColor: {
+                        'pri-pink': '#FFA69E', //淺粉
+                        'pri-darkpink': '#FF7E6B', //深粉
+                        'pri-green': '#A9F0D1', //綠色
+                        'pri-light': '#FFF7F8', //背景白粉
+                        'pri-dark': '#8C5E58'//咖啡
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="h-32 mb-9">
+        <!-- 等統一格式 -->
+        header保留區
+    </header>
+
+    <main class="product_bg_all_main flex">
+        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pri-pink ">
+            <ul>
+                <a href="./product_bg_all.html">
+                    <li class="bg-white bg-pri-dark px-8 py-2 my-4 rounded-full">
+                        商品總覽
+                    </li>
+                </a>
+                <a href="./product_bg_add.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        新增商品
+                    </li>
+                </a>
+                <a href="./product_bg_update.html">
+                    <li class="bg-pri-dark text-white px-8 py-2 my-4 rounded-full">
+                        更新商品
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div class="right-side w-4/5 pb-20 bg-white flex flex-col justify-center items-center" id="product_bg_all">
+            <div class="showcard">
+
+            </div>
+        </div>
+    </main>
+
+    <footer class=" h-32 bg-pri-pink">
+        <!-- 等統一格式 -->
+        footer保留區
+    </footer>
+    <script src="../../Js/product_bg_all.js"></script>
+</body>
+
+</html>
