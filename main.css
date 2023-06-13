@@ -204,22 +204,6 @@ header button:hover {
   border-radius: 50%;
 }
 
-.account-alert {
-  display: none;
-}
-
-.password-alert {
-  display: none;
-}
-
-.name-alert {
-  display: none;
-}
-
-.tel-alert {
-  display: none;
-}
-
 .animal_modify {
   display: flex;
   justify-content: center;
@@ -383,206 +367,98 @@ header button:hover {
   background-color: #FFA69E;
 }
 
-.cart {
-  width: 100%;
-  height: 100vh;
-  background-color: #fff7f8;
+.filesTitle {
+  max-width: 1920px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-}
-.cart .product {
-  width: 100%;
-  height: 75px;
-  background-color: white;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
 }
-.cart .product img {
-  width: 50px;
-  height: 50px;
-}
-.cart .product input {
-  width: 50px;
-  height: 20px;
-}
-
-button {
-  width: 100px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 2rem;
-  box-shadow: 2px 2px 2px gray;
-  margin: 0 5px;
-  background-color: #FF7E6B;
-  color: white;
-  cursor: pointer;
-  transform: 1.2;
-}
-
-footer {
-  width: 100%;
-  height: 200px;
-  background-color: #FFA69E;
-}
-
-.account-alert {
-  display: none;
-}
-
-.password-alert {
-  display: none;
-}
-
-.name-alert {
-  display: none;
-}
-
-.tel-alert {
-  display: none;
-}
-
-.animal_delete {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
-}
-
-.delete,
-.quit,
-.update {
-  text-align: center;
-  font-size: 18px;
-  margin: 1.5rem auto;
-  padding: 1rem 2rem;
-  color: white;
-  border-radius: 0.5rem;
-  transition: ease 0.1s;
-  border: none;
-  box-shadow: 2px 2px 2px gray;
-  background-color: #FF7E6B;
-}
-.delete:hover,
-.quit:hover,
-.update:hover {
-  background-color: #FFA69E;
-}
-
-.animal_modify {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
-}
-
-.imgBlock {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  border: 1rem double #8C5E58;
-  margin-right: 50px;
-  padding: 50px;
-}
-.imgBlock .upload {
-  position: absolute;
-  left: 150px;
-  top: 20px;
-}
-.imgBlock .modifyMinPic {
-  display: flex;
-}
-.imgBlock .firstPic img {
-  width: 350px;
-  height: 350px;
-}
-.imgBlock .otherPic img {
-  width: 50px;
-  height: 50px;
-}
-
-.modifyText {
-  width: 500px;
-  height: 500px;
-}
-.modifyText .modifyTextUl {
-  text-align: start;
-  line-height: 2.5;
-  margin: 2rem 1.5rem;
-  font-size: 20px;
-  border: 2px solid black;
-  background-color: white;
-}
-.modifyText .modifyTextUl li {
-  text-align: center;
-  font-weight: bold;
-}
-.modifyText label {
+.filesTitle .filesTitleH2 {
   font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 1px #8C5E58;
 }
-.modifyText .modifyBtn {
+.filesTitle .filesTitleBtn {
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
 }
-.modifyText .modifyBtn .reset,
-.modifyText .modifyBtn .submit {
-  text-align: center;
+.filesTitle .filesTitleBtn button {
+  width: 100px;
+  height: 30px;
+  margin: 20px;
+  background-color: rgb(182, 180, 180);
   font-size: 18px;
-  margin: 1.5rem auto;
-  padding: 1rem 2rem;
-  color: white;
-  border-radius: 0.5rem;
-  transition: ease 0.1s;
-  border: none;
-  box-shadow: 2px 2px 2px gray;
-  background-color: #FF7E6B;
+  font-weight: bold;
 }
-.modifyText .modifyBtn .reset:hover,
-.modifyText .modifyBtn .submit:hover {
-  background-color: #FFA69E;
-}
-
-.male,
-.female,
-.cat,
-.dog {
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-  position: relative;
-  border: none;
-}
-.male::before,
-.female::before,
-.cat::before,
-.dog::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 50%;
-  position: absolute;
-}
-.male:checked::after,
-.female:checked::after,
-.cat:checked::after,
-.dog:checked::after {
-  content: "";
+.filesTitle .filesTitleBtn button:hover {
   background-color: #8C5E58;
-  width: 16px;
-  height: 16px;
-  top: -2px;
-  left: -2px;
-  border: 4px double #fff;
-  border-radius: 50%;
-  position: absolute;
 }
 
+.filesTitleMinBtn {
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+}
+.filesTitleMinBtn .MinPage {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+.filesTitleMinBtn .MinPage:hover {
+  background-color: #8C5E58;
+}
+
+.filesBanner {
+  margin: 50px;
+}
+
+.filesPic {
+  width: 250px;
+  height: 250px;
+  background-image: url("https://pansci.asia/wp-content/uploads/2011/04/133050s.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid gray;
+}
+
+.filesText {
+  width: 250px;
+  height: 50px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 1px gray;
+}
+.filesText ul {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+svg.like {
+  z-index: 10;
+  border-radius: 100%;
+  transform: scale(0.3);
+  transform-origin: 50% 50%;
+  fill: gray;
+  cursor: pointer;
+}
+
+body.liked svg.like {
+  animation: blink 1s forwards;
+}
+@keyframes blink {
+  10% {
+    transform: scale(0.42);
+    fill: #FFA69E;
+  }
+  100% {
+    fill: #ff5a5a;
+  }
+}
 .banner {
   display: flex;
   justify-content: center;
@@ -1020,4 +896,52 @@ hr.hrStyle {
   box-shadow: 0px 15px 20px #f3c0bc;
   transform: translateY(-7px);
   cursor: pointer;
+}
+
+.cart {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff7f8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cart .product {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.cart .product img {
+  width: 50px;
+  height: 50px;
+}
+.cart .product input {
+  width: 50px;
+  height: 20px;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 2px gray;
+  margin: 0 5px;
+  background-color: #FF7E6B;
+  color: white;
+  cursor: pointer;
+  transform: 1.2;
+}
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: #FFA69E;
 }/*# sourceMappingURL=main.css.map */
