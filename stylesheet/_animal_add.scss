@@ -53,6 +53,15 @@
     line-height: 2.5;
     margin: 2rem 1.5rem;
     font-size: 20px;
+    border: 2px solid black;
+    background-color: white;
+
+    li {
+      text-align: center;
+      font-weight: bold;
+    }
+
+
   }
 
   label {
