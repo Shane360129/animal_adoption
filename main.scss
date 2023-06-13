@@ -2,21 +2,24 @@
 @import "./layout/layout";
 @import "./node_modules/@fortawesome/fontawesome-free/css/all.css";
 
-// @import "./stylesheet/_register.scss";
-@import "./stylesheet/_animal_add.scss";
-@import "./stylesheet/_animal_adoption.scss";
-@import "./stylesheet/_animal_modify_and_delete.scss";
+// @import "././stylesheet/_register.scss";
+@import "././stylesheet/_animal_add.scss";
+@import "././stylesheet/_animal_adoption.scss";
+@import "././stylesheet/_animal_modify_and_delete.scss";
 @import "./stylesheet/animal_allFiles.scss";
+
 
 // 首頁
 @import "./stylesheet/_index.scss";
 
+//member
 //member
 @import "./stylesheet/member/member";
 @import "./stylesheet/member/member_info";
 
 //cart
 @import "./stylesheet/cart/_cart.scss";
+@import "./stylesheet/cart/_checkout.scss";
 
 //商品頁
 @import "./stylesheet/product_index.scss";

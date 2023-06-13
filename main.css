@@ -138,6 +138,44 @@ header button {
 }
 header button:hover {
   background-color: #FFA69E;
+  display: flex;
+  justify-content: space-around;
+}
+footer .footerImg {
+  margin-left: 20px;
+}
+footer .footerCoverP {
+  color: #8c5e58;
+  font-size: 18px;
+}
+footer .footerIcon {
+  line-height: 3;
+  letter-spacing: 8px;
+  text-align: center;
+}
+footer .footerText {
+  width: 33%;
+  margin: 50px 20px;
+  font-size: 24px;
+  color: #8c5e58;
+  line-height: 3;
+}
+footer .footerMap {
+  width: 33%;
+  margin: 50px 20px;
+}
+footer .footerMapText {
+  font-size: 30px;
+  font-weight: bolder;
+  margin: 20px;
+  color: #8c5e58;
+  text-shadow: 1px 1px 1px #573e3a;
+}
+footer .footerMapLi {
+  font-size: 24px;
+  line-height: 2;
+  margin-left: 40px;
+  color: #8c5e58;
 }
 
 .frontFooter {
