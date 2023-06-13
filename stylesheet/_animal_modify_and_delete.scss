@@ -1,0 +1,26 @@
+//Radio樣式在animal_add
+
+.animal_delete {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.delete,
+.quit,
+.update {
+    text-align: center;
+    font-size: 18px;
+    margin: 1.5rem auto;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 0.5rem;
+    transition: ease 0.1s;
+    border: none;
+    box-shadow: 2px 2px 2px gray;
+    background-color: #FF7E6B;
+
+    &:hover {
+        background-color: #FFA69E;
+    }
+}
