@@ -5,6 +5,9 @@ const pwdAlertTextDOM = document.querySelector("#pwdAlertText");
 
 const loginBtnDOM = document.querySelector("#loginBtn");
 
+// 暫存帳號資訊
+sessionStorage.setItem("member_id", "")
+
 // 將所有input設為不儲存紀錄
 const inputElements = document.querySelectorAll("input");
 inputElements.forEach((input) => {
@@ -43,10 +46,9 @@ pwdDOM.addEventListener("blur", () => {
 loginBtnDOM.addEventListener("click", () => {
     // 若有欄位是空或全空白
     if (memberIdDOM.value.trim() === "" || pwdDOM.value.trim() === "") {
-        return swal("注意!", "輸入資料錯誤", "error");
+        return Swal.fire("注意!", "輸入資料錯誤", "error");
     }
     
-    // location.href="/";
     const body = {
         member_id: memberIdDOM.value,
         password: pwdDOM.value
@@ -57,28 +59,23 @@ loginBtnDOM.addEventListener("click", () => {
         headers: {
             "Content-Type": "application/json"
         },
-        "body": JSON.stringify(body),
+        body: JSON.stringify(body),
         
     })
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
+        console.log(data);
 
         // 跳出提醒視窗
-        if (data.message === "登入成功") {
-            swal(data.message, "登入成功", "success");
-
-            const swalBtnDOM = document.querySelector(".swal-button");
-            swalBtnDOM.addEventListener("click", () => {
-                location.href="/";
-            })
-            // console.dir(swalBtnDOM)
-        }
         if (data.message === "資料不正確") {
-            swal(data.message, "輸入錯誤", "error");
+            return Swal.fire(data.message, "輸入錯誤", "error");
         }
         if (data.message === "尚未註冊會員或資料錯誤或尚未生效會員") {
-            swal(data.message, "資訊錯誤", "error");
+            return Swal.fire(data.message, "資訊錯誤", "error");
+        }
+        if (data.message === "登入成功") {
+            const verifyCode = data.verify_code;
+            return Swal.fire(data.message, "歡迎加入~", "success")
         }
     })
 })
