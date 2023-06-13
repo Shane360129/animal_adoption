@@ -1,26 +1,53 @@
 const filesBanner = document.querySelector(".filesBanner");
 
+
 // 獲得資料所有動物資料
+// 自動渲染資料中有的動物資訊
 function getAllAnimal() {
-  axios.get("http://localhost:8080/findAll").then((res) => {
-    console.log(res);
-    const animalList = res.data.animalList;
-    console.log(animalList);
-    for (let i = 0; i < animalList.length; i++) {
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("firstPic");
-      newDiv.innerHTML =`<div class="filesText">
-      <ul>編號:</ul>
-      <ul>${animalList[i].animalId}</ul>
-      <svg height="100" width="100" class="like" viewBox="0 0 320 290"
-           onclick="document.body.classList.toggle('liked')">
-        <path class="path heart" d="M 160 145 c 15 -90 170 -20 0 90 m 0 -90 c -15 -90 -170 -20 0 90"></path>
-      </svg>`;
-      filesBanner.appendChild(newDiv);
-      const filesPic = document.querySelector(".filesPic");
-      filesPic.style.backgroundImage=`url("\\img\\animalAll\\${animalList[i].animalId}-1.png")`;
-    }
+  return new Promise((resolve, reject) => {
+    axios.get("http://localhost:8080/findAll").then((res) => {
+      const animalList = res.data.animalList;
+      for (let i = 0; i < 9; i++) {
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("filesPic");
+        newDiv.innerHTML = `<div class="filesText">
+        <ul>編號:</ul>
+        <ul>${animalList[i].animalId}</ul>
+        <p class="like" data-clicks="0" data-item="${animalList[i].animalId}">♥</p>`;
+        filesBanner.appendChild(newDiv);
+        const filesPic = document.querySelector(".filesPic");
+        newDiv.style.backgroundImage = `url("../img/animalAll/${animalList[i].animalId}-1.png")`;
+      }
+
+      resolve();
+    }).catch((error) => {
+      reject(error);
+    });
   });
 }
 
-getAllAnimal();
+getAllAnimal().then(() => {
+  const filesBanner = document.querySelector(".filesBanner")
+  console.log(filesBanner);
+  filesBanner.addEventListener("click", function(e) {
+    console.log(e.target.getAttribute("data-item"))
+    if (e.target.classList.contains("like")) {
+      const clicks = parseInt(e.target.getAttribute("data-clicks"));
+      if (clicks === 0) {
+        e.target.classList.add("liked");
+        e.target.setAttribute("data-clicks", clicks + 1);
+
+      } else {
+        e.target.classList.remove("liked");
+        e.target.setAttribute("data-clicks", clicks - 1);
+      }
+    }
+  });
+}).then(() => {
+
+}).catch((error) => {
+  console.error(error);
+});
+getAllAnimal().then(() => {}).catch((error) => {
+  console.error(error);
+});

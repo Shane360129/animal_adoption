@@ -413,12 +413,18 @@ header button:hover {
 
 .filesBanner {
   margin: 50px;
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+}
+.filesBanner .filesText p {
+  font-size: 25px;
+  cursor: pointer;
 }
 
 .filesPic {
   width: 250px;
   height: 250px;
-  background-image: url("https://pansci.asia/wp-content/uploads/2011/04/133050s.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -439,7 +445,18 @@ header button:hover {
   font-weight: bold;
 }
 
-svg.like {
+.like {
+  font-size: 25px;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px white;
+  color: transparent;
+}
+
+.liked {
+  color: red;
+}
+
+/*svg.like {
   z-index: 10;
   border-radius: 100%;
   -webkit-transform: scale(0.3);
@@ -460,20 +477,23 @@ body.liked svg.like {
     -webkit-transform: scale(0.42);
     transform: scale(0.42);
   }
+
   100% {
     fill: #8C5E58;
   }
 }
+
 @keyframes blink {
   10% {
     -webkit-transform: scale(0.42);
     transform: scale(0.42);
     fill: #FFA69E;
   }
+
   100% {
     fill: #ff5a5a;
   }
-}
+}*/
 .banner {
   display: flex;
   justify-content: center;
