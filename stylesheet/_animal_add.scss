@@ -8,19 +8,31 @@
 
 
 .imgBlock {
+  position: relative;
   width: 400px;
   height: 400px;
   border: 1rem double #8C5E58;
   margin-right: 50px;
   padding: 50px;
 
+  .upload{
+    position: absolute;
+    left: 150px;
+    top: 20px;
+
+  }
+
+  .modifyMinPic{
+    display: flex;
+
+  }
 
 
 
   .firstPic {
     img {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
     }
   }
 

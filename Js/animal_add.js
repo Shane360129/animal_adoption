@@ -13,6 +13,7 @@ const regCity = document.querySelector("#regCity");
 const reset = document.querySelector(".reset");
 const submit = document.querySelector(".submit");
 const inputs = document.querySelectorAll("input");
+const modifyMinPic = document.querySelector(".modifyMinPic");
 
 setAnimalId2();
 setDate();
@@ -104,6 +105,7 @@ upload.addEventListener("change", (e) => {
     for (let i = 1; i < firstPics.length; i++) {
       firstPics[i].classList.remove("firstPic");
       firstPics[i].classList.add("otherPic");
+      modifyMinPic.insertBefore(firstPics[i],modifyMinPic.firstChild);
     }
   }
 })
