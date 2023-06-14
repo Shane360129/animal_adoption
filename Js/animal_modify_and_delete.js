@@ -1,9 +1,24 @@
 import {autoAddMenuCityContent} from "../Js/views/autoAddMenuCityContent.js"
+
+
 // 從sessionStorage獲取點擊的動物id
 const filesPic = +sessionStorage.getItem("filesPic");
+
+const animalId = document.querySelector(".animalId");
+const animalName = document.querySelector(".animalName");
+const regCity = document.querySelector("#regCity")
+const type = document.querySelector(".type");
+const regDate = document.querySelector(".regDate");
+const update = document.querySelector(".update");
+const deleteBtn = document.querySelector(".delete");
+const quit = document.querySelector(".quit");
+
+// 自動新增選單城市內容
+autoAddMenuCityContent(regCity);
+
 // 透過api獲取動物的資訊
 axios.post("http://localhost:8080/findByAnimalId",
-    {"animalId": 1}
+    {"animalId": filesPic}
 ).then((res) => {
   const animal = {
     animalId: res.data.animal.animalId,
@@ -16,20 +31,8 @@ axios.post("http://localhost:8080/findByAnimalId",
   };
   console.log(res.data.animal.species)
   setAnimalInfo(animal);
-  // outsideAnimal = animal;
 })
 
-
-const animalId = document.querySelector(".animalId");
-const animalName = document.querySelector(".animalName");
-const regCity = document.querySelector("#regCity")
-const type = document.querySelector(".type");
-const regDate = document.querySelector(".regDate");
-const update = document.querySelector(".update");
-const deleteBtn = document.querySelector(".delete");
-
-// 自動新增選單城市內容
-autoAddMenuCityContent(regCity);
 
 // 渲染選中寵物資料
 function setAnimalInfo(animal) {
@@ -53,7 +56,10 @@ function setAnimalInfo(animal) {
   }
 }
 
-
+// 放棄更新返回上一頁
+quit.addEventListener("click",()=>{
+  window.history.go(-1);
+})
 
 // 更新功能
 update.addEventListener("click", () => {
@@ -112,7 +118,7 @@ deleteBtn.addEventListener("click", () => {
 // 渲染照片功能
 axios.post("http://localhost:8080/countImg", {
   "sort": "a",
-  "id": 1
+  "id": filesPic
 }).then((res) => {
   // 取得照片張數
   const numberOfPhotos = res.data.count;
@@ -124,7 +130,7 @@ axios.post("http://localhost:8080/countImg", {
   for (let i = 1; i <= numberOfPhotos; i++) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("firstPic");
-    newDiv.innerHTML = `<img src="../img/animalAll/1-${i}.png" alt="pet">`;
+    newDiv.innerHTML = `<img src="../img/animalAll/${filesPic}-${i}.png" alt="pet">`;
     imgBlock.insertBefore(newDiv, imgBlock.firstChild);
 
     const firstPics = document.querySelectorAll(".firstPic");

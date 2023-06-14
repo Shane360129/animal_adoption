@@ -38,8 +38,15 @@ getAllAnimal().then(() => {
     if (e.target.classList.contains("filesPic")) {
       // 判斷點擊的元素是否是<p class="like">♥</p>
       if (!e.target.classList.contains("like")) {
-        // 執行跳轉頁面的動作
-        window.location.href = "../pages/animal_adoption.html";
+        if (sessionStorage.getItem("administrator")){
+          // 執行跳轉頁面的動作,管理者
+          window.location.href = "../pages/animal_modify_and_delete.html";
+        }
+        else {
+          // 執行跳轉頁面的動作,一般使用者
+          window.location.href = "../pages/animal_adoption.html";
+        }
+
       }
     }
 
@@ -53,23 +60,22 @@ getAllAnimal().then(() => {
         "animalId": animalId
       }
       axios.post("http://localhost:8080/findByAnimalId", body).then((res) => {
-        console.log(res)
-        // TODO
-        // 更改為sessionStorage的值
         const body = {
-          "member_id": "A129111111",
+          "member_id": sessionStorage.getItem("member_id"),
           "animal_id": animalId
         };
         if (clicks === 0) {
           e.target.classList.add("liked");
           e.target.setAttribute("data-clicks", clicks + 1);
           axios.post("http://localhost:8080/add_favorite", body).then((res) => {
+            console.log(res.data.message);
           })
         }
         else {
           e.target.classList.remove("liked");
           e.target.setAttribute("data-clicks", clicks - 1);
           axios.post("http://localhost:8080/delete_favorite", body).then((res) => {
+            console.log(res.data.message);
           })
         }
 

@@ -1,11 +1,8 @@
-const btn = document.querySelector("#btn");
+const btn = document.querySelector(".btn");
 console.log(sessionStorage.getItem("member_id"))
 if(sessionStorage.getItem("member_id")){
   btn.innerHTML = ` <a href="#">
                     <button type="button" class="signOut">登出</button>
-                </a>
-                <a href="#">
-                    <button type="button">我的收藏</button>
                 </a>`;
   const signOut = document.querySelector(".signOut")
   signOut.addEventListener("click",function (){
