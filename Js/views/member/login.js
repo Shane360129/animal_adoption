@@ -76,7 +76,9 @@ loginBtnDOM.addEventListener("click", () => {
                 })
 
                 // 暫存帳號資訊
-                sessionStorage.setItem("member_id", data.member.memberId)
+                sessionStorage.setItem("member_id", data.member.memberId);
+                sessionStorage.setItem("administrator", data.member.administrator);
+
             }
             if (data.message === "資料不正確") {
                 swal(data.message, "輸入錯誤", "error");
