@@ -935,21 +935,85 @@ hr.hrStyle {
 
 .member-info-body {
   display: flex;
+  margin: 30px 0;
+  padding: 0 30px;
+  font-family: sans-serif;
 }
 .member-info-body aside {
-  width: 20%;
+  width: 16%;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
-.member-info-body main {
+.member-info-body aside .nav {
+  padding: 15px 0;
+}
+.member-info-body aside .nav .nav-item {
+  width: 48%;
+  margin: 15px auto;
+  border-radius: 10px;
   text-align: center;
 }
+.member-info-body aside .nav .nav-item a {
+  display: block;
+  padding: 15px;
+}
+.member-info-body aside .nav .nav-item a i {
+  margin-bottom: 10px;
+}
+.member-info-body aside .nav .nav-item a p {
+  font-size: 0.9rem;
+  color: #665e54;
+}
+.member-info-body main {
+  width: 80%;
+  margin: 0 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.0509803922);
+}
 .member-info-body main h2 {
+  text-align: center;
+  padding: 30px 0 15px;
   font-size: 1.5rem;
   font-weight: bold;
 }
-.member-info-body main .info-content-box {
-  width: 400px;
-  background-color: #fff;
+.member-info-body main .merber-info-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
+.member-info-body main .merber-info-box .info-content-box {
+  width: 400px;
+}
+.member-info-body main .merber-info-box .info-content-box .each-content-box {
+  width: 80%;
+  margin: 20px auto;
+}
+.member-info-body main .merber-info-box .info-content-box .each-content-box .title {
+  margin-bottom: 5px;
+}
+.member-info-body main .merber-info-box .info-content-box .each-content-box .title::before {
+  content: "*";
+  color: #ff7e6b;
+}
+.member-info-body main .merber-info-box .info-content-box .each-content-box .content-box {
+  border-radius: 5px;
+  line-height: 48px;
+  background-color: #ececec;
+  cursor: pointer;
+  position: relative;
+}
+.member-info-body main .merber-info-box .info-content-box .each-content-box .content-box p {
+  padding-left: 16px;
+  color: #665e54;
+}
+.member-info-body main .merber-info-box .info-content-box .each-content-box .content-box i {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
 .cart {
   width: 100%;
   height: 100vh;

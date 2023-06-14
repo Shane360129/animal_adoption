@@ -44,7 +44,7 @@ pwdDOM.addEventListener("blur", () => {
 loginBtnDOM.addEventListener("click", () => {
     // 若有欄位是空
     if (memberIdDOM.value.trim() === "" || pwdDOM.value.trim() === "") {
-        swal("注意!", "輸入資料錯誤", "error");
+        return swal("注意!", "輸入資料錯誤", "error");
     }
 
     // location.href="/";

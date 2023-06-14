@@ -5,131 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Animal Adoption</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/index.html">
-                <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
-                    alt="LOGO">
-            </a>
-        </div>
-        <div class="title">
-            <ul class="drop_down_menu">
-                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物認養</a>
-                        </li>
-                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx">最新消息</a>
-                        </li>
-                        <li><a href="#">線上商城</a>
-                        </li>
-                        <li><a href="#">教育課程</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
-                    <ul class="hideUl">
-                        <li><a href="#">園區資訊</a>
-                        </li>
-                        <li><a href="#">聯絡我們</a>
-                        </li>
-                        <li><a href="#">常見問答</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物防疫</a>
-                        </li>
-                        <li><a href="#">拾獲救援</a>
-                        </li>
-                        <li><a href="#">登記絕育</a>
-                        </li>
-                        <li><a href="#">失蹤協尋</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
-                    <ul class="hideUl">
-                        <li><a href="#">貓咪</a>
-                        </li>
-                        <li><a href="#">狗狗</a>
-                        </li>
-                        <li><a href="#">全部</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="btn">
-                <a href="./pages/member/register.html">
-                    <button type="button">註冊</button>
-                </a>
-                <a href="./pages/member/login.html">
-                    <button type="button">登入</button>
-                </a>
 
-            </div>
-        </div>
     </header>
     <div class="member-info-body">
         <aside>
             <ul class="nav">
                 <li class="nav-item">
-                    <i class="fa-regular fa-user" style="color: #ff7e6b;"></i>
-                    <p>會員資訊</p>
+                    <a href="#">
+                        <i class="fa-regular fa-user" style="color: #ff7e6b;"></i>
+                        <p>會員資訊</p>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-regular fa-cart-shopping" style="color: #ff7e6b;"></i>
-                    <p>購物車</p>
+                    <a href="#">
+                        <i class="fa-solid fa-cart-shopping" style="color: #ff7e6b;"></i>
+                        <p>購物車</p>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-regular fa-file-lines" style="color: #ff7e6b;"></i>
-                    <p>訂單歷史</p>
+                    <a href="#">
+                        <i class="fa-regular fa-file-lines" style="color: #ff7e6b;"></i>
+                        <p>訂單歷史</p>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <i class="fa-regular fa-heart" style="color: #ff7e6b;"></i>
-                    <p>我想認養</p>
+                    <a href="#">
+                        <i class="fa-regular fa-heart" style="color: #ff7e6b;"></i>
+                        <p>我想認養</p>
+                    </a>
                 </li>
             </ul>
         </aside>
         <main>
             <h2>會員資訊</h2>
-            <div class="info-content-box">
-                <div class="each-content-box">
-                    <span>密碼</span>
-                    <div id="upPwdBox" class="content-box">
-                        <p id="pwd">aaa12345</p>
-                        <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+            <div class="merber-info-box">
+                <div class="info-content-box">
+                    <div class="each-content-box" id="pwd">
+                        <p class="title">密碼</p>
+                        <div id="upPwdBox" class="content-box">
+                            <p id="pwd">aaa12345</p>
+                            <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="each-content-box">
-                    <span>姓名</span>
-                    <div id="upMemberNameBox" class="content-box">
-                        <p id="memberName">王一一</p>
-                        <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+                    <div class="each-content-box" id="memberName">
+                        <p class="title">姓名</p>
+                        <div id="upMemberNameBox" class="content-box">
+                            <p id="memberName">王一一</p>
+                            <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="each-content-box">
-                    <span>手機</span>
-                    <div id="upPhoneBox" class="content-box">
-                        <p id="phone">0912345678</p>
-                        <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+                    <div class="each-content-box" id="phone">
+                        <p class="title">手機</p>
+                        <div id="upPhoneBox" class="content-box">
+                            <p id="phone">0912345678</p>
+                            <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="each-content-box">
-                    <span>生日</span>
-                    <div id="upBirthBox" class="content-box">
-                        <p id="birth">1999/01/01</p>
-                        <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
-                    </div>
-                </div>               
-            </div> 
-
+                    <div class="each-content-box" id="birthday">
+                        <p class="title">生日</p>
+                        <div id="upBirthBox" class="content-box">
+                            <p id="birth">1999/01/01</p>
+                            <i class="fa-solid fa-pen" style="color: #ff7e6b;"></i>
+                        </div>
+                    </div>               
+                </div> 
+            </div>
         </main>
     </div>
+    <footer>
 
+    </footer>
+
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
+"></script>
     <script src="../Js/member_info.js"></script>
 </body>
 </html>
