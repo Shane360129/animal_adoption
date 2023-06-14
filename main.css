@@ -412,9 +412,9 @@ header button:hover {
 }
 
 .filesBanner {
-  margin: 50px;
+  margin: 50px 100px;
   display: flex;
-  width: 70%;
+  max-width: 1920px;
   flex-wrap: wrap;
 }
 .filesBanner .filesText p {
@@ -423,16 +423,21 @@ header button:hover {
 }
 
 .filesPic {
-  width: 250px;
-  height: 250px;
-  background-position: center;
+  width: 400px;
+  height: 400px;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid gray;
+  margin: 20px auto;
+  scale: 1;
+}
+.filesPic:hover {
+  scale: 1.2;
 }
 
 .filesText {
-  width: 250px;
+  width: 400px;
   height: 50px;
   background-color: #ffffff;
   display: flex;
@@ -493,7 +498,7 @@ body.liked svg.like {
   100% {
     fill: #ff5a5a;
   }
-}
+}*/
 .reviewbox,
 .reviewbtn {
   display: flex;
@@ -835,7 +840,6 @@ hr.hrStyle {
   right: -315px;
   background-color: #ffffff;
   opacity: 0;
-  display: none;
   transition: all 0.2s ease-out;
 }
 .infoTextHideUl li {
@@ -1247,6 +1251,4 @@ footer .footerMapLi {
   scale: 1.2;
   transition: 0.5s;
   border-radius: 50px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

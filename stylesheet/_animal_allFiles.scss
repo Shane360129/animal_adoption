@@ -50,9 +50,9 @@
 
 
 .filesBanner {
-  margin: 50px;
+  margin: 50px 100px;
   display: flex;
-  width: 70%;
+  max-width: 1920px;
   flex-wrap: wrap;
 
   .filesText{
@@ -67,16 +67,22 @@
 
 
 .filesPic {
-  width: 250px;
-  height: 250px;
-  background-position: center;
+  width: 400px;
+  height: 400px;
+  background-position:top;
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid gray;
+  margin: 20px auto;
+  scale: 1;
+
+  &:hover{
+    scale: 1.2;
+  }
 }
 
 .filesText {
-  width: 250px;
+  width: 400px;
   height: 50px;
   background-color: #ffffff;
   display: flex;
