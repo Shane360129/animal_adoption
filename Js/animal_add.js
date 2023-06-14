@@ -1,5 +1,4 @@
 import {autoAddMenuCityContent} from "./views/autoAddMenuCityContent.js"
-import {updateSessionInterval} from "./views/updateSessionInterval.js"
 
 const upload = document.querySelector(".upload");
 const imgBlock = document.querySelector(".imgBlock");
@@ -18,7 +17,6 @@ const modifyMinPic = document.querySelector(".modifyMinPic");
 setAnimalId2();
 setDate();
 autoAddMenuCityContent(regCity);
-updateSessionInterval();
 
 // 自動選擇當天日期
 function setDate() {
@@ -63,7 +61,7 @@ reset.addEventListener("click", () => {
 })
 
 // 登錄寵物資訊
-submit.addEventListener("click", () => {
+submit.addEventListener("click", async () => {
   const species = document.querySelector("input[name ='species']:checked");
   const sex = document.querySelector("input[name ='sex']:checked");
   const body = {
@@ -78,12 +76,25 @@ submit.addEventListener("click", () => {
       }
     ]
   };
+
+  // 必須這樣寫，才能確保前一個e呼叫完，再呼叫下一e
+  for (const e of bodyFromOutside) {
+    try {
+      await axios.post("http://localhost:8080/upLordImg", e);
+      console.log("Image uploaded");
+    } catch (error) {
+      console.error(error);
+    }
+  }
   axios.post("http://localhost:8080/animalAdd", body).then((res) => {
     alert(res.data.message)
   });
 })
 
+
 // 上傳照片
+// 宣告外部參數，保存要上傳照片的body
+let bodyFromOutside = [];
 upload.addEventListener("change", (e) => {
   console.log(e.target.files[0]);
   const img = e.target.files[0];
@@ -95,11 +106,11 @@ upload.addEventListener("change", (e) => {
     // console.log(e.target.result);
     const imgDataUrl = e.target.result;
     const base64 = {
-      "imgBase64":imgDataUrl.split(",")[1],
-      "sort":"a",
-      "id":animalId.value
+      "imgBase64": imgDataUrl.split(",")[1],
+      "sort": "a",
+      "id": animalId.value
     }
-    console.log(base64)
+    bodyFromOutside.push(base64);
     const newDiv = document.createElement("div");
     newDiv.classList.add("firstPic");
     newDiv.innerHTML = `<img src="${imgDataUrl}" alt="pet">`;
@@ -108,22 +119,7 @@ upload.addEventListener("change", (e) => {
     for (let i = 1; i < firstPics.length; i++) {
       firstPics[i].classList.remove("firstPic");
       firstPics[i].classList.add("otherPic");
-      modifyMinPic.insertBefore(firstPics[i],modifyMinPic.firstChild);
+      modifyMinPic.insertBefore(firstPics[i], modifyMinPic.firstChild);
     }
-    // axios.post("http://localhost:8080/upLordImg", base64).then((res) => {
-    // });
   }
 })
-
-function splitBase64IntoChunks(base64Data, chunkSize) {
-  const totalChunks = Math.ceil(base64Data.length / chunkSize);
-  const chunks = [];
-
-  for (let i = 0; i < totalChunks; i++) {
-    const start = i * chunkSize;
-    const chunk = base64Data.substr(start, chunkSize);
-    chunks.push(chunk);
-  }
-  console.log(chunks)
-  return chunks;
-}
