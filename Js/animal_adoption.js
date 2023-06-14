@@ -2,8 +2,8 @@
 const filesPic = +sessionStorage.getItem("filesPic");
 // 透過api獲取動物的資訊
 axios.post("http://localhost:8080/findByAnimalId",
-    {"animalId":filesPic}
-    ).then((res)=>{
+    {"animalId": filesPic}
+).then((res) => {
   const animal = {
     animalId: res.data.animal.animalId,
     animalName: res.data.animal.animalName,
@@ -18,8 +18,6 @@ axios.post("http://localhost:8080/findByAnimalId",
 })
 
 
-
-
 const animalId = document.querySelector(".animalId");
 const animalName = document.querySelector(".animalName");
 const species = document.querySelector(".species");
@@ -28,17 +26,47 @@ const type = document.querySelector(".type");
 const regDate = document.querySelector(".regDate");
 const regCity = document.querySelector(".regCity");
 const adoption = document.querySelector(".adoption");
+const imgBlock = document.querySelector(".imgBlock");
+const modifyMinPic = document.querySelector(".modifyMinPic");
 
 // 渲染選中寵物資料
-function renderAnimalInfo(animal){
+function renderAnimalInfo(animal) {
   animalId.innerText = animal.animalId;
   animalName.innerText = animal.animalName;
-  animal.sex === 0 ? sex.innerText = "公":sex.innerText = "母"
+  animal.sex === 0 ? sex.innerText = "公" : sex.innerText = "母"
   animal.species === 0 ? species.innerText = "貓" : species.innerText = "狗";
   type.innerText = animal.type;
   regDate.innerText = animal.regDate;
   regCity.innerText = animal.regCity;
 }
+
+axios.post("http://localhost:8080/countImg", {
+  "sort": "a",
+  "id": filesPic
+}).then((res) => {
+  // 取得照片張數
+  const numberOfPhotos = res.data.count;
+  console.log(numberOfPhotos)
+
+  const imgBlock = document.querySelector(".imgBlock");
+  const modifyMinPic = document.querySelector(".modifyMinPic");
+
+  for (let i = 1; i <= numberOfPhotos; i++) {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("firstPic");
+    newDiv.innerHTML = `<img src="../img/animalAll/${filesPic}-${i}.png" alt="pet">`;
+    imgBlock.insertBefore(newDiv, imgBlock.firstChild);
+
+    const firstPics = document.querySelectorAll(".firstPic");
+    for (let j = 1; j < firstPics.length; j++) {
+      firstPics[j].classList.remove("firstPic");
+      firstPics[j].classList.add("otherPic");
+      modifyMinPic.insertBefore(firstPics[j], modifyMinPic.firstChild);
+    }
+  }
+}).catch((error) => {
+  console.error(error);
+});
 
 
 // 送審認養
@@ -47,10 +75,10 @@ let outsideAnimal = null;
 // 從sessionStorage獲取點擊的會員id
 const memberId = sessionStorage.getItem("member_id");
 
-adoption.addEventListener("click",()=>{
+adoption.addEventListener("click", () => {
   const body = {
     "member_id": memberId
-    ,animal:{}
+    , animal: {}
   }
   body.animal = outsideAnimal;
   axios({
@@ -59,7 +87,7 @@ adoption.addEventListener("click",()=>{
     //API要求的資料
     data: body
   })
-      .then( (response) => {
+      .then((response) => {
         alert(response.data.message)
       })
 })
