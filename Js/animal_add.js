@@ -77,7 +77,7 @@ submit.addEventListener("click", async () => {
     ]
   };
 
-  // 必須這樣寫，才能確保前一個e呼叫完，再呼叫下一e
+  // 必須這樣寫，才能確保前一個e呼叫完，再呼叫下一個e
   for (const e of bodyFromOutside) {
     try {
       await axios.post("http://localhost:8080/upLordImg", e);
