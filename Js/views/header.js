@@ -3,6 +3,8 @@ console.log(sessionStorage.getItem("member_id"))
 if(sessionStorage.getItem("member_id")){
   btn.innerHTML = ` <a href="#">
                     <button type="button" class="signOut">登出</button>
+                </a><a href="#">
+                    <button type="button" class="addAnimal">新增動物</button>
                 </a>`;
   const signOut = document.querySelector(".signOut")
   signOut.addEventListener("click",function (){
