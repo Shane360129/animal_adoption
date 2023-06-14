@@ -78,7 +78,14 @@ birthDOM.max = maxDate;
 
 // 生日欄位檢查
 birthDOM.addEventListener("blur", () => {
-    if(birthDOM.value === null || birthDOM.value === "") {
+    // 解析日期字串為日期物件
+    const date = new Date(birthDOM.value);
+    
+    if (date.getFullYear() < 1900 
+    || date.getFullYear() > today.getFullYear()) {
+        birthAlertTextDOM.innerText = "*生日無效";
+    }
+    else if(birthDOM.value === null || birthDOM.value === "") {
         birthAlertTextDOM.innerText = "*生日欄位未填寫";
     }
     else {
