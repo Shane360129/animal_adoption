@@ -64,7 +64,3 @@ getAllAnimal().then(() => {
 }).catch((error) => {
   console.error(error);
 });
-getAllAnimal().then(() => {
-}).catch((error) => {
-  console.error(error);
-});
