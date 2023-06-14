@@ -1,34 +1,91 @@
 .member-info-body {
     display: flex;
+    margin: 30px 0;
+    padding: 0 30px;
+    font-family: sans-serif;
 
     aside {
-        width: 20%;
+        width: 16%;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 3px 10px rgba(0,0,0,.05);
         .nav {
+            padding: 15px 0;
+            
             .nav-item {
-                p {
+                width: 48%;
+                margin: 15px auto;
+                border-radius: 10px;
+                text-align: center;
+                
+                // background-color: #ffe9e8;
 
+                a {
+                    display: block;
+                    padding: 15px;
+                    
+                    i {
+                        margin-bottom: 10px;
+                    }
+                    p {
+                        font-size: .9rem;
+                        color: #665e54;
+                    }
                 }
             }
         }
     }
 
     main {
-        text-align: center;
+        width: 80%;
+        margin: 0 30px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 3px 10px #0000000d;
         
         h2 {
+            text-align: center;
+            padding: 30px 0 15px;
             font-size: 1.5rem;
             font-weight: bold;
         }
 
-        .info-content-box {
-            width: 400px;
-            background-color: #fff;
-            .each-content-box {
-                span {
-
-                }
-                .content-box {
-
+        .merber-info-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+    
+            .info-content-box {
+                width: 400px;
+                .each-content-box {
+                    width: 80%;
+                    margin: 20px auto;
+                    
+                    .title {
+                        margin-bottom: 5px;
+                        &::before {
+                            content: "*";
+                            color: #ff7e6b;
+                        }
+                    }
+                    .content-box {
+                        border-radius: 5px;
+                        line-height: 48px;
+                        background-color: #ececec;
+                        cursor: pointer;
+                        position: relative;
+    
+                        p {
+                            padding-left: 16px;
+                            color: #665e54;
+                        }
+    
+                        i {
+                            position: absolute;
+                            top: 16px;
+                            right: 16px;
+                        }
+                    }
                 }
             }
         }

@@ -71,7 +71,7 @@ loginBtnDOM.addEventListener("click", () => {
 
             const swalBtnDOM = document.querySelector(".swal-button");
             swalBtnDOM.addEventListener("click", () => {
-                location.href="/";
+                window.history.go(-1);
             })
             
             // 暫存帳號資訊
