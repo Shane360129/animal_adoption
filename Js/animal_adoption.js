@@ -8,7 +8,7 @@ axios.post("http://localhost:8080/findByAnimalId",
     animalId: res.data.animal.animalId,
     animalName: res.data.animal.animalName,
     sex: res.data.animal.sex,
-    species: res.data.animal.species,
+    species: +res.data.animal.species,
     type: res.data.animal.type,
     regDate: res.data.animal.regDate,
     regCity: res.data.animal.regCity
@@ -40,6 +40,7 @@ function renderAnimalInfo(animal) {
   regCity.innerText = animal.regCity;
 }
 
+// 渲染照片功能
 axios.post("http://localhost:8080/countImg", {
   "sort": "a",
   "id": filesPic
