@@ -1,24 +1,22 @@
-// 預期會從「待認養犬貓照片檢索」的js裡導入選中的寵物資訊
-// 這裡先預設
-const animal = {
-  animalId: 1,
-  animalName: "咪咪",
-  sex: 1,
-  species: 0,
-  type: "MIX",
-  regDate: "2023-05-12",
-  regCity: "臺北市"
-}
+// 從sessionStorage獲取點擊的動物id
+const filesPic = +sessionStorage.getItem("filesPic");
+// 透過api獲取動物的資訊
+axios.post("http://localhost:8080/findByAnimalId",
+    {"animalId": filesPic}
+).then((res) => {
+  const animal = {
+    animalId: res.data.animal.animalId,
+    animalName: res.data.animal.animalName,
+    sex: res.data.animal.sex,
+    species: +res.data.animal.species,
+    type: res.data.animal.type,
+    regDate: res.data.animal.regDate,
+    regCity: res.data.animal.regCity
+  };
+  renderAnimalInfo(animal);
+  outsideAnimal = animal;
+})
 
-// 還沒想好如何獲得登錄會員資訊
-// 這裡先預設
-const member={
-  memberId:"A129111111",
-  pwd:"eibb6666",
-  memberName:"doctor",
-  phone:"0988876584",
-  birth:"2023-06-08"
-}
 
 const animalId = document.querySelector(".animalId");
 const animalName = document.querySelector(".animalName");
@@ -28,31 +26,69 @@ const type = document.querySelector(".type");
 const regDate = document.querySelector(".regDate");
 const regCity = document.querySelector(".regCity");
 const adoption = document.querySelector(".adoption");
+const imgBlock = document.querySelector(".imgBlock");
+const modifyMinPic = document.querySelector(".modifyMinPic");
 
 // 渲染選中寵物資料
-animalId.innerText = animal.animalId;
-animalName.innerText = animal.animalName;
-animal.sex === 0 ? sex.innerText = "公":sex.innerText = "母"
-animal.species === 0 ? species.innerText = "貓" : species.innerText = "狗";
-type.innerText = animal.type;
-regDate.innerText = animal.regDate;
-regCity.innerText = animal.regCity;
+function renderAnimalInfo(animal) {
+  animalId.innerText = animal.animalId;
+  animalName.innerText = animal.animalName;
+  animal.sex === 0 ? sex.innerText = "公" : sex.innerText = "母"
+  animal.species === 0 ? species.innerText = "貓" : species.innerText = "狗";
+  type.innerText = animal.type;
+  regDate.innerText = animal.regDate;
+  regCity.innerText = animal.regCity;
+}
+
+// 渲染照片功能
+axios.post("http://localhost:8080/countImg", {
+  "sort": "a",
+  "id": filesPic
+}).then((res) => {
+  // 取得照片張數
+  const numberOfPhotos = res.data.count;
+  console.log(numberOfPhotos)
+
+  const imgBlock = document.querySelector(".imgBlock");
+  const modifyMinPic = document.querySelector(".modifyMinPic");
+
+  for (let i = 1; i <= numberOfPhotos; i++) {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("firstPic");
+    newDiv.innerHTML = `<img src="../img/animalAll/${filesPic}-${i}.png" alt="pet">`;
+    imgBlock.insertBefore(newDiv, imgBlock.firstChild);
+
+    const firstPics = document.querySelectorAll(".firstPic");
+    for (let j = 1; j < firstPics.length; j++) {
+      firstPics[j].classList.remove("firstPic");
+      firstPics[j].classList.add("otherPic");
+      modifyMinPic.insertBefore(firstPics[j], modifyMinPic.firstChild);
+    }
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
 
 // 送審認養
-adoption.addEventListener("click",()=>{
+// 宣告全域參數，獲取最上面animal資訊
+let outsideAnimal = null;
+// 從sessionStorage獲取點擊的會員id
+const memberId = sessionStorage.getItem("member_id");
+
+adoption.addEventListener("click", () => {
   const body = {
-    member:{}
-    ,animal:{}
+    "member_id": memberId
+    , animal: {}
   }
-  body.member = member;
-  body.animal = animal;
+  body.animal = outsideAnimal;
   axios({
     method: "post",
     url: "http://localhost:8080/adoption",
     //API要求的資料
     data: body
   })
-      .then( (response) => {
+      .then((response) => {
         alert(response.data.message)
       })
 })

@@ -15,8 +15,9 @@ function getAllAnimal() {
         <ul>${animalList[i].animalId}</ul>
         <p class="like" data-clicks="0" data-item="${animalList[i].animalId}">♥</p>`;
         filesBanner.appendChild(newDiv);
-        const filesPic = document.querySelector(".filesPic");
         newDiv.style.backgroundImage = `url("../img/animalAll/${animalList[i].animalId}-1.png")`;
+        const filesPic = document.querySelectorAll(".filesPic");
+        filesPic[i].setAttribute("data-filesPic",`${animalList[i].animalId}`)
       }
 
       resolve();
@@ -28,8 +29,22 @@ function getAllAnimal() {
 
 getAllAnimal().then(() => {
   const filesBanner = document.querySelector(".filesBanner")
-  console.log(filesBanner);
   filesBanner.addEventListener("click", function (e) {
+
+    // 儲存點擊的寵物ID，供animal_adoption.js使用
+    let filesPic= e.target.getAttribute("data-filesPic");
+    sessionStorage.setItem("filesPic",filesPic);
+    // 判斷點擊的元素是否是<div class="filesPic">
+    if (e.target.classList.contains("filesPic")) {
+      // 判斷點擊的元素是否是<p class="like">♥</p>
+      if (!e.target.classList.contains("like")) {
+        // 執行跳轉頁面的動作
+        window.location.href = "../pages/animal_adoption.html";
+      }
+    }
+
+
+    // 判斷收藏或解除收藏
     console.log(e.target.getAttribute("data-item"))
     if (e.target.classList.contains("like")) {
       const clicks = parseInt(e.target.getAttribute("data-clicks"));
@@ -39,19 +54,23 @@ getAllAnimal().then(() => {
       }
       axios.post("http://localhost:8080/findByAnimalId", body).then((res) => {
         console.log(res)
+        // TODO
+        // 更改為sessionStorage的值
         const body = {
-          "member_id":"A129111111",
+          "member_id": "A129111111",
           "animal_id": animalId
         };
         if (clicks === 0) {
           e.target.classList.add("liked");
           e.target.setAttribute("data-clicks", clicks + 1);
-          axios.post("http://localhost:8080/add_favorite", body).then((res) =>{})
+          axios.post("http://localhost:8080/add_favorite", body).then((res) => {
+          })
         }
         else {
           e.target.classList.remove("liked");
           e.target.setAttribute("data-clicks", clicks - 1);
-          axios.post("http://localhost:8080/delete_favorite", body).then((res) =>{})
+          axios.post("http://localhost:8080/delete_favorite", body).then((res) => {
+          })
         }
 
 
