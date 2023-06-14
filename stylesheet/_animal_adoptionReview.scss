@@ -1,0 +1,53 @@
+.reviewbox,
+.reviewbtn {
+    display: flex;
+    justify-content: center;
+}
+
+.reviewAnimal,
+.reviewPerson {
+    width: 500px;
+    height: 500px;
+    margin-top: 100px;
+
+
+    .modifyTextUl,
+    .personTextUl {
+        text-align: start;
+        line-height: 2.5;
+        margin: 2.5rem 1rem;
+        font-size: 20px;
+        border: 2px solid #8C5E58;
+        background-color: white;
+        color: #8C5E58;
+        border-radius: 2rem 0.5rem;
+
+        li {
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}
+
+.reviewbtn {
+
+    .reviewUnpass,
+    .reviewPass {
+        width: 130px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 50px;
+        padding: 1rem 2rem;
+        color: white;
+        border-radius: 1rem;
+        transition: ease 0.1s;
+        border: none;
+        box-shadow: 2px 2px 5px gray;
+        background-color: #8C5E58;
+
+        &:hover {
+            background-color: gray;
+        }
+    }
+}
