@@ -289,7 +289,6 @@ hr.hrStyle {
 
 .infoTextUl {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -304,21 +303,27 @@ hr.hrStyle {
     text-align: center;
     cursor: pointer;
 
-    &:hover .infoTextHideUl {
-        opacity: 1;
+    &:hover {
+        background-color: #FFA69E;
     }
+
+}
+
+.infoTextInside {
+    position: absolute;
 }
 
 .infoTextHideUl {
-    width: 400px;
+    width: 600px;
     height: 300px;
     margin-top: 20px;
-    line-height: 2.5;
+    line-height: 3;
     text-align: left;
     font-weight: bold;
-    // border-radius: 1rem;
     padding-left: 30px;
     position: absolute;
+    top: 85px;
+    right: -315px;
     background-color: #ffffff;
     opacity: 0;
     transition: all 0.2s ease-out;
@@ -326,6 +331,10 @@ hr.hrStyle {
     li {
         margin: 5px 0;
     }
+}
+
+.active {
+    opacity: 1;
 }
 
 //新聞區

@@ -32,7 +32,7 @@ var swiper1 = new Swiper(".mySwiper1", {
     slidesPerView: 3,
     coverflowEffect: {
         rotate: 0,
-        stretch: 0,
+        stretch: 150,
         depth: 700,
         modifier: 1,
         slideShadows: true,
@@ -46,3 +46,15 @@ var swiper1 = new Swiper(".mySwiper1", {
         clickable: true,
     },
 });
+
+//教育頁面的tab切換
+const tabWall = document.querySelectorAll(".infoTextUl .infoTextHideLi")
+
+for(let i =0 ; i<tabWall.length ; i++){
+    tabWall[i].addEventListener('mouseenter',function(){
+        document.querySelector(".infoTextUl .active").classList.remove("active")
+        this.classList.add("active")
+        document.querySelector(".infoTextInside .active").classList.remove("active")
+        document.querySelector(`.infoTextInside .infoTextHideUl:nth-child(${i+1})`).classList.add("active")
+    })
+}
