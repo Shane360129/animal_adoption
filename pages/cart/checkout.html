@@ -7,6 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../main.css">
     <title>Document</title>
+    <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // 自定義tailwindcss
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundColor: {
+                        'pri-pink': '#FFA69E', //淺粉
+                        'pri-darkpink': '#FF7E6B', //深粉
+                        'pri-green': '#A9F0D1', //綠色
+                        'pri-light': '#FFF7F8', //背景白粉
+                        'pri-dark': '#8C5E58'//咖啡
+                    },
+                    width: {
+                        '90': '90%',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -67,10 +88,10 @@
                 </li>
             </ul>
             <div class="btn">
-                <a href="./pages/member/register.html">
+                <a href="../../pages/member/register.html">
                     <button type="button">註冊</button>
                 </a>
-                <a href="./pages/member/login.html">
+                <a href="../../pages/member/login.html">
                     <button type="button">登入</button>
                 </a>
             </div>
@@ -79,6 +100,7 @@
         <div class="productInfo" id="resultContainer">
             <p id="test"></p>
         </div>
+        <button type="button" class="btn" id="sendOrder">送出訂單</button>
 
     <footer class="frontFooter">
         <div class="footerImg">
@@ -133,4 +155,4 @@
     <script src="../../Js/views/cart/checkout.js"></script>
 </body>
 
-</html>
+z</html>

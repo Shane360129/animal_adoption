@@ -13,7 +13,7 @@ const quantity4DOM = document.querySelector("#quantity4")
 
 
 sendOrderDOM.addEventListener("click", function () {
-    const memberId = "E123456789";
+    const memberId = sessionStorage.getItem("member_id");
     const products = {};
 
     if (product1DOM.checked) {
