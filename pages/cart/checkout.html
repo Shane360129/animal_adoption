@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../main.css">
-    <title>Document</title>
+    <title>購物車結帳 - Vet X</title>
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -42,35 +42,35 @@
             <ul class="drop_down_menu">
                 <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
                     <ul class="hideUl">
-                        <li><a href="#">A</a>
+                        <li><a href="#">動物認養</a>
                         </li>
-                        <li><a href="#">B</a>
+                        <li><a href="#">最新消息</a>
                         </li>
-                        <li><a href="#">C</a>
+                        <li><a href="#">線上商城</a>
                         </li>
-                        <li><a href="#">D</a>
+                        <li><a href="#">教育課程</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
                     <ul class="hideUl">
-                        <li><a href="#">ㄅ</a>
+                        <li><a href="#">園區資訊</a>
                         </li>
-                        <li><a href="#">ㄆ</a>
+                        <li><a href="#">聯絡我們</a>
                         </li>
-                        <li><a href="#">ㄇ</a>
+                        <li><a href="#">常見問答</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
                     <ul class="hideUl">
-                        <li><a href="#">OAO</a>
+                        <li><a href="#">動物防疫</a>
                         </li>
-                        <li><a href="#">QAQ</a>
+                        <li><a href="#">拾獲救援</a>
                         </li>
-                        <li><a href="#">A_A</a>
+                        <li><a href="#">登記絕育</a>
                         </li>
-                        <li><a href="#">T_T</a>
+                        <li><a href="#">失蹤協尋</a>
                         </li>
                     </ul>
                 </li>
@@ -80,9 +80,7 @@
                         </li>
                         <li><a href="#">狗狗</a>
                         </li>
-                        <li><a href="#">人類</a>
-                        </li>
-                        <li><a href="#">其他畜生</a>
+                        <li><a href="#">全部</a>
                         </li>
                     </ul>
                 </li>
@@ -94,14 +92,41 @@
                 <a href="../../pages/member/login.html">
                     <button type="button">登入</button>
                 </a>
+
             </div>
         </div>
     </header>
-    
-        <div class="productInfo" id="resultContainer">
+    <main class="product_front_all_main flex">
+        <!-- 左邊顯示區 -->
+        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pri-pink ">
+            <!-- 超連結列表 -->
+            <ul>
+                <a href="../../pages/product/product_front_all.html">
+                    <li class="bg-pri-dark text-white  px-8 py-2 my-4 rounded-full">
+                        全部商品
+                    </li>
+                </a>
+                <a href="../cart/checkout.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        購物車
+                    </li>
+                </a>
+                <a href="../cart/order.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        <!-- 超連結待更新 -->
+                        歷史訂單
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div class="productInfo w-4/5 bg-white justify-center" id="resultContainer">
             <p id="test"></p>
         </div>
-        <button type="button" class="btn" id="sendOrder">送出訂單</button>
+        <button type="button" class="btn w-4/10 px-8 py-2 my-4" id="sendOrder"
+    style="float: right;">送出訂單</button>
+        
+    </main>
+    
 
     <footer class="frontFooter">
         <div class="footerImg">
