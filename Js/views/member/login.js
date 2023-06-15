@@ -52,6 +52,13 @@ loginBtnDOM.addEventListener("click", () => {
         return swal("注意!", "有欄位未填寫", "error");
     }
 
+    // 驗證碼錯誤
+    const verifyAlertDOM = document.querySelector("#verifyAlert");
+    if (verifyAlertDOM.innerText === "驗證碼錯誤") {
+        return swal("驗證碼錯誤", "請重新輸入", "error");
+        location.href="/pages/member/login.html";
+    }
+
     // location.href="/";
     const body = {
         member_id: memberIdDOM.value,
