@@ -15,7 +15,7 @@ axios.post("http://localhost:8080/findByAnimalId",
   };
   renderAnimalInfo(animal);
   outsideAnimal = animal;
-})
+}).catch((error) => console.log(error));
 
 
 const animalId = document.querySelector(".animalId");
@@ -90,5 +90,5 @@ adoption.addEventListener("click", () => {
   })
       .then((response) => {
         alert(response.data.message)
-      })
+      }).catch((error) => console.log(error));
 })

@@ -31,7 +31,7 @@ axios.post("http://localhost:8080/findByAnimalId",
   };
   console.log(res.data.animal.species)
   setAnimalInfo(animal);
-})
+}).catch((error) => console.log(error));
 
 
 // 渲染選中寵物資料

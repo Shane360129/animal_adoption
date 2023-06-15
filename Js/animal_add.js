@@ -39,7 +39,7 @@ function setDate() {
 function setAnimalId2() {
   axios.get("http://localhost:8080/findAll").then((res) => {
     animalId.value = +res.data.animalList.pop().animalId + 1;
-  });
+  }).catch((error) => console.log(error));
 }
 
 
@@ -88,7 +88,7 @@ submit.addEventListener("click", async () => {
   }
   axios.post("http://localhost:8080/animalAdd", body).then((res) => {
     alert(res.data.message)
-  });
+  }).catch((error) => console.log(error));
 })
 
 
