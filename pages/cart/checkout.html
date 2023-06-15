@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../main.css">
-    <title>Document</title>
+    <title>送出訂單</title>
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,65 +33,63 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/index.html">
+            <a href="http://127.0.0.1:5500/index.html">
                 <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
                     alt="LOGO">
             </a>
         </div>
         <div class="title">
             <ul class="drop_down_menu">
-                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
-                    <ul class="hideUl">
-                        <li><a href="#">A</a>
+                <li class="hideLi"><a class="hideLi_a" href="http://127.0.0.1:5500/index.html">首頁</a>
+                    <ul class="hideUl unMember">
+                        <li><a href="http://127.0.0.1:5500/pages/animal_allFiles.html">動物認養</a>
                         </li>
-                        <li><a href="#">B</a>
+                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx" target="_blank">最新消息</a>
                         </li>
-                        <li><a href="#">C</a>
+                        <li><a href="http://127.0.0.1:5500/pages/product/product_index.html">線上商城</a>
                         </li>
-                        <li><a href="#">D</a>
+                        <li><a href="#Jump1">教育課程</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
-                    <ul class="hideUl">
-                        <li><a href="#">ㄅ</a>
+                    <ul class="hideUl unMember">
+                        <li><a href="#">園區資訊</a>
                         </li>
-                        <li><a href="#">ㄆ</a>
+                        <li><a href="#">聯絡我們</a>
                         </li>
-                        <li><a href="#">ㄇ</a>
+                        <li><a href="#">常見問答</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
-                    <ul class="hideUl">
-                        <li><a href="#">OAO</a>
+                    <ul class="hideUl unMember">
+                        <li><a href="#">動物防疫</a>
                         </li>
-                        <li><a href="#">QAQ</a>
+                        <li><a href="#">拾獲救援</a>
                         </li>
-                        <li><a href="#">A_A</a>
+                        <li><a href="#">登記絕育</a>
                         </li>
-                        <li><a href="#">T_T</a>
+                        <li><a href="#">失蹤協尋</a>
                         </li>
                     </ul>
                 </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
-                    <ul class="hideUl">
-                        <li><a href="#">貓咪</a>
+                <li class="hideLi"><a class="hideLi_a" href="http://127.0.0.1:5500/pages/animal_allFiles.html">動物</a>
+                    <ul class="hideUl memberIn" id="animalDrop">
+                        <li><a href="http://127.0.0.1:5500/pages/animal_adoptionReview.html">審查</a>
                         </li>
-                        <li><a href="#">狗狗</a>
+                        <li><a href="http://127.0.0.1:5500/pages/animal_add.html">增加</a>
                         </li>
-                        <li><a href="#">人類</a>
-                        </li>
-                        <li><a href="#">其他畜生</a>
+                        <li><a href="http://127.0.0.1:5500/pages/animal_allFiles.html">全部</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             <div class="btn">
-                <a href="../../pages/member/register.html">
+                <a href="http://127.0.0.1:5500/pages/member/register.html">
                     <button type="button">註冊</button>
                 </a>
-                <a href="../../pages/member/login.html">
+                <a href="http://127.0.0.1:5500/pages/member/login.html">
                     <button type="button">登入</button>
                 </a>
             </div>
@@ -103,57 +101,57 @@
         </div>
         <button type="button" class="btn" id="sendOrder">送出訂單</button>
 
-    <footer class="frontFooter">
-        <div class="footerImg">
-            <div class="logo">
-                <a href="/index.html">
-                    <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
-                        alt="LOGO">
-                </a>
+        <footer class="frontFooter">
+            <div class="footerImg">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
+                            alt="LOGO">
+                    </a>
+                </div>
+                <p class="footerCoverP">
+                    2023 Made ◎ Zhen all rights reserved.
+                </p>
+                <div class="footerIcon">
+                    <a href="https://www.facebook.com/isu.edu.tw?fref=ts">
+                        <i class="fa-brands fa-facebook fa-2xl" style="color: #8c5e58;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/isupublic/?utm_medium=copy_link">
+                        <i class="fa-brands fa-instagram fa-2xl" style="color: #8c5e58;"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCJ7lbrEbG-SOp5a1jkbKYbg">
+                        <i class="fa-brands fa-youtube fa-2xl" style="color: #8c5e58;"></i>
+                    </a>
+                    <a href="https://twitter.com/?lang=zh-Hant">
+                        <i class="fa-brands fa-twitter fa-2xl" style="color: #8c5e58;"></i>
+                    </a>
+                    <a
+                        href="https://www.google.com.tw/maps/place/%E7%BE%A9%E5%AE%88%E5%A4%A7%E5%AD%B8/@22.7263706,120.4048897,17.44z/data=!4m6!3m5!1s0x346e111c3b372669:0x48b39f7fb236fcdc!8m2!3d22.7271472!4d120.4058239!16s%2Fm%2F03gx909?entry=ttu">
+                        <i class="fa-solid fa-location-dot fa-2xl" style="color: #8c5e58;"></i>
+                    </a>
+    
+                </div>
+    
             </div>
-            <p class="footerCoverP">
-                2023 Made ◎ Zhen all rights reserved.
-            </p>
-            <div class="footerIcon">
-                <a href="https://www.facebook.com/isu.edu.tw?fref=ts">
-                    <i class="fa-brands fa-facebook fa-2xl" style="color: #8c5e58;"></i>
-                </a>
-                <a href="https://www.instagram.com/isupublic/?utm_medium=copy_link">
-                    <i class="fa-brands fa-instagram fa-2xl" style="color: #8c5e58;"></i>
-                </a>
-                <a href="https://www.youtube.com/channel/UCJ7lbrEbG-SOp5a1jkbKYbg">
-                    <i class="fa-brands fa-youtube fa-2xl" style="color: #8c5e58;"></i>
-                </a>
-                <a href="https://twitter.com/?lang=zh-Hant">
-                    <i class="fa-brands fa-twitter fa-2xl" style="color: #8c5e58;"></i>
-                </a>
-                <a
-                    href="https://www.google.com.tw/maps/place/%E7%BE%A9%E5%AE%88%E5%A4%A7%E5%AD%B8/@22.7263706,120.4048897,17.44z/data=!4m6!3m5!1s0x346e111c3b372669:0x48b39f7fb236fcdc!8m2!3d22.7271472!4d120.4058239!16s%2Fm%2F03gx909?entry=ttu">
-                    <i class="fa-solid fa-location-dot fa-2xl" style="color: #8c5e58;"></i>
-                </a>
-
+            <div class="footerText">
+                <ul>
+                    <li>地址：(84001)高雄市大樹區學城路一段1號</li>
+                    <li>服務時間：星期一至星期五</li>
+                    <li>上午8:00~12:00 下午13:30~17:30</li>
+                    <li>建議瀏覽器：Edge、Firefox、Chrome</li>
+                    <li>(螢幕設定最佳顯示效果為1920*1080)</li>
+                </ul>
             </div>
-
-        </div>
-        <div class="footerText">
-            <ul>
-                <li>地址：(84001)高雄市大樹區學城路一段1號</li>
-                <li>服務時間：星期一至星期五</li>
-                <li>上午8:00~12:00 下午13:30~17:30</li>
-                <li>建議瀏覽器：Edge、Firefox、Chrome</li>
-                <li>(螢幕設定最佳顯示效果為1920*1080)</li>
-            </ul>
-        </div>
-        <div class="footerMap">
-            <h3 class="footerMapText">網站導覽</h3>
-            <ul>
-                <li class="footerMapLi">捐款專線:</li>
-                <li class="footerMapLi">07-657-7711</li>
-            </ul>
-        </div>
-    </footer>
+            <div class="footerMap">
+                <h3 class="footerMapText">網站導覽</h3>
+                <ul>
+                    <li class="footerMapLi">捐款專線:</li>
+                    <li class="footerMapLi">07-657-7711</li>
+                </ul>
+            </div>
+        </footer>
 
     <script src="../../Js/views/cart/checkout.js"></script>
 </body>
 
-z</html>
+</html>

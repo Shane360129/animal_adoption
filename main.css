@@ -54,6 +54,10 @@ table {
   border-spacing: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #fff2ce;
   max-width: 1920px;
@@ -85,7 +89,7 @@ header .title .hideLi {
   margin: 50px;
   position: relative;
 }
-header .title .hideLi:hover .hideUl {
+header .title .hideLi:hover .unMember {
   display: block;
   z-index: 1;
 }
@@ -115,6 +119,9 @@ header .title .hideUl li {
 }
 header .title .hideUl li a {
   color: white;
+}
+header .title .memberIn {
+  display: none;
 }
 header .btn {
   display: flex;
@@ -203,6 +210,10 @@ header button:hover {
   opacity: 1;
   font-weight: bold;
   border-radius: 50%;
+}
+
+.hide {
+  display: none;
 }
 
 .animal_modify {
@@ -1016,6 +1027,7 @@ hr.hrStyle {
 }
 .member-body main .member-page .member-wrap form .input-block .verify-pic .verify-btn {
   width: 50px;
+  height: -moz-fit-content;
   height: fit-content;
   margin: 10px;
   padding: 5px;
@@ -1326,6 +1338,4 @@ footer .footerMapLi {
   scale: 1.2;
   transition: 0.5s;
   border-radius: 50px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
