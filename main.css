@@ -948,6 +948,9 @@ hr.hrStyle {
 .member-info-body aside .nav {
   padding: 15px 0;
 }
+.member-info-body aside .nav .member-info-item {
+  background-color: #ffe9e8;
+}
 .member-info-body aside .nav .nav-item {
   width: 48%;
   margin: 15px auto;
@@ -1184,6 +1187,4 @@ footer .footerMapLi {
   scale: 1.2;
   transition: 0.5s;
   border-radius: 50px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

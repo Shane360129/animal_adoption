@@ -11,14 +11,16 @@
         box-shadow: 0 3px 10px rgba(0,0,0,.05);
         .nav {
             padding: 15px 0;
+
+            .member-info-item {
+                background-color: #ffe9e8;
+            }
             
             .nav-item {
                 width: 48%;
                 margin: 15px auto;
                 border-radius: 10px;
                 text-align: center;
-                
-                // background-color: #ffe9e8;
 
                 a {
                     display: block;
