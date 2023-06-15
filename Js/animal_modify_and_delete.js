@@ -3,7 +3,6 @@ import {autoAddMenuCityContent} from "../Js/views/autoAddMenuCityContent.js"
 
 // 從sessionStorage獲取點擊的動物id
 const filesPic = +sessionStorage.getItem("filesPic");
-
 const animalId = document.querySelector(".animalId");
 const animalName = document.querySelector(".animalName");
 const regCity = document.querySelector("#regCity")
@@ -12,14 +11,13 @@ const regDate = document.querySelector(".regDate");
 const update = document.querySelector(".update");
 const deleteBtn = document.querySelector(".delete");
 const quit = document.querySelector(".quit");
+const upload = document.querySelector(".upload");
 
 // 自動新增選單城市內容
 autoAddMenuCityContent(regCity);
 
 // 透過api獲取動物的資訊
-axios.post("http://localhost:8080/findByAnimalId",
-    {"animalId": filesPic}
-).then((res) => {
+axios.post("http://localhost:8080/findByAnimalId", {"animalId": filesPic}).then((res) => {
   const animal = {
     animalId: res.data.animal.animalId,
     animalName: res.data.animal.animalName,
@@ -29,7 +27,6 @@ axios.post("http://localhost:8080/findByAnimalId",
     regDate: res.data.animal.regDate,
     regCity: res.data.animal.regCity
   };
-  console.log(res.data.animal.species)
   setAnimalInfo(animal);
 }).catch((error) => console.log(error));
 
@@ -57,12 +54,12 @@ function setAnimalInfo(animal) {
 }
 
 // 放棄更新返回上一頁
-quit.addEventListener("click",()=>{
+quit.addEventListener("click", () => {
   window.history.go(-1);
 })
 
 // 更新功能
-update.addEventListener("click", () => {
+update.addEventListener("click", async () => {
       // 必須click之後querySelector
       const animalName = document.querySelector(".animalName");
       const sex = document.querySelector("input[name ='sex']:checked");
@@ -73,7 +70,7 @@ update.addEventListener("click", () => {
       const body = {
         animalList: [
           {
-            animalId: animal.animalId,
+            animalId: animalId.value,
             animalName: animalName.value,
             sex: +sex.value,
             species: +species.value,
@@ -83,24 +80,37 @@ update.addEventListener("click", () => {
           }
         ]
       };
-  fetch("http://localhost:8080/animalModify", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(body)
-  })
-      .then(response => response.json())
-      .then(data => {
-        alert(data.message);
+      fetch("http://localhost:8080/animalModify", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
       })
+          .then(response => response.json())
+          .then(data => {
+            alert(data.message);
+          })
+
+      // 將照片批次送出
+      // 必須這樣寫，才能確保前一個e呼叫完，再呼叫下一個e
+      for (const e of bodyFromOutside) {
+        try {
+          await axios.post("http://localhost:8080/upLordImg", e);
+          console.log("Image uploaded");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      location.reload()
     }
 )
 
 // 刪除功能
 deleteBtn.addEventListener("click", () => {
   const body = {
-    animalId: animal.animalId
+    animalId: animalId.value
   };
   fetch("http://localhost:8080/deleteById", {
     method: "POST",
@@ -113,6 +123,7 @@ deleteBtn.addEventListener("click", () => {
       .then(data => {
         alert(data.message);
       })
+  window.history.go(-1);
 })
 
 // 渲染照片功能
@@ -140,6 +151,51 @@ axios.post("http://localhost:8080/countImg", {
       modifyMinPic.insertBefore(firstPics[j], modifyMinPic.firstChild);
     }
   }
+
+  // 圖片輪播功能
+  // 綁定父層點擊事件，並向下冒泡
+  imgBlock.addEventListener('click', (e) => {
+
+    // 檢查點擊的元素是否是圖片元素
+    if (e.target.tagName === 'IMG') {
+      // 檢查點擊的圖片元素是否已經有 'firstPic' class
+      if (!e.target.parentNode.classList.contains('firstPic')) {
+        const firstPicElement = imgBlock.querySelector('.firstPic');
+
+        firstPicElement.classList.remove("firstPic");
+        firstPicElement.classList.add("otherPic");
+        modifyMinPic.appendChild(firstPicElement);
+
+        e.target.parentNode.classList.remove("otherPic");
+        e.target.parentNode.classList.add("firstPic");
+        imgBlock.insertBefore(e.target.parentNode, imgBlock.firstChild);
+
+      }
+    }
+  });
+
 }).catch((error) => {
   console.error(error);
 });
+
+// 上傳照片
+// 宣告外部參數，保存要上傳照片的body
+let bodyFromOutside = [];
+upload.addEventListener("change", async (e) => {
+  console.log(e.target.files[0]);
+  const img = e.target.files[0];
+  const reader = new FileReader();
+  // 非同步方法
+  reader.readAsDataURL(img)
+  // 讀完圖片後會執行的方法
+  reader.onload = function (e) {
+    // console.log(e.target.result);
+    const imgDataUrl = e.target.result;
+    const base64 = {
+      "imgBase64": imgDataUrl.split(",")[1],
+      "sort": "a",
+      "id": animalId.value
+    }
+    bodyFromOutside.push(base64);
+  }
+})
