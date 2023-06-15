@@ -1,10 +1,73 @@
 // SWAL介紹網址 https://pluscdev.com/tutorial-sweetalert2/
 
-const updateNametext = document.getElementById('product_update_name');
+let inputId = 0
+let productName = "";
+let category = "";
+let stock = 0;
+let price = 0;
+let quantity = 0;
+
+
+const productUpdateName = document.getElementById('product_update_name');
+const productUpdateCategory = document.getElementById('product_update_category');
+const productUpdateStock = document.getElementById('product_update_stock');
+const productUpdatePrice = document.getElementById('product_update_price')
+
+//查詢全部的數量
+// 查詢區
+const inputbtn = document.getElementById('input_product_btn');// 填入要查詢的產品ID
+inputbtn.addEventListener('click', function () {
+    inputId = document.getElementById('input_product_id').value; // 填入要查詢的產品ID
+
+    document.getElementById('notFound').style.display = "none";
+    document.getElementById('input_product_id').style.borderColor = "black"
+
+    fetch('http://localhost:8080/find_one', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(inputId)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            productName = data.product.productName;
+            category = data.product.category;
+            stock = data.product.stock;
+            price = data.product.price;
+
+            productUpdateName.innerText = productName;
+            productUpdateCategory.innerText = category;
+            productUpdateStock.innerText = stock;
+            productUpdatePrice.innerText = price;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            if (inputId > quantity) {
+                document.getElementById('input_product_id').style.borderColor = "red"
+                document.getElementById('notFound').style.display = "block";
+            }
+            if (isEmpty(inputId)) {
+                document.getElementById('input_product_id').style.borderColor = "red"
+                document.getElementById('notFound').style.display = "block";
+            }
+        });
+
+})
+
+
+
+//判斷輸入值為空
+function isEmpty(value) {
+    return (value === null || value === undefined || value.trim().length === 0);
+}
+
+// 修改區
 const showUpdateNameAlert = () => {
     Swal.fire({
         title: '修改名稱',
-        text: '原品名：',
+        text: `原名稱：${productName}`,
         input: 'text',
         showConfirmButton: true,
         showCancelButton: true,
@@ -13,48 +76,97 @@ const showUpdateNameAlert = () => {
         cancelButtonText: "取消"
 
     }).then((result) => {
-        console.log(result)
         if (result.isConfirmed) {
-            const inputtext = Swal.getInput()
-            updateNametext.innerText = inputtext.value;
+            const inputtext = Swal.getInput().value;
+            //判斷不得為空值
+            if (isEmpty(inputtext)) {
+                return;
+            }
+            // 存入資料庫
+            let body = {
+                product_id: inputId,
+                product_name: inputtext
+            }
+            fetch('http://localhost:8080/update_product_name', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                "body": JSON.stringify(body)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+            //更新畫面文字
+            productUpdateName.innerText = inputtext;
+
             Swal.fire({
                 icon: 'success',
-                title: '修改完成',
+                title: '完成!',
             })
         }
 
     })
 }
-const updateCategorytext = document.getElementById('product_update_category');
+
 const showUpdateCategoryAlert = () => {
     Swal.fire({
         title: '修改分類',
-        text: '原分類：',
+        text: `原分類：${category}`,
         input: 'text',
         showConfirmButton: true,
         showCancelButton: true,
         backdrop: true,
         confirmButtonText: "確認修改",
         cancelButtonText: "取消"
-
     }).then((result) => {
-        console.log(result)
         if (result.isConfirmed) {
-            const inputtext = Swal.getInput()
-            updateCategorytext.innerText = inputtext.value;
+            const inputtext = Swal.getInput().value;
+            //判斷不得為空值
+            if (isEmpty(inputtext)) {
+                return;
+            }
+            // 存入資料庫
+            let body = {
+                product_id: inputId,
+                category: inputtext
+            }
+            fetch('http://localhost:8080/update_product_category', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                "body": JSON.stringify(body)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+            //更新畫面文字
+            productUpdateCategory.innerText = inputtext;
+
             Swal.fire({
                 icon: 'success',
-                title: '修改完成',
+                title: '完成!',
             })
-        }
 
+        }
     })
 }
-const updateStocktext = document.getElementById('product_update_stock');
+
 const showUpdateStockAlert = () => {
     Swal.fire({
         title: '修改庫存',
-        text: '目前庫存：',
+        text: `原庫存：${stock}`,
         input: 'number',
         showConfirmButton: true,
         showCancelButton: true,
@@ -63,30 +175,48 @@ const showUpdateStockAlert = () => {
         cancelButtonText: "取消"
 
     }).then((result) => {
-        console.log(result)
         if (result.isConfirmed) {
-            const inputtext = Swal.getInput()
-            if (inputtext.value < 0 || inputtext.value === null) {
-                Swal.fire({
-                    icon: 'error',
-                    title: '不可為負數',
-                })
+            const inputtext = Swal.getInput().value;
+            //判斷不得為空值
+            if (isEmpty(inputtext) || inputtext < 0) {
                 return;
             }
-            updateStocktext.innerText = inputtext.value;
+            // 存入資料庫
+            let body = {
+                product_id: inputId,
+                stock: inputtext
+            }
+            fetch('http://localhost:8080/update_product_stock', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                "body": JSON.stringify(body)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+            //更新畫面文字
+            productUpdateStock.innerText = inputtext;
+
             Swal.fire({
                 icon: 'success',
-                title: '修改完成',
+                title: '完成!',
             })
         }
 
     })
 }
-const updatePricetext = document.getElementById('product_update_price');
+
 const showUpdatePriceAlert = () => {
     Swal.fire({
         title: '修改價格',
-        text: '現在價格：',
+        text: `原價格：${price}`,
         input: 'number',
         showConfirmButton: true,
         showCancelButton: true,
@@ -95,81 +225,40 @@ const showUpdatePriceAlert = () => {
         cancelButtonText: "取消"
 
     }).then((result) => {
-        console.log(result)
         if (result.isConfirmed) {
-            const inputtext = Swal.getInput()
-            if (inputtext.value <= 0 || inputtext.value === null) {
-                Swal.fire({
-                    icon: 'error',
-                    title: '不可為負數或0',
-                })
+            const inputtext = Swal.getInput().value;
+            //判斷不得為空值
+            if (isEmpty(inputtext) || inputtext <= 0) {
                 return;
             }
-            updatePricetext.innerText = inputtext.value;
+            // 存入資料庫
+            let body = {
+                product_id: inputId,
+                price: inputtext
+            }
+            fetch('http://localhost:8080/update_product_price', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                "body": JSON.stringify(body)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+            //更新畫面文字
+            productUpdatePrice.innerText = inputtext;
+
             Swal.fire({
                 icon: 'success',
-                title: '修改完成',
+                title: '完成!',
             })
         }
 
     })
 }
-
-
-// // 更新名稱
-// const productUpdateNameBtn = document.querySelector('#product_update_name_btn');
-// const productUpdateName = document.querySelector('#product_update_name');
-// function openModal() {
-//     // 創建modal元素
-//     const modal = document.createElement('div');
-//     modal.classList.add('modal-window');
-//     modal.innerHTML = `
-//         <div class="flex flex-col  items-center">
-//             <a href="#" title="Close" class="modal-close">
-//             <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i>
-//             關閉</a>
-//             <h1 class="text-2xl text-center">編輯品名</h1>
-//             <p>品名：<span>{舊品名}</span></p>
-//             <input type="text" placeholder="請輸入新品名" id="product_update_name_input" class="h-12 w-4/5">
-//             <button type="button" id="product_update_name_confirm">確定</button>
-//             <button type="button" id="product_update_clear_all">清除</button>
-//         </div>
-//     `;
-
-//     // 添加關閉按鈕的點擊事件
-//     modal.querySelector('.modal-close').addEventListener('click', function (event) {
-//         event.preventDefault();
-//         closeModal();
-//     });
-
-//     // 添加確定按鈕的點擊事件
-//     modal.querySelector('#product_update_name_confirm').addEventListener('click', function () {
-//         const productUpdateNameInput = document.querySelector('#product_update_name_input');
-//         const productUpdateName = document.querySelector('#product_update_name');
-//         productUpdateName.innerHTML = productUpdateNameInput.value;
-//         closeModal();
-//     });
-
-//     // 添加清除按鈕的點擊事件
-//     modal.querySelector('#product_update_clear_all').addEventListener('click', function () {
-//         var productUpdateNameInput = document.querySelector('#product_update_name_input');
-//         productUpdateNameInput.value = '';
-//     });
-
-//     // 將modal添加到頁面中
-//     document.body.appendChild(modal);
-// }
-
-// function closeModal() {
-//     // 刪除modal元素
-//     var modal = document.querySelector('.modal-window');
-//     if (modal) {
-//         modal.remove();
-//     }
-// }
-
-// // 為打開按鈕添加點擊事件
-// productUpdateNameBtn.addEventListener('click', function () {
-//     openModal();
-// });
-
