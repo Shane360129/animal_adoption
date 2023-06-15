@@ -4,7 +4,7 @@ const reviewMemberId = document.querySelector(".reviewMemberId");
 const reviewMemberBtn = document.querySelector(".reviewMemberBtn");
 
 
-const reject = document.querySelector(".reject");
+const reject = document.querySelector(".reject a");
 const reviewPass = document.querySelector(".reviewPass");
 
 const animalId = document.querySelector(".animalId");
@@ -71,8 +71,7 @@ reviewPass.addEventListener("click", () => {
     alert(res.data.message);
   }).catch((error) => console.log(error))
 })
-//  233e8d09-f2e3-45da-9834-4bddb5bbf2d4
-// 忍痛拒絕
-reject.addEventListener("click",()=>{
 
-})
+
+// 忍痛拒絕
+reject.href=`mailto:?subject=審查結果&body=經過考慮決定忍痛拒絕您認養申請`;
