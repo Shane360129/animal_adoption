@@ -980,7 +980,61 @@ hr.hrStyle {
   color: #f00;
   font-size: 0.5rem;
 }
-.member-body main .member-page .member-wrap form button {
+.member-body main .member-page .member-wrap form .input-block {
+  width: 60%;
+  margin: 10px auto;
+  text-align: center;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-pic {
+  display: flex;
+  padding-left: 10px;
+  margin: 10px 0;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-pic .verify-canva {
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-pic .verify-btn {
+  width: 50px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #665e54;
+  font-size: 0.6rem;
+  transition: 0.3s;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-pic .verify-btn:hover {
+  background-color: #777;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-pic .verify-btn:active {
+  scale: 0.95;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-input {
+  display: flex;
+  padding-left: 10px;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-input input {
+  width: 100px;
+  padding-left: 10px;
+  line-height: 2rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+  color: #665e54;
+  font-weight: 700;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-input input:focus {
+  outline: none;
+  border: 1px solid #ffa69e;
+}
+.member-body main .member-page .member-wrap form .input-block .verify-input p {
+  width: 80px;
+  padding: 10px 0;
+  font-size: 0.8rem;
+}
+.member-body main .member-page .member-wrap form .submit-btn {
   width: 150px;
   margin: 24px 164px 6px;
   border: none;
@@ -992,7 +1046,7 @@ hr.hrStyle {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1019607843);
   transition: 0.3s;
 }
-.member-body main .member-page .member-wrap form button:hover {
+.member-body main .member-page .member-wrap form .submit-btn:hover {
   background-color: #ffa69e;
   color: #665e54;
   box-shadow: 0px 15px 20px #f3c0bc;
@@ -1014,6 +1068,9 @@ hr.hrStyle {
 }
 .member-info-body aside .nav {
   padding: 15px 0;
+}
+.member-info-body aside .nav .member-info-item {
+  background-color: #ffe9e8;
 }
 .member-info-body aside .nav .nav-item {
   width: 48%;
@@ -1251,6 +1308,4 @@ footer .footerMapLi {
   scale: 1.2;
   transition: 0.5s;
   border-radius: 50px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
