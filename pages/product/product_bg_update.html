@@ -23,6 +23,9 @@
                         'pri-green': '#A9F0D1', //綠色
                         'pri-light': '#FFF7F8', //背景白粉
                         'pri-dark': '#8C5E58'//咖啡
+                    },
+                    width: {
+                        '90': '90%',
                     }
                 }
             }
@@ -31,9 +34,70 @@
 </head>
 
 <body>
-    <header class="h-32 mb-9">
-        <!-- 等統一格式 -->
-        header保留區
+    <header>
+        <div class="logo">
+            <a href="/index.html">
+                <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
+                    alt="LOGO">
+            </a>
+        </div>
+        <div class="title">
+            <ul class="drop_down_menu">
+                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
+                    <ul class="hideUl">
+                        <li><a href="#">動物認養</a>
+                        </li>
+                        <li><a href="#">最新消息</a>
+                        </li>
+                        <li><a href="#">線上商城</a>
+                        </li>
+                        <li><a href="#">教育課程</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
+                    <ul class="hideUl">
+                        <li><a href="#">園區資訊</a>
+                        </li>
+                        <li><a href="#">聯絡我們</a>
+                        </li>
+                        <li><a href="#">常見問答</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
+                    <ul class="hideUl">
+                        <li><a href="#">動物防疫</a>
+                        </li>
+                        <li><a href="#">拾獲救援</a>
+                        </li>
+                        <li><a href="#">登記絕育</a>
+                        </li>
+                        <li><a href="#">失蹤協尋</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
+                    <ul class="hideUl">
+                        <li><a href="#">貓咪</a>
+                        </li>
+                        <li><a href="#">狗狗</a>
+                        </li>
+                        <li><a href="#">全部</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="btn">
+                <a href="./pages/member/register.html">
+                    <button type="button">註冊</button>
+                </a>
+                <a href="./pages/member/login.html">
+                    <button type="button">登入</button>
+                </a>
+
+            </div>
+        </div>
     </header>
 
     <main class="product_bg_update_main flex">
@@ -59,33 +123,39 @@
         <div class="right-side w-4/5 pb-20 bg-white flex flex-col justify-center items-center">
             <h2 class="text-3xl mt-10">商品資料更新</h2>
 
-            <!-- 商品名稱 -->
-            <div class="product_bg_update_container mt-4 flex-wrap flex justify-center items-center">
-                <!-- SweetAlert2 彈跳視窗套件 -->
+            <!-- 輸入商品資料 -->
+            <div id="search_id_bar" class=" h-24 w-full flex justify-center items-center bg-pri-light rounded-lg m-5">
+                <span class="text-2xl ">請輸入商品編號：</span>
+                <input id="input_product_id" type="number" class="border-2 h-10 m-3">
+                <button id="input_product_btn" type="button"> 查詢 </button>
+            </div>
+            <p class="hidden text-5xl" id="notFound">查無資料</p>
+
+            <div class="product_bg_update_container mt-4">
+
+                <!-- 變更名稱 -->
                 <button onclick="showUpdateNameAlert()"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    class="bg-pri-light py-1 h-24 w-96 flex justify-between items-center mx-5 my-5">
                     <img class="w-20 pl-2"
                         src="https://3.bp.blogspot.com/-KqVSsXF1vFo/U9zpEUYEahI/AAAAAAAAkBY/00oPpgvnFlE/s1600/hiragana_01_a.png.png">
                     <div class=" px-5">
-                        <p class="text-xl">【商品名稱】</p>
-                        <p class="mt-2 text-xs text-clip">
-                            <span id="product_update_name">品名</span>
+                        <p class="text-xs">【商品名稱】</p>
+                        <p class="mt-2 text-xl text-clip">
+                            <span id="product_update_name">-</span>
                         </p>
                     </div>
                     <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
-                    <!-- 手刻彈跳視窗 -->
-                    <!-- <a href="#open-modal" class="product_update_name_mod"></a>-->
                 </button>
 
 
                 <!-- 變更分類 -->
                 <button onclick="showUpdateCategoryAlert()"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    class="bg-pri-light py-1 w-90 h-24 flex justify-between items-center mx-5 my-5">
                     <img class="w-20 pl-2"
                         src="https://4.bp.blogspot.com/-yn703BXL-3U/VuKMXoMqr0I/AAAAAAAA4zA/Qcz_Kz6o0nkp6t1JrsNkdQDFozoBWrSng/s400/computer_folder.pngg">
                     <div class=" px-5">
-                        <p class="text-xl">【分類】</p>
-                        <p class="mt-2 text-xs text-clip" id="product_update_category">分類, 分類, 分類, 分類
+                        <p class=" text-xs">【分類】</p>
+                        <p class="mt-2 text-xl text-clip" id="product_update_category">-
                         </p>
                     </div>
                     <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
@@ -93,22 +163,22 @@
 
                 <!-- 變更庫存 -->
                 <button onclick="showUpdateStockAlert()"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    class="bg-pri-light py-1 w-90 h-24 flex justify-between items-center mx-5 my-5">
                     <img class="w-20 pl-2"
                         src="https://1.bp.blogspot.com/--ol-eoqhFHg/Xhwqi1LSKwI/AAAAAAABXBE/KNxAF4TB3FoUUXA5aHbRrdAlB_W7CZDQACNcBGAsYHQ/s400/nimotsu_box_close_bad.png">
                     <div class=" px-5">
-                        <p class="text-xl">【庫存】</p>
-                        <p class="mt-2 text-xs" id="product_update_stock">13456231</p>
+                        <p class="text-xs">【庫存】</p>
+                        <p class="mt-2 text-xl" id="product_update_stock">-</p>
                     </div>
                     <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
                 </button>
                 <button onclick="showUpdatePriceAlert()"
-                    class="border-2 border-red-200 py-1 w-96 flex justify-between items-center mx-5 my-5">
+                    class="bg-pri-light py-1 w-90 h-24 flex justify-between items-center mx-5 my-5">
                     <img class=" w-20 pl-2"
                         src="https://1.bp.blogspot.com/-KtVIPGzqFaU/VbnRnEF5z7I/AAAAAAAAwNo/WXdX-AlKG8I/s400/mark_yen_okaikei.png">
                     <div class=" px-5">
-                        <p class="text-xl">【價格】</p>
-                        <p class="mt-2 text-xs" id="product_update_price">9999999</p>
+                        <p class="text-xs">【價格】</p>
+                        <p class="mt-2 text-xl" id="product_update_price">-</p>
                     </div>
                     <i class="fa-solid fa-pen-to-square fa-lg pr-5" style="color: #757575;"></i>
                 </button>
@@ -116,12 +186,62 @@
         </div>
     </main>
 
-    <footer class=" h-32 bg-pri-pink">
-        <!-- 等統一格式 -->
-        footer保留區
+
+    <footer class="frontFooter">
+        <div class="footerImg">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
+                        alt="LOGO">
+                </a>
+            </div>
+            <p class="footerCoverP">
+                2023 Made ◎ Zhen all rights reserved.
+            </p>
+            <div class="footerIcon">
+                <a href="https://www.facebook.com/isu.edu.tw?fref=ts">
+                    <i class="fa-brands fa-facebook fa-2xl" style="color: #8c5e58;"></i>
+                </a>
+                <a href="https://www.instagram.com/isupublic/?utm_medium=copy_link">
+                    <i class="fa-brands fa-instagram fa-2xl" style="color: #8c5e58;"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCJ7lbrEbG-SOp5a1jkbKYbg">
+                    <i class="fa-brands fa-youtube fa-2xl" style="color: #8c5e58;"></i>
+                </a>
+                <a href="https://twitter.com/?lang=zh-Hant">
+                    <i class="fa-brands fa-twitter fa-2xl" style="color: #8c5e58;"></i>
+                </a>
+                <a
+                    href="https://www.google.com.tw/maps/place/%E7%BE%A9%E5%AE%88%E5%A4%A7%E5%AD%B8/@22.7263706,120.4048897,17.44z/data=!4m6!3m5!1s0x346e111c3b372669:0x48b39f7fb236fcdc!8m2!3d22.7271472!4d120.4058239!16s%2Fm%2F03gx909?entry=ttu">
+                    <i class="fa-solid fa-location-dot fa-2xl" style="color: #8c5e58;"></i>
+                </a>
+
+            </div>
+
+        </div>
+        <div class="footerText">
+            <ul>
+                <li>地址：(84001)高雄市大樹區學城路一段1號</li>
+                <li>服務時間：星期一至星期五</li>
+                <li>上午8:00~12:00 下午13:30~17:30</li>
+                <li>建議瀏覽器：Edge、Firefox、Chrome</li>
+                <li>(螢幕設定最佳顯示效果為1920*1080)</li>
+            </ul>
+        </div>
+        <div class="footerMap">
+            <h3 class="footerMapText">網站導覽</h3>
+            <ul>
+                <li class="footerMapLi">捐款專線:</li>
+                <li class="footerMapLi">07-657-7711</li>
+            </ul>
+        </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script src="../../Js/product_bg_update.js"></script>
+    <script src="../../Js/views/header.js"></script>
 </body>
+<!-- 手刻彈跳視窗 -->
+<!-- <a href="#open-modal" class="product_update_name_mod"></a>-->
 
 </html>
