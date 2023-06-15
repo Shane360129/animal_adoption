@@ -18,27 +18,27 @@
 <body>
     <header>
         <div class="logo">
-            <a href="./index.html">
+            <a href="http://127.0.0.1:5500/index.html">
                 <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
                     alt="LOGO">
             </a>
         </div>
         <div class="title">
             <ul class="drop_down_menu">
-                <li class="hideLi"><a class="hideLi_a" href="./index.html">首頁</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物認養</a>
+                <li class="hideLi"><a class="hideLi_a" href="http://127.0.0.1:5500/index.html">首頁</a>
+                    <ul class="hideUl unMember">
+                        <li><a href="http://127.0.0.1:5500/pages/animal_allFiles.html">動物認養</a>
                         </li>
-                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx">最新消息</a>
+                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx" target="_blank">最新消息</a>
                         </li>
-                        <li><a href="./pages/product/product_index.html">線上商城</a>
+                        <li><a href="http://127.0.0.1:5500/pages/product/product_index.html">線上商城</a>
                         </li>
-                        <li><a href="#">教育課程</a>
+                        <li><a href="#Jump1">教育課程</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
-                    <ul class="hideUl">
+                    <ul class="hideUl unMember">
                         <li><a href="#">園區資訊</a>
                         </li>
                         <li><a href="#">聯絡我們</a>
@@ -47,8 +47,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="hideLi" id="service"><a class="hideLi_a" href="#">服務</a>
-                    <ul class="hideUl">
+                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
+                    <ul class="hideUl unMember">
                         <li><a href="#">動物防疫</a>
                         </li>
                         <li><a href="#">拾獲救援</a>
@@ -59,25 +59,24 @@
                         </li>
                     </ul>
                 </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
-                    <ul class="hideUl">
-                        <li><a href="#">貓咪</a>
+                <li class="hideLi"><a class="hideLi_a" href="http://127.0.0.1:5500/pages/animal_allFiles.html">動物</a>
+                    <ul class="hideUl memberIn" id="animalDrop">
+                        <li><a href="http://127.0.0.1:5500/pages/animal_adoptionReview.html">審查</a>
                         </li>
-                        <li><a href="#">狗狗</a>
+                        <li><a href="http://127.0.0.1:5500/pages/animal_add.html">增加</a>
                         </li>
-                        <li><a href="./pages/animal_allFiles.html">全部</a>
+                        <li><a href="http://127.0.0.1:5500/pages/animal_allFiles.html">全部</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             <div class="btn">
-                <a href="./pages/member/register.html">
+                <a href="http://127.0.0.1:5500/pages/member/register.html">
                     <button type="button">註冊</button>
                 </a>
-                <a href="./pages/member/login.html">
+                <a href="http://127.0.0.1:5500/pages/member/login.html">
                     <button type="button">登入</button>
                 </a>
-
             </div>
         </div>
     </header>
@@ -109,7 +108,8 @@
                             <i class="fa-solid fa-cart-shopping fa-beat-fade" style="color: #000000;"></i>
                         </h2>
                     </a>
-                    <a href="https://www.youtube.com/"><img src="./img/pruductWall_img/pruductWall_1.jpg" /></a>
+                    <a href="http://127.0.0.1:5500/pages/product/product_info_1.html"><img
+                            src="./img/pruductWall_img/pruductWall_1.jpg" /></a>
                 </div>
                 <div class="swiper-slide pruductSlide">
                     <a href="https://www.youtube.com/">
@@ -317,7 +317,7 @@
             <div class="infoImgBot3"></div>
         </div>
         <div class="teachInfoTextBot">
-            <h2 class="infoTextTitle">教育與關愛EDUCATION & LOVE</h2>
+            <h2 class="infoTextTitle"> <a name="Jump1" id="Jump1"></a>教育與關愛EDUCATION & LOVE</h2>
             <div class="infoTextOutside">
                 <ul class="infoTextUl">
                     <li class="infoTextHideLi active">高雄市壽山 動物保護教育園區
@@ -453,7 +453,7 @@
         </div>
     </footer>
 
-    <div class="homeBox">
+    <div class="homeBox  hide">
         <a href="#" class="homeBoxP">Top
         </a>
     </div>
@@ -463,7 +463,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script src="./Js/index.js"></script>
-  <script src="./Js/views/header.js"></script>
+    <script src="./Js/views/layout.js"></script>
+    <script src="./Js/views/header.js"></script>
 </body>
 
 </html>
