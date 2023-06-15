@@ -74,7 +74,6 @@ loginBtnDOM.addEventListener("click", () => {
                     // location.href="/";
                     window.history.go(-1);
                 })
-
                 // 暫存帳號資訊
                 sessionStorage.setItem("member_id", data.member.memberId);
                 sessionStorage.setItem("administrator", data.member.administrator);
