@@ -562,6 +562,10 @@ body.liked svg.like {
   box-shadow: 2px 2px 5px gray;
   background-color: #8C5E58;
 }
+.reviewBtn .reject a,
+.reviewBtn .reviewPass a {
+  color: white;
+}
 .reviewBtn .reject:hover,
 .reviewBtn .reviewPass:hover {
   background-color: gray;

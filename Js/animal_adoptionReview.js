@@ -71,3 +71,8 @@ reviewPass.addEventListener("click", () => {
     alert(res.data.message);
   }).catch((error) => console.log(error))
 })
+//  233e8d09-f2e3-45da-9834-4bddb5bbf2d4
+// 忍痛拒絕
+reject.addEventListener("click",()=>{
+
+})
