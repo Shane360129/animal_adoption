@@ -120,6 +120,30 @@ upload.addEventListener("change", (e) => {
       firstPics[i].classList.remove("firstPic");
       firstPics[i].classList.add("otherPic");
       modifyMinPic.insertBefore(firstPics[i], modifyMinPic.firstChild);
+
+      // 圖片輪播功能
+      // 綁定父層點擊事件，並向下冒泡
+      imgBlock.addEventListener('click', (e) => {
+
+        // 檢查點擊的元素是否是圖片元素
+        if (e.target.tagName === 'IMG') {
+          // 檢查點擊的圖片元素是否已經有 'firstPic' class
+          if (!e.target.parentNode.classList.contains('firstPic')) {
+            const firstPicElement = imgBlock.querySelector('.firstPic');
+
+            firstPicElement.classList.remove("firstPic");
+            firstPicElement.classList.add("otherPic");
+            modifyMinPic.appendChild(firstPicElement);
+
+            e.target.parentNode.classList.remove("otherPic");
+            e.target.parentNode.classList.add("firstPic");
+            imgBlock.insertBefore(e.target.parentNode, imgBlock.firstChild);
+
+          }
+        }
+      });
+
+
     }
   }
 })

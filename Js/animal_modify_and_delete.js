@@ -2,8 +2,8 @@ import {autoAddMenuCityContent} from "../Js/views/autoAddMenuCityContent.js"
 
 
 // 從sessionStorage獲取點擊的動物id
-const filesPic = +sessionStorage.getItem("filesPic");
-
+// const filesPic = +sessionStorage.getItem("filesPic");
+const filesPic = 1;
 const animalId = document.querySelector(".animalId");
 const animalName = document.querySelector(".animalName");
 const regCity = document.querySelector("#regCity")
@@ -140,6 +140,29 @@ axios.post("http://localhost:8080/countImg", {
       modifyMinPic.insertBefore(firstPics[j], modifyMinPic.firstChild);
     }
   }
+
+  // 圖片輪播功能
+  // 綁定父層點擊事件，並向下冒泡
+  imgBlock.addEventListener('click', (e) => {
+
+    // 檢查點擊的元素是否是圖片元素
+    if (e.target.tagName === 'IMG') {
+      // 檢查點擊的圖片元素是否已經有 'firstPic' class
+      if (!e.target.parentNode.classList.contains('firstPic')) {
+        const firstPicElement = imgBlock.querySelector('.firstPic');
+
+        firstPicElement.classList.remove("firstPic");
+        firstPicElement.classList.add("otherPic");
+        modifyMinPic.appendChild(firstPicElement);
+
+        e.target.parentNode.classList.remove("otherPic");
+        e.target.parentNode.classList.add("firstPic");
+        imgBlock.insertBefore(e.target.parentNode, imgBlock.firstChild);
+
+      }
+    }
+  });
+
 }).catch((error) => {
   console.error(error);
 });
