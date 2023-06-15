@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 線上商城 - Vet X</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../../main.css">
+
+    <!-- SweetAlert2 彈跳視窗 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- flickity引入 -->
     <script>
         // 自定義tailwindcss
         tailwind.config = {
@@ -31,69 +35,7 @@
 
 <body>
     <header>
-        <div class="logo">
-            <a href="/index.html">
-                <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
-                    alt="LOGO">
-            </a>
-        </div>
-        <div class="title">
-            <ul class="drop_down_menu">
-                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物認養</a>
-                        </li>
-                        <li><a href="#">最新消息</a>
-                        </li>
-                        <li><a href="#">線上商城</a>
-                        </li>
-                        <li><a href="#">教育課程</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
-                    <ul class="hideUl">
-                        <li><a href="#">園區資訊</a>
-                        </li>
-                        <li><a href="#">聯絡我們</a>
-                        </li>
-                        <li><a href="#">常見問答</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物防疫</a>
-                        </li>
-                        <li><a href="#">拾獲救援</a>
-                        </li>
-                        <li><a href="#">登記絕育</a>
-                        </li>
-                        <li><a href="#">失蹤協尋</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
-                    <ul class="hideUl">
-                        <li><a href="#">貓咪</a>
-                        </li>
-                        <li><a href="#">狗狗</a>
-                        </li>
-                        <li><a href="#">全部</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="btn">
-                <a href="./pages/member/register.html">
-                    <button type="button">註冊</button>
-                </a>
-                <a href="./pages/member/login.html">
-                    <button type="button">登入</button>
-                </a>
 
-            </div>
-        </div>
     </header>
 
 
@@ -120,13 +62,17 @@
                 </a>
             </ul>
         </div>
+
+
         <!-- 右邊顯示區 -->
         <div class="right-side w-4/5 bg-white">
-            <div class="flex justify-center items-center">
-                <input id="serch_keyword" class="h-12 w-1/2 border-4 p-2 m-5" type="text" placeholder="請輸入關鍵字">
+            <!-- 搜尋欄 -->
+            <!-- <div class="flex justify-center items-center">
+                <input id="search_keyword" class="h-12 w-1/2 border-4 p-2 m-5" type="text" placeholder="請輸入關鍵字，可用空格區分">
                 <button id="search_btn" class="h-12 w-24 bg-pri-green" type="button">搜尋!</button>
-            </div>
+            </div> -->
 
+            <!-- 卡片欄 -->
             <div id="show_product_area" class=" flex justify-evenly items-evenly flex-wrap">
                 <!-- <div id="product_card" class="bg-pri-pink p-8 rounded-2xl m-5 relative">
                     <img id="product_img" class=" h-48" src="../../img/pruductWall_img/pruductWall_1.jpg" alt="">
@@ -186,6 +132,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <script src="../../Js/views/header.js"></script>
     <script src="../../Js/product_front_all.js"></script>
 </body>

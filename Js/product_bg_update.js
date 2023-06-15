@@ -7,15 +7,59 @@ let stock = 0;
 let price = 0;
 let quantity = 0;
 
-
 const productUpdateName = document.getElementById('product_update_name');
 const productUpdateCategory = document.getElementById('product_update_category');
 const productUpdateStock = document.getElementById('product_update_stock');
 const productUpdatePrice = document.getElementById('product_update_price')
 
-//查詢全部的數量
+
+// 獲取網址中的查詢參數
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+// 使用 get() 方法獲取指定的查詢參數值
+const productId = urlParams.get('productId');
+// console.log("productId：" + productId);
+
+//轉跳頁面直接顯示
+fetch('http://localhost:8080/find_one', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: productId
+})
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        productName = data.product.productName;
+        category = data.product.category;
+        stock = data.product.stock;
+        price = data.product.price;
+
+        productUpdateName.innerText = productName;
+        productUpdateCategory.innerText = category;
+        productUpdateStock.innerText = stock;
+        productUpdatePrice.innerText = price;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        if (inputId > quantity) {
+            document.getElementById('input_product_id').style.borderColor = "red"
+            document.getElementById('notFound').style.display = "block";
+        }
+        if (isEmpty(inputId)) {
+            document.getElementById('input_product_id').style.borderColor = "red"
+            document.getElementById('notFound').style.display = "block";
+        }
+    });
+
+
+
+
+
 // 查詢區
-const inputbtn = document.getElementById('input_product_btn');// 填入要查詢的產品ID
+const inputbtn = document.getElementById('input_product_btn');
 inputbtn.addEventListener('click', function () {
     inputId = document.getElementById('input_product_id').value; // 填入要查詢的產品ID
 
@@ -27,7 +71,7 @@ inputbtn.addEventListener('click', function () {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(inputId)
+        body: inputId
     })
         .then(response => response.json())
         .then(data => {

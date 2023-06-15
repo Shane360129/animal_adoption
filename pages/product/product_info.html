@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全部商品 - Vet X</title>
+    <title>商品詳細資訊 - Vet X</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../../main.css">
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
@@ -31,73 +31,46 @@
 </head>
 
 <body>
+    <header class="">
 
-    <header class="h-32 mb-9">
-        <div class="logo">
-            <a href="/index.html">
-                <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
-                    alt="LOGO">
-            </a>
-        </div>
-        <div class="title">
-            <ul class="drop_down_menu">
-                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物認養</a>
-                        </li>
-                        <li><a href="#">最新消息</a>
-                        </li>
-                        <li><a href="#">線上商城</a>
-                        </li>
-                        <li><a href="#">教育課程</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
-                    <ul class="hideUl">
-                        <li><a href="#">園區資訊</a>
-                        </li>
-                        <li><a href="#">聯絡我們</a>
-                        </li>
-                        <li><a href="#">常見問答</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
-                    <ul class="hideUl">
-                        <li><a href="#">動物防疫</a>
-                        </li>
-                        <li><a href="#">拾獲救援</a>
-                        </li>
-                        <li><a href="#">登記絕育</a>
-                        </li>
-                        <li><a href="#">失蹤協尋</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
-                    <ul class="hideUl">
-                        <li><a href="#">貓咪</a>
-                        </li>
-                        <li><a href="#">狗狗</a>
-                        </li>
-                        <li><a href="#">全部</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="btn">
-                <a href="./pages/member/register.html">
-                    <button type="button">註冊</button>
-                </a>
-                <a href="./pages/member/login.html">
-                    <button type="button">登入</button>
-                </a>
-
-            </div>
-        </div>
     </header>
-    <main class="product-info-main">
+
+    <main class="product_front_all_main flex">
+        <!-- 左邊顯示區 -->
+        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pri-pink ">
+            <!-- 超連結列表 -->
+            <ul>
+                <a href="./product_front_all.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        全部商品
+                    </li>
+                </a>
+                <a href="../cart/cart.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        購物車
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        <!-- 超連結待更新 -->
+                        歷史訂單
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <!-- 右邊顯示區 -->
+        <div class="right-side w-4/5 bg-white flex justify-center items-center">
+            <div id="show_detail_area" class="h-5/6 w-5/6 m-5 bg-pri-green flex">
+                <img id="product_img" class="w-1/2 m-5" src="" alt="">
+                <div class="m-5 w-1/2 bg-pri-light p-3 relative">
+                    <h1 id="product_name" class="text-5xl m-5">品名</h1>
+                    <h3 id="product_category" class="text-2xl m-5">分類</h3>
+                    <p id="product_price" class="text-xl m-5">價格</p>
+                    <p id="product_stock" class="text-lg m-5">庫存</p>
+                    <button id="add_cart" class="bg-pri-green w-48 absolute bottom-5 right-5" type="button">加入購物車
+                        🛒</button>
+                </div>
+            </div>
 
     </main>
 
@@ -154,7 +127,7 @@
     </footer>
 
 
-    <script src="../../Js/product_index.js"></script>
+    <script src="../../Js/product_info.js"></script>
     <script src="../../Js/views/header.js"></script>
 </body>
 

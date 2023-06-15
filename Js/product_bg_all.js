@@ -39,8 +39,7 @@ fetch("http://localhost:8080/find_all")
                                 </p>
                             </div>
                         </div>
-                        
-                        <a href="./product_bg_update.html">
+                        <a href="./product_bg_update.html?productId=${encodeURIComponent(item.productId)}">
                             <button type="button" class=" m-5 bg-pri-pink">
                             修改資訊
                             </button>
@@ -51,4 +50,15 @@ fetch("http://localhost:8080/find_all")
         console.dir(productIdArr);
         //展示清單在頁面上
         showProduct.innerHTML = productCard;
+
+
+        //把ID傳給update頁面!!!
+        showProduct.addEventListener('click', function (event) {
+            if (event.target.tagName === 'BUTTON') {
+                const productCard = event.target.closest('.product_bg');
+                const productId = productCard.querySelector('p[id^="product_show_name"]').id.replace('product_show_name', '');
+                window.location.href = `../product_bg_update.html?productId=${encodeURIComponent(productId)}`;
+            }
+        });
     })
+
