@@ -19,7 +19,7 @@ if (sessionStorage.getItem("administrator") === "true") {
   animalDOM.classList.add('unMember')
   btn.innerHTML = ` <a href="#">
                     <button type="button" class="signOut">登出</button></a>
-                    <a href="/pages/product/product_bg_all.html">
+                    <a href="http://localhost:63343/animal_adoption/pages/product/product_bg_all.html">
                     <button type="button" class="addAnimal">商品總覽</button></a>
                   `;
   signout();
@@ -29,16 +29,16 @@ else if (sessionStorage.getItem("member_id")
   && sessionStorage.getItem("administrator") === "false") {
   btn.innerHTML = ` <a href="#">
                     <button type="button" class="signOut">登出</button>
-                </a><a href="/pages/member_info.html">
+                </a><a href="http://localhost:63343/animal_adoption/pages/member_info.html">
                     <button type="button" class="">會員中心</button>
                 </a>`;
   signout();
 }
 else {
-  btn.innerHTML = ` <a href="http://127.0.0.1:5500/pages/member/register.html">
+  btn.innerHTML = ` <a href="http://localhost:63343/animal_adoption/pages/member/register.html">
                     <button type="button">註冊</button>
                 </a>
-                <a href="http://127.0.0.1:5500/pages/member/login.html">
+                <a href="http://localhost:63343/animal_adoption/pages/member/login.html">
                     <button type="button">登入</button>
                 </a>`;
 }

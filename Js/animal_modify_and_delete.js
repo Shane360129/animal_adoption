@@ -21,7 +21,7 @@ axios.post("http://localhost:8080/findByAnimalId", {"animalId": filesPic}).then(
   const animal = {
     animalId: res.data.animal.animalId,
     animalName: res.data.animal.animalName,
-    sex: res.data.animal.sex,
+    sex: +res.data.animal.sex,
     species: +res.data.animal.species,
     type: res.data.animal.type,
     regDate: res.data.animal.regDate,
@@ -88,22 +88,23 @@ update.addEventListener("click", async () => {
         body: JSON.stringify(body)
       })
           .then(response => response.json())
-          .then(data => {
+          .then(async data => {// 將照片批次送出
+            // 必須這樣寫，才能確保前一個e呼叫完，再呼叫下一個e
+            for (const e of bodyFromOutside) {
+              try {
+                await axios.post("http://localhost:8080/upLordImg", e);
+                console.log("Image uploaded");
+              } catch (error) {
+                console.error(error);
+              }
+            }
             alert(data.message);
+            location.reload()
           })
 
-      // 將照片批次送出
-      // 必須這樣寫，才能確保前一個e呼叫完，再呼叫下一個e
-      for (const e of bodyFromOutside) {
-        try {
-          await axios.post("http://localhost:8080/upLordImg", e);
-          console.log("Image uploaded");
-        } catch (error) {
-          console.error(error);
-        }
-      }
 
-      location.reload()
+
+
     }
 )
 
