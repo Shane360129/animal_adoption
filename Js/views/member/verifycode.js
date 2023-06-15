@@ -1,4 +1,4 @@
-// 參考來源: 
+// 參考來源: https://codepen.io/ayugioh2003/pen/VwKozNo?editors=1011
 // --- 數字圖形驗證 ---
 // https://www.facebook.com/x43x61x69/posts/2179043332232529 Code Review
 // https://mycode.gov.taipei/mycode 原站
