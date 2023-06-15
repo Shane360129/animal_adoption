@@ -49,14 +49,16 @@ loginBtnDOM.addEventListener("click", () => {
     if (memberIdDOM.value.trim() === "" 
         || pwdDOM.value.trim() === ""
         || validTextDOM.value.trim() === "") {
-        return swal("注意!", "有欄位未填寫", "error");
+        return Swal.fire("注意!", "有欄位未填寫", "error");
     }
 
     // 驗證碼錯誤
     const verifyAlertDOM = document.querySelector("#verifyAlert");
     if (verifyAlertDOM.innerText === "驗證碼錯誤") {
-        return swal("驗證碼錯誤", "請重新輸入", "error");
-        location.href="/pages/member/login.html";
+        return Swal.fire("驗證碼錯誤", "請重新輸入", "error")
+        .then(() => {
+            location.href = "/pages/member/login.html";
+        }) 
     }
 
     // location.href="/";
@@ -79,23 +81,22 @@ loginBtnDOM.addEventListener("click", () => {
 
             // 跳出提醒視窗
             if (data.message === "登入成功") {
-                swal(data.message, "登入成功", "success");
-
-                const swalBtnDOM = document.querySelector(".swal-button");
-                swalBtnDOM.addEventListener("click", () => {
-                    // location.href="/";
-                    window.history.go(-1);
-                })
                 // 暫存帳號資訊
                 sessionStorage.setItem("member_id", data.member.memberId);
                 sessionStorage.setItem("administrator", data.member.administrator);
-
+                
+                Swal.fire(data.message, "登入成功", "success")
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        window.history.go(-1);
+                    }
+                });
             }
             if (data.message === "資料不正確") {
-                swal(data.message, "輸入錯誤", "error");
+                Swal.fire(data.message, "輸入錯誤", "error");
             }
             if (data.message === "尚未註冊會員或資料錯誤或尚未生效會員") {
-                swal(data.message, "資訊錯誤", "error");
+                Swal.fire(data.message, "資訊錯誤", "error");
             }
         })
 })
