@@ -1,4 +1,8 @@
 //共用樣式
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #fff2ce;
     max-width: 1920px;
@@ -25,35 +29,37 @@ header {
         align-items: center;
 
 
-        .drop_down_menu{
+        .drop_down_menu {
             display: flex;
             justify-content: center;
         }
 
-        .hideLi{
+        .hideLi {
             margin: 50px;
             position: relative;
-            &:hover .hideUl{
+
+            &:hover .unMember {
                 display: block;
                 z-index: 1;
             }
-            &:hover .hideLi_a{
+
+            &:hover .hideLi_a {
                 color: #A9F0D1;
                 text-shadow: 2px 2px 2px white;
             }
 
-            a{
-            text-decoration: none;
-            font-size: 36px;
-            font-weight: bold;
-            color: black;
+            a {
+                text-decoration: none;
+                font-size: 36px;
+                font-weight: bold;
+                color: black;
             }
         }
 
-        .hideUl{
+        .hideUl {
             padding: 0 20px;
             width: 150px;
-            text-align:center;
+            text-align: center;
             border-radius: 1rem;
             line-height: 1.5;
             position: absolute;
@@ -61,12 +67,17 @@ header {
             display: none;
             transition: all 0.2s ease-out;
 
-            li{
+            li {
                 margin: 10px 0;
-                a{
-                color: white;
+
+                a {
+                    color: white;
                 }
             }
+        }
+
+        .memberIn{
+            display: none;
         }
     }
 
@@ -90,8 +101,8 @@ header {
         margin: 0 5px;
         background-color: #FF7E6B;
         color: white;
-            
-        &:hover{
+
+        &:hover {
             background-color: #FFA69E;
         }
     }
@@ -163,12 +174,15 @@ header {
     .homeBoxP {
         font-size: 36px;
         color: #ffffff;
-    }
 
+    }
     &:hover {
         opacity: 1;
         font-weight: bold;
         border-radius: 50%;
 
     }
+}
+.hide{
+    display: none;
 }

@@ -33,27 +33,27 @@
 <body class="">
     <header>
         <div class="logo">
-            <a href="/index.html">
+            <a href="http://127.0.0.1:5500/index.html">
                 <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
                     alt="LOGO">
             </a>
         </div>
         <div class="title">
             <ul class="drop_down_menu">
-                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
-                    <ul class="hideUl">
-                        <li><a href="../animal_adoption.html">動物認養</a>
+                <li class="hideLi"><a class="hideLi_a" href="http://127.0.0.1:5500/index.html">首頁</a>
+                    <ul class="hideUl unMember">
+                        <li><a href="http://127.0.0.1:5500/pages/animal_allFiles.html">動物認養</a>
                         </li>
-                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx">最新消息</a>
+                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx" target="_blank">最新消息</a>
                         </li>
-                        <li><a href="./product_index.html">線上商城</a>
+                        <li><a href="http://127.0.0.1:5500/pages/product/product_index.html">線上商城</a>
                         </li>
-                        <li><a href="#">教育課程</a>
+                        <li><a href="#Jump1">教育課程</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
-                    <ul class="hideUl">
+                    <ul class="hideUl unMember">
                         <li><a href="#">園區資訊</a>
                         </li>
                         <li><a href="#">聯絡我們</a>
@@ -63,7 +63,7 @@
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
-                    <ul class="hideUl">
+                    <ul class="hideUl unMember">
                         <li><a href="#">動物防疫</a>
                         </li>
                         <li><a href="#">拾獲救援</a>
@@ -74,13 +74,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
-                    <ul class="hideUl">
-                        <li><a href="#">貓咪</a>
+                <li class="hideLi"><a class="hideLi_a" href="http://127.0.0.1:5500/pages/animal_allFiles.html">動物</a>
+                    <ul class="hideUl memberIn" id="animalDrop">
+                        <li><a href="http://127.0.0.1:5500/pages/animal_adoptionReview.html">審查</a>
                         </li>
-                        <li><a href="#">狗狗</a>
+                        <li><a href="http://127.0.0.1:5500/pages/animal_add.html">增加</a>
                         </li>
-                        <li><a href="../animal_allFiles.html">全部</a>
+                        <li><a href="http://127.0.0.1:5500/pages/animal_allFiles.html">全部</a>
                         </li>
                     </ul>
                 </li>
@@ -197,7 +197,7 @@
     <footer class="frontFooter">
         <div class="footerImg">
             <div class="logo">
-                <a href="../../index.html">
+                <a href="./index.html">
                     <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
                         alt="LOGO">
                 </a>
@@ -244,11 +244,17 @@
         </div>
     </footer>
 
+    <div class="homeBox  hide">
+        <a href="#" class="homeBoxP">Top
+        </a>
+    </div>
+
 
     <!-- Flickity輪播功能 -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="../../Js/product_index.js"></script>
     <script src="../../Js/views/header.js"></script>
+    <script src="../../Js/views/layout.js"></script>
 </body>
 
 </html>
