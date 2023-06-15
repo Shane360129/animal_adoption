@@ -74,8 +74,71 @@
                             font-size: .5rem;
                         }
                     }
+
+                    .input-block {
+                        width: 60%;
+                        margin: 10px auto;
+                        text-align: center;
+
+                        .verify-pic {
+                            display: flex;
+                            padding-left: 10px;
+                            margin: 10px 0;
+
+                            .verify-canva {
+                                width: 200px;
+                                height: 50px;
+                                border-radius: 4px;
+                            }
     
-                    button {
+                            .verify-btn {
+                                width: 50px;
+                                height: fit-content;
+                                margin: 10px;
+                                padding: 5px;
+                                border-radius: 5px;
+                                background-color: #665e54;
+                                font-size: .6rem;
+                                transition: .3s;
+
+                                &:hover {
+                                    background-color: #777;
+                                }
+
+                                &:active {
+                                    scale: .95;
+                                }
+                            }
+                        }
+
+                        .verify-input {
+                            display: flex;
+                            padding-left: 10px;
+
+                            input {
+                                width: 100px;
+                                padding-left: 10px;
+                                line-height: 2rem;
+                                border: 1px solid #777;
+                                border-radius: 4px;
+                                color: #665e54;
+                                font-weight: 700;
+
+                                &:focus {
+                                    outline: none;
+                                    border: 1px solid #ffa69e;
+                                }
+                            }
+                            p {
+                                width: 80px;
+                                padding: 10px 0;
+                                font-size: .8rem;
+                            }
+                        }
+
+                    }
+    
+                    .submit-btn {
                         width: 150px;
                         margin: 24px 164px 6px;
                         border: none;

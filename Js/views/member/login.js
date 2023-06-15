@@ -41,10 +41,15 @@ pwdDOM.addEventListener("blur", () => {
     }
 })
 
+// 驗證碼欄位
+const validTextDOM = document.querySelector("#validText");
+
 loginBtnDOM.addEventListener("click", () => {
     // 若有欄位是空
-    if (memberIdDOM.value.trim() === "" || pwdDOM.value.trim() === "") {
-        return swal("注意!", "輸入資料錯誤", "error");
+    if (memberIdDOM.value.trim() === "" 
+        || pwdDOM.value.trim() === ""
+        || validTextDOM.value.trim() === "") {
+        return swal("注意!", "有欄位未填寫", "error");
     }
 
     // location.href="/";

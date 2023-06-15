@@ -36,7 +36,20 @@
                             </div>
                             <p class="alert-text" id="pwdAlertText"></p>
                         </div>
-                        <button type="button" id="loginBtn">登入</button>              
+
+                        <div class="input-block">
+                            <div class="verify-pic">
+                                <canvas class="verify-canva" id="authCode"></canvas>
+                                <button type="button" class="verify-btn" id="reBtn">換圖</button>
+                            </div>
+                            <div class="verify-input">
+                                <input id="validText" type="text" placeholder="請輸入驗證碼" />
+                                <p id="verifyAlert"></p>
+                            </div>
+                            <!-- <span id=result style="color:red">結果</span> -->
+                        </div>
+
+                        <button class="submit-btn" type="button" id="loginBtn">登入</button>              
                     </form>           
                 </div>
             </div>
@@ -45,6 +58,7 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../../Js/views/member/login.js"></script>
+    <script src="../../Js/views/member/verifycode.js"></script>
 </body>
 </html>
 
