@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新增商品 - Vet X</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../main.css">
     <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- flickity引入 -->
@@ -16,35 +14,98 @@
             theme: {
                 extend: {
                     backgroundColor: {
-                        'pri-pink': '#FFA69E', //淺粉
-                        'pri-darkpink': '#FF7E6B', //深粉
-                        'pri-green': '#A9F0D1', //綠色
-                        'pri-light': '#FFF7F8', //背景白粉
-                        'pri-dark': '#8C5E58'//咖啡
+                        pink: '#FFA69E', //淺粉
+                        darkpink: '#FF7E6B', //深粉
+                        green: '#A9F0D1', //綠色
+                        light: '#FFF7F8', //背景白粉
+                        dark: '#8C5E58'//咖啡
                     }
                 }
             }
         }
     </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../main.css">
 </head>
 
 <body>
     <header>
-
+        <div class="logo">
+            <a href="/index.html">
+                <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
+                    alt="LOGO">
+            </a>
+        </div>
+        <div class="title">
+            <ul class="drop_down_menu">
+                <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
+                    <ul class="hideUl">
+                        <li><a href="../animal_adoption.html">動物認養</a>
+                        </li>
+                        <li><a href="https://livestock.kcg.gov.tw/ActivitiesListC003200.aspx">最新消息</a>
+                        </li>
+                        <li><a href="./product_index.html">線上商城</a>
+                        </li>
+                        <li><a href="#">教育課程</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
+                    <ul class="hideUl">
+                        <li><a href="#">園區資訊</a>
+                        </li>
+                        <li><a href="#">聯絡我們</a>
+                        </li>
+                        <li><a href="#">常見問答</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
+                    <ul class="hideUl">
+                        <li><a href="#">動物防疫</a>
+                        </li>
+                        <li><a href="#">拾獲救援</a>
+                        </li>
+                        <li><a href="#">登記絕育</a>
+                        </li>
+                        <li><a href="#">失蹤協尋</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hideLi"><a class="hideLi_a" href="#">動物</a>
+                    <ul class="hideUl">
+                        <li><a href="#">貓咪</a>
+                        </li>
+                        <li><a href="#">狗狗</a>
+                        </li>
+                        <li><a href="../animal_allFiles.html">全部</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="btn" id="btn">
+                <a href="./product_front_all.html">
+                    <button type="button" class="signOut strongcolor">商品前台</button>
+                </a>
+                <a href="./product_bg_all.html">
+                    <button type="button" class="strongcolor">商品管理</button>
+                </a>`
+            </div>
+        </div>
     </header>
 
 
 
     <main class="product_add_main flex">
-        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pri-pink ">
+        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pink ">
             <ul>
                 <a href="./product_bg_all.html">
-                    <li class="bg-white bg-pri-dark px-8 py-2 my-4 rounded-full">
+                    <li class="bg-white bg-dark px-8 py-2 my-4 rounded-full">
                         商品總覽
                     </li>
                 </a>
                 <a href="./product_bg_add.html">
-                    <li class="bg-pri-dark text-white px-8 py-2 my-4 rounded-full">
+                    <li class="bg-dark text-white px-8 py-2 my-4 rounded-full">
                         新增商品
                     </li>
                 </a>
@@ -78,10 +139,10 @@
                 </div>
             </div>
             <div class="product_add_btn_area flex justify-center items-center">
-                <button type="button" id="product_add_cencel_btn" class="bg-pri-darkpink w-48 py-1 m-5 rounded-full">
+                <button type="button" id="product_add_cencel_btn" class="bg-darkpink w-48 py-1 m-5 rounded-full">
                     取消回列表</button>
                 <button type="button" id="product_add_save_btn"
-                    class="bg-pri-green px-4 w-48 m-5 rounded-full">完成並送出</button>
+                    class="bg-green px-4 w-48 m-5 rounded-full">完成並送出</button>
             </div>
         </div>
     </main>
@@ -136,8 +197,8 @@
         </div>
     </footer>
 
-    <script src="../../Js/views/header.js"></script>
     <script src="../../Js/product_bg_add.js"></script>
+    <script src="../../Js/views/header.js"></script>
 </body>
 
 </html>
