@@ -1,7 +1,7 @@
 const filesBanner = document.querySelector(".filesBanner");
 
-// 獲得資料所有動物資料
-// 自動渲染資料中有的動物資訊
+
+// 獲得資料庫所有動物資料，並渲染頁面
 function getAllAnimal() {
   return new Promise((resolve, reject) => {
     axios.get("http://localhost:8080/findAll").then((res) => {
@@ -27,8 +27,7 @@ function getAllAnimal() {
 
 
 getAllAnimal().then(() => {
-
-  // 畫面載入時渲染已收藏的動物
+  // 畫面載入時，渲染已收藏動物
   axios.post("http://localhost:8080/findByMemberId", {"member_id": sessionStorage.getItem("member_id")}).then(res => {
     const fav = res.data.member.fav.split(",");
     // 根據收藏狀態點亮已收藏的動物 ♥
@@ -44,11 +43,11 @@ getAllAnimal().then(() => {
     console.error(error);
   });
 
-
+  // 父層filesBanner綁定點擊事件，並向下冒泡
   const filesBanner = document.querySelector(".filesBanner")
   filesBanner.addEventListener("click", function (e) {
 
-    // 儲存點擊的寵物ID，供animal_adoption.js使用
+    // 儲存點擊的寵物ID，供animal_adoption.js、animal_modify_and_delete.js使用
     let filesPic = e.target.getAttribute("data-filesPic");
     sessionStorage.setItem("filesPic", filesPic);
     // 判斷點擊的元素是否是<div class="filesPic">
@@ -67,7 +66,7 @@ getAllAnimal().then(() => {
     }
 
 
-    // 判斷收藏或解除收藏
+    // 判斷，收藏或解除收藏
     console.log(e.target.getAttribute("data-item"))
     if (e.target.classList.contains("like")) {
       const clicks = parseInt(e.target.getAttribute("data-clicks"));
