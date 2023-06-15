@@ -1,7 +1,18 @@
 const btn = document.querySelector(".btn");
+<<<<<<< HEAD
 console.log(sessionStorage.getItem("member_id"))
 
 function signout() {
+=======
+if(sessionStorage.getItem("member_id")){
+
+  if (sessionStorage.getItem("administrator")){
+
+  }
+  btn.innerHTML = ` <a href="#">
+                    <button type="button" class="signOut">登出</button>
+                </a>`;
+>>>>>>> animal_adoptionReview_render
   const signOut = document.querySelector(".signOut")
   signOut.addEventListener("click",function (){
     sessionStorage.removeItem("member_id");

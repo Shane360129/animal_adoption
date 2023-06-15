@@ -14,7 +14,7 @@ function getAllAnimalData() {
           toggleFavoriteStatus(e);
         });
         bindClickEvent();
-      });
+      }).catch((error) => console.log(error));
 }
 
 
