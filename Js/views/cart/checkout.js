@@ -22,10 +22,11 @@ fetch("http://localhost:8080/findMemberCart", {
     .then(data => {
         let shoppingCartMap = JSON.parse(data.message);
         console.log(shoppingCartMap)
-        selectedProducts = data.cartList
+        const selectedProducts = data.cartList
         data.cartList.forEach(item => {
             console.dir(item);
             const key = item.productId;
+            console.log(key);
             const value = shoppingCartMap[key];
             productCard +=
                 `
@@ -51,46 +52,43 @@ fetch("http://localhost:8080/findMemberCart", {
                     </div>
                     `;
         });
+
         resultContainer.innerHTML = productCard;
+        resultContainer.addEventListener("click", function (e) {
+            let item = e.target.getAttribute("data-check")  
+            const productShowQuantity = document.querySelector("#sale" + item);
+            if (e.target.checked == true) {
+                selectedProducts2.push(productShowQuantity.textContent);
+                products.push(item)
+            } else {
+                const index = selectedProducts2.findIndex(val => val === productShowQuantity.textContent); 
+                if (index !== -1) {
+                    selectedProducts2.splice(index, 1);
+                    products.splice(index, 1);
+                }
+            }
+            console.log(products)
+            console.log(selectedProducts2)
+        })
     })
     .catch(function (error) {
         console.log("An error occurred:", error);
     });
 
 
-
-let selectedProducts = [];
+let products = [];
 let selectedProducts2 = [];
-resultContainer.addEventListener("click", function (e) {
-    for (let i = 0; i < selectedProducts.length; i++) {
-        const resultContainer = document.getElementById("father" + selectedProducts[i].productId).children[0];
-        const productShowQuantity = document.querySelector("#sale" + selectedProducts[i].productId);
-        if (resultContainer.checked) {
-            console.log(productShowQuantity.textContent)
-            const i = resultContainer.firstChild
-            // const item = { productId: selectedProducts[i].productId, sales: productShowQuantity.textContent }
-            selectedProducts2.push(item);
-        }
-    }
-    console.log(selectedProducts2)
-});
 
-function removeDuplicate(arr) {
-    const empty = []
-    arr.forEach(item => {
-        empty.includes(item) ? '' : empty.push(item)
-    })
-    return empty
-}
+
 sendOrderDOM.addEventListener("click", function () {
-    let selectedProducts3 = removeDuplicate(selectedProducts2)
     const requestData =
     {
         member:
         {
             memberId: sessionStorage.getItem("member_id")
         },
-        productId: selectedProducts3
+        productId: products,
+        sales: selectedProducts2
     };
 
     fetch("http://localhost:8080/checkout", {
