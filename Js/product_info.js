@@ -25,8 +25,8 @@ fetch('http://localhost:8080/find_one', {
 
         productName.innerText = dataProductName;
         productCategory.innerText = "分類：" + dataCategory;
-        productPrice.innerText = "售價：" + dataStock;
-        productStock.innerText = "庫存：" + dataPrice;
+        productPrice.innerText = "售價：" + dataPrice;
+        productStock.innerText = "庫存：" + dataStock;
     })
     .catch(error => {
         //報錯時要做的事情

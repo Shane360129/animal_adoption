@@ -122,7 +122,12 @@
         </div>
         <!-- 右邊顯示區 -->
         <div class="right-side w-4/5 bg-white">
-            <div id="show_product_area" class=" flex justify-evenly items-evenly">
+            <div class="flex justify-center items-center">
+                <input id="serch_keyword" class="h-12 w-1/2 border-4 p-2 m-5" type="text" placeholder="請輸入關鍵字">
+                <button id="search_btn" class="h-12 w-24 bg-pri-green" type="button">搜尋!</button>
+            </div>
+
+            <div id="show_product_area" class=" flex justify-evenly items-evenly flex-wrap">
                 <!-- <div id="product_card" class="bg-pri-pink p-8 rounded-2xl m-5 relative">
                     <img id="product_img" class=" h-48" src="../../img/pruductWall_img/pruductWall_1.jpg" alt="">
                     <p id="product_Name" class=" mt-2 mb-12">商品名</p>
