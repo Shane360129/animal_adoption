@@ -22,7 +22,7 @@ fetch("http://localhost:8080/find_all")
         //展示清單在頁面上
         showProductArea.innerHTML = productCard;
 
-        //把ID傳遞給product_info_1.html
+        //把ID傳遞給product_info.html
         const productCards = document.querySelectorAll('.product_card');
         productCards.forEach(card => {
             const productId = card.querySelector('.add_cart').getAttribute('data-productid');
