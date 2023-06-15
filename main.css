@@ -416,6 +416,7 @@ header button:hover {
   display: flex;
   max-width: 1920px;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 .filesBanner .filesText p {
   font-size: 25px;

@@ -26,8 +26,6 @@ const type = document.querySelector(".type");
 const regDate = document.querySelector(".regDate");
 const regCity = document.querySelector(".regCity");
 const adoption = document.querySelector(".adoption");
-const imgBlock = document.querySelector(".imgBlock");
-const modifyMinPic = document.querySelector(".modifyMinPic");
 
 // 渲染選中寵物資料
 function renderAnimalInfo(animal) {
@@ -65,6 +63,29 @@ axios.post("http://localhost:8080/countImg", {
       modifyMinPic.insertBefore(firstPics[j], modifyMinPic.firstChild);
     }
   }
+
+  // 圖片輪播功能
+  // 綁定父層點擊事件，並向下冒泡
+  imgBlock.addEventListener('click', (e) => {
+
+    // 檢查點擊的元素是否是圖片元素
+    if (e.target.tagName === 'IMG') {
+      // 檢查點擊的圖片元素是否已經有 'firstPic' class
+      if (!e.target.parentNode.classList.contains('firstPic')) {
+        const firstPicElement = imgBlock.querySelector('.firstPic');
+
+        firstPicElement.classList.remove("firstPic");
+        firstPicElement.classList.add("otherPic");
+        modifyMinPic.appendChild(firstPicElement);
+
+        e.target.parentNode.classList.remove("otherPic");
+        e.target.parentNode.classList.add("firstPic");
+        imgBlock.insertBefore(e.target.parentNode, imgBlock.firstChild);
+
+      }
+    }
+  });
+
 }).catch((error) => {
   console.error(error);
 });
@@ -92,3 +113,4 @@ adoption.addEventListener("click", () => {
         alert(response.data.message)
       }).catch((error) => console.log(error));
 })
+
