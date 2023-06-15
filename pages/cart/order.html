@@ -3,14 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 線上商城 - Vet X</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="../../main.css">
-    <title></title>
+    <!-- tailwind引入，Play CDN 僅用於開發目的，不適用於生產環境。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- flickity引入 -->
+    <script>
+        // 自定義tailwindcss
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundColor: {
+                        'pri-pink': '#FFA69E', //淺粉
+                        'pri-darkpink': '#FF7E6B', //深粉
+                        'pri-green': '#A9F0D1', //綠色
+                        'pri-light': '#FFF7F8', //背景白粉
+                        'pri-dark': '#8C5E58'//咖啡
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <a href="/index.html">
@@ -22,35 +41,35 @@
             <ul class="drop_down_menu">
                 <li class="hideLi"><a class="hideLi_a" href="#">首頁</a>
                     <ul class="hideUl">
-                        <li><a href="#">A</a>
+                        <li><a href="#">動物認養</a>
                         </li>
-                        <li><a href="#">B</a>
+                        <li><a href="#">最新消息</a>
                         </li>
-                        <li><a href="#">C</a>
+                        <li><a href="#">線上商城</a>
                         </li>
-                        <li><a href="#">D</a>
+                        <li><a href="#">教育課程</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">關於</a>
                     <ul class="hideUl">
-                        <li><a href="#">ㄅ</a>
+                        <li><a href="#">園區資訊</a>
                         </li>
-                        <li><a href="#">ㄆ</a>
+                        <li><a href="#">聯絡我們</a>
                         </li>
-                        <li><a href="#">ㄇ</a>
+                        <li><a href="#">常見問答</a>
                         </li>
                     </ul>
                 </li>
                 <li class="hideLi"><a class="hideLi_a" href="#">服務</a>
                     <ul class="hideUl">
-                        <li><a href="#">OAO</a>
+                        <li><a href="#">動物防疫</a>
                         </li>
-                        <li><a href="#">QAQ</a>
+                        <li><a href="#">拾獲救援</a>
                         </li>
-                        <li><a href="#">A_A</a>
+                        <li><a href="#">登記絕育</a>
                         </li>
-                        <li><a href="#">T_T</a>
+                        <li><a href="#">失蹤協尋</a>
                         </li>
                     </ul>
                 </li>
@@ -60,56 +79,62 @@
                         </li>
                         <li><a href="#">狗狗</a>
                         </li>
-                        <li><a href="#">人類</a>
-                        </li>
-                        <li><a href="#">其他畜生</a>
+                        <li><a href="#">全部</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             <div class="btn">
-                <a href="../../pages/member/register.html">
+                <a href="./pages/member/register.html">
                     <button type="button">註冊</button>
                 </a>
-                <a href="../../pages/member/login.html">
+                <a href="./pages/member/login.html">
                     <button type="button">登入</button>
                 </a>
 
             </div>
         </div>
     </header>
-    <div class="cart">
-        <div class="product">
-            <input type="checkbox" name="1" id="product1">
-            <img src="../../img/logo.jpg" alt="">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, ea.</p>
-            <input type="number" name="quantity1" id="quantity1">
+
+
+    <main class="product_front_all_main flex">
+        <!-- 左邊顯示區 -->
+        <div class="left-side w-1/5 flex flex-col justify-start items-center bg-pri-pink ">
+            <!-- 超連結列表 -->
+            <ul>
+                <a href="./product_front_all.html">
+                    <li class="bg-pri-dark text-white  px-8 py-2 my-4 rounded-full">
+                        全部商品
+                    </li>
+                </a>
+                <a href="../cart/checkout.html">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        購物車
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="bg-white px-8 py-2 my-4 rounded-full">
+                        <!-- 超連結待更新 -->
+                        歷史訂單
+                    </li>
+                </a>
+            </ul>
         </div>
-        <div class="product">
-            <input type="checkbox" name="2" id="product2">
-            <img src="../../img/logo.jpg" alt="">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, ea.</p>
-            <input type="number" name="quantity2" id="quantity2">
-        </div>
-        <div class="product">
-            <input type="checkbox" name="3" id="product3">
-            <img src="../../img/logo.jpg" alt="">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, ea.</p>
-            <input type="number" name="quantity3" id="quantity3">
-        </div>
-        <div class="product">
-            <input type="checkbox" name="4" id="product4">
-            <img src="../../img/logo.jpg" alt="">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, ea.</p>
-            <input type="number" name="quantity4" id="quantity4">
-        </div>
-        <button type="button" class="btn" id="sendOrder">新增至購物車</button>
-    </div>
-    
+        <!-- 右邊顯示區 -->
+        <div class="right-side w-4/5 bg-white">
+            <div id="show_product_area" class=" flex justify-evenly items-evenly">
+                <!-- <div id="product_card" class="bg-pri-pink p-8 rounded-2xl m-5 relative">
+                    <img id="product_img" class=" h-48" src="../../img/pruductWall_img/pruductWall_1.jpg" alt="">
+                    <p id="product_Name" class=" mt-2 mb-12">商品名</p>
+                    <button id="add_cart" class="h-8 w-8 bg-white absolute bottom-5 right-8" type="button">🛒</button>
+                </div> -->
+            </div>
+    </main>
+
     <footer class="frontFooter">
         <div class="footerImg">
             <div class="logo">
-                <a href="/index.html">
+                <a href="./index.html">
                     <img src="https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-cartoon-cute-pet-animal-logo-png-image_6150426.png"
                         alt="LOGO">
                 </a>
@@ -155,7 +180,9 @@
             </ul>
         </div>
     </footer>
-    <script src="../../Js/views/cart/cart.js"></script>
+
+    <script src="../../Js/views/header.js"></script>
+    <script src="../../Js/product_front_all.js"></script>
 </body>
 
 </html>
