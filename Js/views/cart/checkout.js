@@ -5,6 +5,7 @@ let productCard = "";
 const cartData = {
     member:
     {
+      // sessionStorage.getItem("member_id")
         memberId: sessionStorage.getItem("member_id")
     }
 };
@@ -20,6 +21,8 @@ fetch("http://localhost:8080/findMemberCart", {
         return response.json();
     })
     .then(data => {
+      console.log(JSON.stringify(cartData))
+      console.log(11)
         let shoppingCartMap = JSON.parse(data.message);
         console.log(shoppingCartMap)
         const selectedProducts = data.cartList

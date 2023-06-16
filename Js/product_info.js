@@ -19,33 +19,60 @@ console.log(productId);
 
 //找出資料庫的資料：用input去改
 fetch('http://localhost:8080/find_one', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: productId
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: productId
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        const dataProductName = data.product.productName;
-        const dataCategory = data.product.category;
-        const dataStock = data.product.stock;
-        const dataPrice = data.product.price;
-
-        productImg.src = `../../img/pruductWall_img/pruductWall_${productId}.jpg`
-        productName.innerText = dataProductName;
-        productCategory.innerText = "分類：" + dataCategory;
-        productPrice.innerText = "售價：" + dataPrice;
-        productStock.innerText = "庫存：" + dataStock;
+      console.log(data);
+      const dataProductName = data.product.productName;
+      const dataCategory = data.product.category;
+      const dataStock = data.product.stock;
+      const dataPrice = data.product.price;
+      productImg.src = `../../img/pruductWall_img/pruductWall_${productId}.jpg`
+      productName.innerText = dataProductName;
+      productCategory.innerText = "分類：" + dataCategory;
+      productPrice.innerText = "售價：" + dataPrice;
+      productStock.innerText = "庫存：" + dataStock;
     })
     .catch(error => {
-        //報錯時要做的事情
-        console.error('Error:', error);
+      //報錯時要做的事情
+      console.error('Error:', error);
     });
 
 //點下加入購物車之後的動作
 const addCart = document.querySelector('#add_cart');
+const quantity1DOM = document.querySelector("#quantity1")
 addCart.addEventListener('click', function () {
+  const memberId = sessionStorage.getItem("member_id");
+  const products = {};
 
-})
+  products[productId] = quantity1DOM.value;
+
+  const requestData = {
+    member: {
+      memberId: memberId
+    },
+    products,
+  };
+  console.log(requestData)
+  fetch("http://localhost:8080/addCart", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(requestData)
+  })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        alert(data.message);
+      })
+      .catch(function (error) {
+        console.log("An error occurred:", error);
+      });
+});
