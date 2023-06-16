@@ -97,7 +97,7 @@ function bindClickEvent() {
     sessionStorage.setItem("filesPic", filesPic);
     if (e.target.classList.contains("filesPic")) {
       if (!e.target.classList.contains("like")) {
-        if (sessionStorage.getItem("administrator")) {
+        if (Boolean(sessionStorage.getItem("administrator"))) {
           window.location.href = "../pages/animal_modify_and_delete.html";
         }
         else {
